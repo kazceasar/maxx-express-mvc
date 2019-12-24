@@ -1,0 +1,178 @@
+﻿@{
+    if (Session["LogUserPR_IND"].ToString() == "1") //Payroll Access Only
+    {
+
+<div id="right-panel" class="right-panel" style="overflow-x:hidden">
+    <div id="main-header" class="breadcrumbs">
+        <div class="col-sm-6">
+            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+            <div class="page-header">
+                <span id="maxx-txt-logo" class="maxxtextlogo pull-left hide" style="display:none;"></span>
+                <div id="dashboard-title" class="page-title">
+                    @if (Session["LogUserFullName"] != null)
+                    {
+                        <span class="PayrollDash-Txt">Payroll Dashboard  </span><span class="Hello-Txt"><span style="color:black">></span>  Hello, @Session["LogUserFullName"].ToString()</span>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li id="dateandtime" class="active dtl_number"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content mt-3">
+
+        <div class="row">
+
+            <div class="col-xl-7">
+                <div id="payroll-summary-card" class="card">
+                    <div class="card-header">
+                        <div class="col-lg-4" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> Payroll Summary</strong></div>
+                        <div class="col-lg-4">
+                            <select class="cs-select cs-skin-border payroll-dateview-dd">
+                                <option value="" disabled selected>This Month</option>
+                                <option value="Week" class="add-load-btn">This Week</option>
+                                <option value="Month" class="edit-load-btn">This Month</option>
+                                <option value="30Days" class="edit-load-btn">30 Days</option>
+                                <option value="All" class="update-status-btn">All</option>
+                            </select>
+                        </div>
+                        <div class="col-lg-4">
+                            <select class="cs-select cs-skin-border payroll-personview-dd">
+                                <option value="" disabled selected>All</option>
+                                <option value="All" class="all-payroll-btn">All</option>
+                                <option value="James_Waddy" class="james-payroll-btn">James Waddy</option>
+                                @*<option value="Bill_Pryce" class="bill-payroll-btn">Bill Pryce</option>*@
+                                <option value="Jermaine_Covington" class="jermanie-payroll-btn">Jermaine Covington</option>
+                                <option value="Gary_Brown" class="gary-payroll-btn">Gary Brown</option>
+                            </select>
+                            <input id="employee-placeholder-tb" class="hide" type="text" value="All" />
+                            <input id="date-placeholder-tb" class="hide" type="text" value="Month" />
+                        </div>
+
+                    </div>
+                    <div id="payroll-summary-data" class="card-body" style="padding: 0px;">
+
+                        <div id="payrollRunAlert" class="payroll-run-success alert alert-success alert-dismissible hide" role="alert">
+                            <span class="badge badge-pill badge-success">Success</span> Run Payroll is Complete
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+
+                        <table id="payroll-summary" class="table table-responsive" style="overflow-x: auto;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width:11%;">Date</th>
+                                    <th style="width:20%;">Employee</th>
+                                    <th style="width:6%;">Miles</th>
+                                    <th style="width:6%;">PPM</th>
+                                    <th style="width:8%;">Base</th>
+                                    <th style="width:8%;">Adjustment</th>
+                                    <th style="width:8%;">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="payroll-row-data">
+                                @{Html.RenderAction("GetPayrollSummaryIndex");}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 no-pad-horizontal">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <div class="col-lg-6" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> Payroll Administration</strong></div>
+                            <div class="col-lg-4">
+
+                            </div>
+
+                        </div>
+                        <div class="row padding-sm">
+                            <div class="col-xl-7">
+                                <div class="col-md-12">
+                                    <button class="btn btn-payroll btn-default btn-lg btn-block btn-huge payroll-run-btn" style="border: 1px solid #ccc;">Run Payroll</button>
+                                </div>
+                                <div class="col-md-12 padding-top-sm">
+                                    <button class="btn btn-adjustments btn-default btn-lg btn-block btn-huge payroll-adj-btn" style="border: 1px solid #ccc;">Add/Edit Adjustment</button>
+                                </div>
+                            </div>
+
+                            <div class="col-xl-5 no-pad-horizontal">
+                                @foreach (var p in ViewData["PayrollDatePeriod"]
+                         as IEnumerable<MaxxExpress.vw_payroll_period_summary>)
+                                {
+                                    <div class="col-md-12 payroll-period"><strong>Pay Period</strong></div>
+                                    <div class="col-md-12 payroll-period">@p.Week_Starting - @p.Week_Ending </div>
+                                    <div class="col-md-12 payroll-period"><strong>Submit Day</strong></div>
+                                    <div class="col-md-12 payroll-period">@p.Submit_Day</div>
+                                    <div class="col-md-12 payroll-period"><strong>Pay Day</strong></div>
+                                    <div class="col-md-12 payroll-period">@p.Pay_Day</div>
+                                    <div class="col-md-12 payroll-period"><strong>Mileage Period</strong></div>
+                                    <div class="col-md-12 payroll-period">@p.Fleetmatic_StartDate - @p.Fleetmatic_EndDate</div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /# card -->
+                </div>
+
+
+                <div class="col-xl-12 col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-money text-success border-success"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Payroll</div>
+                                    @foreach (var g in ViewData["PayrollDatePeriod"]
+                         as IEnumerable<MaxxExpress.vw_payroll_period_summary>)
+                                    {
+                                        <div class="stat-digit dtl_number">@string.Format("{0:#.00}", g.Total_Payroll)/<small>wk</small>&nbsp; @string.Format("{0:#.00}", g.Total_Month_Payroll)/<small>mo.</small></div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-xl-12 col-lg-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="stat-widget-one">
+                                <div class="stat-icon dib"><i class="ti-user text-primary border-primary"></i></div>
+                                <div class="stat-content dib">
+                                    <div class="stat-text">Employees Paid</div>
+                                    @foreach (var t in ViewData["PayrollDatePeriod"]
+                            as IEnumerable<MaxxExpress.vw_payroll_period_summary>)
+                                    {
+                                        <div class="stat-digit">@t.Total_Employees</div>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- .content -->
+</div><!-- /#right-panel -->
+
+    }
+    else
+    {
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="alert-no-access" class="alert  alert-danger alert-dismissible fade show" style="margin: 2%;" role="alert">
+                <span class="badge badge-pill badge-danger">Unauthorized</span> You do not have access to view this page, contact web administrator to gain access.
+            </div>
+        </div>
+    }
+}

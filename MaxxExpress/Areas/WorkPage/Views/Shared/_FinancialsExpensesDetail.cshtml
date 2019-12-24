@@ -1,0 +1,38 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+
+@foreach (var p in Model.vM_financial_expensesData
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_expenses>)
+{
+    <tr> 
+        <td class="dtl_number">@p.Trans_Date.ToString("MM/dd")</td>
+        <td class="dtl_number">@p.Trans_Item</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Amount)</td>
+        <td class="dtl_number">@p.Method</td>
+        <td class="dtl_number">         
+                @if (p.Purpose == null || p.Purpose == "")
+                {
+                    <i class="fa fa-plus-circle add-expense-purpose" data-expenseid="@p.Expense_ID.ToString()" aria-hidden="true"></i>
+                }
+                else
+                {
+                    <i class="fa fa-pencil add-expense-purpose" data-expenseid="@p.Expense_ID.ToString()" aria-hidden="true"></i>
+                }
+                <span class="padding-left-sm">@p.Purpose</span>       
+    </td>
+        <td class="dtl_number">@p.Authorized_By</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

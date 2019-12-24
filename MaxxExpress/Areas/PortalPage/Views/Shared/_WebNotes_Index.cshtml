@@ -1,0 +1,107 @@
+﻿
+    @foreach (var d in ViewData["WebNotes"]
+           as IEnumerable<MaxxExpress.tbl_web_notes>)
+    { 
+        <li class="message-line">
+            <div>
+                <div class="col-md-12 no-padding  message-item" data-toggle="collapse" data-target=#message_id_@d.ID.ToString()  style="height:0px"> 
+                    <div class="col-md-1 text-left message-type-text @d.Message_Type_class"> @d.Message_Type</div> 
+                    <div class="col-md-5 dtl_number message-subject-line message-subject-text">@d.Subject
+                        &nbsp; 
+                    @if (d.Attachment_IND == "1")
+                    {
+                        <i class="fa fa-paperclip" aria-hidden="true"></i>
+                    }
+                    </div>
+                    <div class="col-md-1 dtl_number message-subject-line message-subject-text">
+                        @if (d.Message_Type == "Bill Due")
+                        {@d.Due_Amount
+                        }
+                    </div>                   
+                    <div class="col-md-1 dtl_number message-subject-line message-subject-text">@d.Action_Date</div>
+                </div>
+            </div>
+            <div class="message-content-item collapse" id=message_id_@d.ID.ToString() style="width:100%">
+                <div class="card card-body padding-left-lg message-content-container">
+                    <div class="row message-body-meta">
+                        <div class="col-md-1 dtl_number message-body-meta-date">
+                            @Convert.ToDateTime(d.CreateDate).ToString("MM/dd/yy")
+                        </div>
+                        <div class="col-md-2 message-body-from">
+                            From: @d.SentFrom
+                        </div>
+                        <div class="col-md-4 message-body-subject">
+                            Subject: @d.Subject
+                        </div>
+                        @if (@d.Action_Date != null)
+                        {
+                            <div class="col-md-2 dtl_number message-body-duedate no-pad-horizontal">
+                                Due Date: @d.Action_Date
+                            </div>
+                        }
+                        @if (@d.Due_Amount != null)
+                        {
+                            <div class="col-md-2 dtl_number message-body-amount no-pad-horizontal">
+                                Amount Due: @d.Due_Amount
+                            </div>
+                        }
+                    </div>
+                    <div class="row message-body-content">
+                        <div class="col-md-12">
+                           @Uri.UnescapeDataString(d.Message_Content) 
+                        </div>
+                    </div>
+                    <div class="row message-body-options-section">
+                        <i class="fa fa-cog" aria-hidden="true"></i> &nbsp; Options
+                        <div class="col-md-12 no-pad-horizontal message-body-options">
+                            <div class="col-md-3 message-body-option">
+                                <span id="btn-note-remove-modal" class="note-remove-modal btn btn-block btn-huge btn-outline-danger" data-noteid=@d.ID.ToString()>Remove Note</span>
+                            </div>
+                            <div class="col-md-3 message-body-option">
+                                <span id="btn-note-remove-alert" class="note-remove-alert btn btn-block btn-huge btn-outline-warning" data-noteid=@d.ID.ToString()>Remove Alert</span>
+                            </div>
+                            <div class="col-md-3 message-body-option">
+                                <span id="btn-note-archive-modal" class="note-archive btn btn-block btn-huge btn-outline-primary" data-noteid=@d.ID.ToString()>Archive</span>
+                            </div>
+                        </div>
+                    </div>
+                @if (@d.Attachment_IND == "1")
+                {
+                    <div class="row message-body-attachment-section">
+                        <i class="fa fa-paperclip" aria-hidden="true"></i> &nbsp;  Attachments
+                        <div class="col-md-12">
+                                @if (@d.Attachment_1_Path != null)
+                                {
+                                    <span class="message-body-attachment attachment-1 dtl_number"> <a class="dtl_number" target="_blank" href=@d.Attachment_1_Path>@d.Attachment_1_Path.Replace("https://maxx-express.com/Areas/PortalPage/docs/notes/", "")</a></span> 
+                                }
+                                @if (@d.Attachment_2_Path != null)
+                                {
+                                    <span class="message-body-attachment attachment-2 dtl_number"> <a class="dtl_number" target="_blank" href=@d.Attachment_2_Path>@d.Attachment_2_Path.Replace("https://maxx-express.com/Areas/PortalPage/docs/notes/", "")</a></span>
+                                }
+                                @if (@d.Attachment_3_Path != null)
+                                {
+                                    <span class="message-body-attachment attachment-3 dtl_number"> <a class="dtl_number" target="_blank" href=@d.Attachment_3_Path>@d.Attachment_3_Path.Replace("https://maxx-express.com/Areas/PortalPage/docs/notes/", "")</a></span>
+                                }
+                        </div>
+                    </div>
+                    }
+                </div>
+            </div>
+        </li>
+    }
+
+
+
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

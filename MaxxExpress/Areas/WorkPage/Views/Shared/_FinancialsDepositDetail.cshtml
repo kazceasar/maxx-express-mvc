@@ -1,0 +1,35 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+
+
+@foreach (var p in Model.vM_financial_DepositData
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_revenue_deposit>)
+{
+    if (Model.vM_financial_Deposit_IND == "1") {
+    <tr> 
+        <td class="dtl_number">@p.Purpose</td>
+        <td class="dtl_number">@p.Deposit_Date.ToString("MM/dd")</td>
+        <td class="dtl_number">@p.Amount</td>
+        <td class="dtl_number">@p.Source</td>
+    
+    </tr>
+    }
+    else
+    {
+        <td class="dtl_number">No Manual Deposits this Month</td>
+    }
+}
+
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

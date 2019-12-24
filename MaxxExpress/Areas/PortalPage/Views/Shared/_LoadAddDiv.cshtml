@@ -1,0 +1,451 @@
+﻿@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+<form class="loadaddform" enctype="multipart/form-data">
+    <div id="addLoad_InfoBox" class="card border border-secondary LoadInfoBox">
+        <div class="card-header card-header-addLoad">
+            <div class="col-md-4 form-group"><span class="dtl_value padding-right-md">Load Number :</span><span id="vM_AddLoadData_LoadNbr" class="dtl_value padding-right-md">@Html.EditorFor(m => m.vM_AddLoadData.Load_Number, new { htmlAttributes = new { @class = "form-control dtl_number" } })</span><span style="color:white;"><small>Load Number cannot be edited</small></span></div>
+            <div class="col-md-4 form-group"><span class="dtl_value padding-right-md">Customer :</span><span class="dtl_value padding-right-md">@Html.DropDownListFor(m => m.vM_AddLoadData.Customer_ID, new SelectList(Model.AddLoad_Customer_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+            <div class="col-md-4 form-group no-pad-right">
+                <span class="dtl_value ">Load Confirmation :</span>
+                <div class="col-md-12 no-pad-horizontal">
+                    <div class="col-md-8 no-pad-horizontal">
+                        <span id="addLoad-uploadbox" class="btn btn-basic fileinput-button fileInput-maxx-disabled">
+                            <span id="AddLoad_LoadConfirmation_Filename" class="dtl_number">Select File</span>
+                            <input id="AddLoad_LoadConfirmation_Upload" namde="AddLoad_LoadConfirmation_Upload" class="LoadConfirmationUpload" type="file" disabled onchange="get_filename()">
+                        </span>
+                        <div id="addLoad_UploadProgress" class=""></div>
+                    </div>
+                    <div class="col-md-4 no-pad-horizontal">
+                        <span class="btn btn-primary-disabled fileinput-button AddLoad_LoadConfirmationUpload_Submit" style="width: 100%">
+                            <span>Upload</span>
+                            <input class="AddLoad_LoadConfirmationUpload_Submit LoadConfirmationUpload" type="button">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card-body">
+
+            <div class="col-md-12">
+                <div class="col-md-4 form-group"><span class="dtl_label">Week of : </span><span class="dtl_value "> @Html.DropDownListFor(m => m.vM_AddLoadData.Week_of, new SelectList(Model.AddLoad_Weekof_List, "Id", "Value"), new { @class = "form-control dtl_number" })</span></div>
+                <div class="col-md-4 form-group"><span class="dtl_label">Load # of Week : </span><span class="dtl_value padding-right-md">@Html.DropDownListFor(m => m.vM_AddLoadData.Load_of_Week, new SelectList(Model.AddLoad_LoadofWeek_List, "Id", "Value", Model.AddLoad_LoadofWeek_Val), new { @class = "form-control" })</span></div>
+                <div class="col-md-4 form-group" style="padding-left:0px;">
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Payout</span><span class="dtl_value money-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Payout, new { htmlAttributes = new { @class = "form-control dtl_number dtl_number pull-left", @style = "width:100%" } })</span></div>
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Price PM</span><span class="dtl_value money-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Price_Per_Mile, new { htmlAttributes = new { @class = "form-control dtl_number dtl_number pull-left", @style = "width:100%", @disabled = true } })</span></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4 form-group"><span class="dtl_label">Weight : </span><span id="payout-dtl" class="dtl_value padding-right-md money-round-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Weight, new { htmlAttributes = new { @class = "form-control dtl_number" } })</span></div>
+                <div class="col-md-4 form-group"><span class="dtl_label">Contents : </span><span class="dtl_value padding-right-md money-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Contents, new { htmlAttributes = new { @class = "form-control" } })</span></div>
+                <div class="col-md-4 form-group" style="padding-left:0px;">
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Total Miles</span><span class="dtl_value money-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Total_Miles, new { htmlAttributes = new { @class = "form-control dtl_number pull-left", @style = "width:100%", @disabled = true } })</span></div>
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Load Miles</span><span class="dtl_value money-dtl">@Html.EditorFor(m => m.vM_AddLoadData.Total_Load_Miles, new { htmlAttributes = new { @class = "form-control dtl_number pull-left", @style = "width:100%", @disabled = true } })</span></div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4 form-group"><span class="dtl_label">Driver : </span><span class="dtl_value money-round-dtl">@Html.DropDownListFor(m => m.vM_AddLoadData.Driver_NBR, new SelectList(Model.AddLoad_Driver_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+                <div class="col-md-4 form-group" style="padding-left:0px;">
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Truck</span><span class="dtl_value money-dtl">@Html.DropDownListFor(m => m.vM_AddLoadData.Truck_NBR, new SelectList(Model.AddLoad_Truck_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">Trailer</span><span class="dtl_value money-dtl">@Html.DropDownListFor(m => m.vM_AddLoadData.Trailer_NBR, new SelectList(Model.AddLoad_Trailer_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+                </div>
+
+                <div class="col-md-4 form-group" style="padding-left:0px;">
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label">LTL?</span><span class="dtl_value money-dtl">@Html.DropDownListFor(m => m.vM_AddLoadData.LTL, new SelectList(Model.AddLoad_LTL_IND_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+                    <div class="col-md-6" style="padding-right: 0px"><span class="dtl_label"></span></div>
+                </div>
+            </div>
+            <div class="col-md-11">
+                @Html.EditorFor(m => m.vM_AddLoadData.Load_Confirmation_URL, new { htmlAttributes = new { @class = "form-control", @hidden = true } })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <span class="dtl_label padding-right-md"></span>
+    </div>
+
+    <div class="col-md-6 form-group">
+        <div id="editLoad_DetailBox" class="card border border-secondary">
+            <div class="card-header card-header-pickup">
+                <strong class="card-title">Pickup Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Pickup City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Pickup Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Name, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Pickup Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Address, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Pickup Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Zip, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Pickup Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Pickup Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Pickup Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+
+                <div class="col-md-6 form-group">Pickup Deadhead :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Deadhead_Miles, new { htmlAttributes = new { @class = "form-control", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dtl-dropoff-1" class="col-md-6 form-group">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 1 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Address, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Zip, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_1_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">PU To D1 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Pickup_DO1_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+    <div id="dtl-dropoff-2" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 2 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Address, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Zip, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_2_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D1 To D2  :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO1_DO2_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dtl-dropoff-3" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 3 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Address, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Zip, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_3_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D2 To D3 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO2_DO3_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dtl-dropoff-4" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 4 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Address, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Zip, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_4_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D3 To D4 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO3_DO4_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dtl-dropoff-5" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 5 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Address, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Zip, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_5_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D4 To D5 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO4_DO5_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dtl-dropoff-6" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 6 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Address, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Zip, new { htmlAttributes = new { @class = "form-control" } })  </div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_6_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D5 To D6 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO5_DO6_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+
+    <div id="dtl-dropoff-7" class="col-md-6 form-group multi-dropoff hide">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 7 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 form-group">Dropoff City :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Location, new { htmlAttributes = new { @class = "form-control dtl_location" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Name, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Address, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Zip, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Contact, new { htmlAttributes = new { @class = "form-control" } }) </div>
+
+                <div class="col-md-6 form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Date, new { htmlAttributes = new { @class = "form-control date-field dtl_number" } })</div>
+
+                <div class="col-md-6 form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Time, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">Special Notes :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.Dropoff_7_Notes, new { htmlAttributes = new { @class = "form-control" } })</div>
+
+                <div class="col-md-6 form-group">D6 To D7 :</div>
+                <div class="col-md-6 form-group">@Html.EditorFor(m => m.vM_AddLoadData.DO6_DO7_Miles, new { htmlAttributes = new { @class = "form-control mileage-field", @onkeyup = "recalc_Miles()" } })</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12 add-multi-droppoff">
+        <div class="col-md-4" style="padding-right: 0px"></div>
+        <div class="col-md-4" style="padding-right: 0px"><button type="button" class="btn btn-outline-primary btn-sm add-multi-dropoff-btn"><i class="fa fa-plus"></i>&nbsp; Add More Stops</button></div>
+        <div class="col-md-4" style="padding-right: 0px"></div>
+    </div>
+</form>
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="../Areas/PortalPage/css/customDatePicker.css" rel='stylesheet' type='text/css'>
+
+<script type="text/javascript">
+
+    function getSum(total, num) {
+        return total + num - 1;
+    }
+    function recalc_Miles() {
+        var deadheadMiles_tb = document.getElementById("vM_AddLoadData_Deadhead_Miles");
+        var ppm_tb = document.getElementById("vM_AddLoadData_Price_Per_Mile");
+        var payout_tb = document.getElementById("vM_AddLoadData_Payout");
+        var mileageField = document.getElementsByClassName("mileage-field");
+        var TotalMiles_tb = document.getElementById("vM_AddLoadData_Total_Miles");
+        var TotalLoadMiles_tb = document.getElementById("vM_AddLoadData_Total_Load_Miles");
+        var dh_miles = 0;
+        var sumlist = [1];
+        var sumVal = 0;
+        Array.prototype.forEach.call(mileageField, function (el) {
+            if (el.value) {
+                sumlist.push(parseInt(el.value.replace(',', '')));
+            }
+
+            sumVal = sumlist.reduce(getSum);
+            dh_miles = parseInt(deadheadMiles_tb.value);
+            ppm_tb.value = (parseInt(payout_tb.value.replace(',', '').replace('$', '')) / parseInt(sumVal)).toFixed(2);
+            TotalMiles_tb.value = sumVal + dh_miles;
+            TotalLoadMiles_tb.value = sumVal;
+        });
+    }
+
+    function get_filename() {
+        var uploader = document.getElementById('AddLoad_LoadConfirmation_Upload');
+        var filename = uploader.files.item(0).name;
+        document.getElementById("AddLoad_LoadConfirmation_Filename").innerHTML = filename;
+    };
+
+    $(function () {
+        $(".date-field").datepicker({ dateFormat: 'mm/dd/yy' });
+
+        $("#vM_AddLoadData_Load_Number").keyup(function () {
+            $("#addLoad-uploadbox").removeClass('fileInput-maxx-disabled').addClass('fileInput-maxx');
+            $('#AddLoad_LoadConfirmation_Upload').removeAttr('disabled');
+            $('.AddLoad_LoadConfirmationUpload_Submit').removeClass('btn-primary-disabled').addClass('btn-primary');
+        });
+        // Add Load - Upload Load Confirmation
+        $('.AddLoad_LoadConfirmationUpload_Submit').on('click', function (event) {
+
+            var file_data = $("#AddLoad_LoadConfirmation_Upload").prop("files")[0]; // Getting the properties of file from file field
+            if (file_data) {
+                var Loadnum = $('#vM_AddLoadData_Load_Number').val();
+                $('#addLoad_UploadProgress').addClass('progress');
+
+
+                var form_data = new FormData(); // Creating object of FormData class
+                form_data.append("file", file_data) // Appending parameter named file with properties of file_field to form_data
+
+                $.ajax({
+                    type: 'POST',
+                    cache: false,
+                    processData: false, // important
+                    contentType: false, // important
+                    data: form_data,
+                    url: '../portal/uploadLoadConfirmation?LoadNbr=' + Loadnum,
+                    dataType: 'json',
+                    success: function (response) {
+                        if (response.success) {
+                            console.log(response.responseText);
+                            $('#addLoad_UploadProgress').removeClass('progress').html('File Upload Successful');
+                            $('#AddLoad_Load_Paperwork_Upload').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete');
+                            $('#vM_AddLoadData_Load_Confirmation_URL').val('https://maxx-express.com/Areas/PortalPage/docs/loads/' + Loadnum + '.pdf')
+                        } else {
+                            alert(response.responseText);
+                        }
+                    },
+                    error: function (response) {
+                        alert(response.responseText);
+                    }
+
+                });
+            }
+        });
+
+    });
+
+
+</script>

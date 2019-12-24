@@ -1,0 +1,22 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{
+
+    string totalDateText = Model.expense_ViewByDate.ToString();
+    string totalExpenses = string.Format("{0:C}", Model.expense_Total);
+}
+<strong class="card-title">
+    <span id="expenseDateText" class="dtl_number">@Html.DisplayFor(modelItem => totalDateText)</span>
+    - <span id="expenseTotal" class="dtl_number">@Html.DisplayFor(modelItem => totalExpenses)</span>
+    </strong>
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+
+
+
+

@@ -1,0 +1,64 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{ 
+    var list = ViewData["ExpenseSummaryData"];
+    var total = ViewData["ExpenseTotal"];
+    var total_DateText = ViewData["ExpenseTotalDate"];
+    
+}
+
+
+@foreach (var p in list
+           as IEnumerable<MaxxExpress.vw_expenses>)
+{
+    <tr> 
+        <td class="dtl_number">@p.DateValue_str</td>
+        <td>@p.Authorized_By</td>
+        <td class="dtl_number">@p.Trans_Item</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Amount)</td>
+        <td class="dtl_number">@p.Method</td>
+        <td class="dtl_number">
+            @if (p.Reoccurring_IND == 1)
+            {
+                <span>Yes</span>
+            }
+            else
+            {
+                <span>No</span>
+            }
+               
+        </td>
+        <td class="dtl_number">
+            @if (p.Reoccurring_IND == 0)
+            {
+                if (p.Purpose == null || p.Purpose == "") { 
+                <i class="fa fa-plus-circle add-expense-purpose" data-expenseid="@p.ID.ToString()" aria-hidden="true"></i>
+                }
+                else
+                {
+                    <i class="fa fa-pencil add-expense-purpose" data-expenseid="@p.ID.ToString()" aria-hidden="true"></i>
+                }
+                <span class="padding-left-sm">@p.Purpose</span>
+            }
+            else
+            {
+                @p.Purpose
+            }
+        </td>
+        <td class="hide" data-total="@total" data-dateText="@total_DateText"></td>
+ 
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

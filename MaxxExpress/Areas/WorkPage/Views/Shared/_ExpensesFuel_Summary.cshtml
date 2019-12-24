@@ -1,0 +1,32 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{
+    var list = ViewData["FuelSummaryData"];
+}
+
+
+@foreach (var p in list
+           as IEnumerable<MaxxExpress.vw_fuel>)
+{
+    <tr>
+        <td class="dtl_number">@p.Trans_Date_str</td>
+        <td>@p.Location</td>
+        <td class="dtl_number">@p.Gallons</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Amount)</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Price)</td>
+        <td class="dtl_number">@p.Fuel_Type</td>
+        <td class="dtl_number">@p.FuelSource</td>
+        <td class="dtl_number">@p.Name</td>
+
+
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+

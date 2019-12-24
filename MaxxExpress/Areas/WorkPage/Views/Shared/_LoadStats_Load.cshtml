@@ -1,0 +1,28 @@
+﻿@{
+    var unpaidAmount = ViewData["HomepageStats_DeliveredNotPaidDollars"].ToString();
+    var unpaidCount = ViewData["HomepageStats_DeliveredNotPaidCount"].ToString();
+    //var gross = ViewData["HomepageStats_DeliveredGross"].ToString();
+    //var miles = ViewData["HomepageStats_MilesDrivenLastWeek"].ToString();
+    //var fuel = ViewData["HomepageStats_FuelDollarsLastWeek"].ToString();
+    //var payroll = ViewData["HomepageStats_PayrollLastWeek"].ToString();
+    //var expenses = ViewData["HomepageStats_ExpensesLastWeek"].ToString();
+
+}
+
+
+<span type="button" class="btn btn-lg btn-loads-due" style="margin-bottom: 4px">
+    <i class="fa-loads-due">@unpaidCount</i>
+    <span class="loads-due-value dtl_number">Loads Due - $@unpaidAmount</span>
+</span>
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

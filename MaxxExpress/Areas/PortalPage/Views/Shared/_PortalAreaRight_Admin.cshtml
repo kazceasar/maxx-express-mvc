@@ -1,0 +1,221 @@
+﻿<div id="right-panel" class="right-panel" style="overflow-x:hidden">
+    <div id="main-header" class="breadcrumbs">
+        <div class="col-sm-8">
+            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+            <div class="page-header">
+                <span id="maxx-txt-logo" class="maxxtextlogo pull-left hide" style="display:none;"></span>
+                <div id="dashboard-title" class="page-title">
+                    <div id="welcome-name" class="col-md-7 no-pad-sides">
+                        @if (Session["LogUserFullName"] != null)
+                        {
+                            <span class="PortalDash-Txt">Portal  </span><span class="Hello-Txt"><span style="color:black">></span>   Hello, @Session["LogUserFullName"].ToString()</span>
+                        }
+                    </div>
+                    <div class="col-md-5 no-pad-sides padding-top-md">
+                        <span id="btn-view-notes" class="view-notes"><i class="fa fa-envelope-o fa-2 view-notes" aria-hidden="true" style="font-size:20px"></i> View Notes</span>
+                        <span id="note-count-notification" class="count bg-danger dtl_number">@{Html.RenderAction("WebNotesCountIndex");}</span>
+                        <span id="btn-create-note" class="create-note"><i class="fa fa-plus fa-2" aria-hidden="true" style="font-size:20px; padding-left:1%;"></i> Create Note</span>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <div class="breadcrumb text-right">
+                        <span class="dtl_number">@*Date Period @period*@</span>
+                        <span id="dateandtime" class="active dtl_number" style="width: 295px;"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="web-notes" class="notes-drawer" style="height: 0px; position:relative; z-index:30;">
+        <nav>
+            <ul id="web-notes-rows" class="nav nav-tabs nav-stacked" style="height:0px">
+                @{Html.RenderAction("WebNotesIndex");}
+            </ul>
+        </nav>
+    </div>
+    <div id="web-create-note" class="create-note-drawer" style="height: 0px; position:relative; z-index:30;">
+        <nav>
+            <ul class="nav nav-tabs nav-stacked" style="height:0px">
+                <li class="create-note-li">
+                    @{Html.RenderAction("CreateNoteIndex");}
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div id="right-panel-body">
+        <div id="web-alerts">
+            <div id="web-alerts-rows" class="col-md-12">
+                @{Html.RenderAction("WebAlertsIndex");}
+            </div>
+        </div>
+        <div class="col-md-12 note-send-successful hide">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-success">Note Create</span><span class="dtl_number"> Your note was successfully sent </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12 note-delete-successful hide">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-danger">Note Delete</span><span class="dtl_number"> Your note was successfully deleted </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12 note-delete-successful hide">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-warning">Alert Delete</span><span class="dtl_number"> Your alert was successfully disabled </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        </div>
+        <div class="col-md-12 note-archive-successful hide">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                <span class="badge badge-pill badge-primary">Note Archived</span><span class="dtl_number"> Your note was successfully archived </span>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+        </div>
+        <div class="content mt-3" style="padding:0px; margin-top:0px !important;">
+            <div class="col-lg-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="col-lg-2" style="padding-top: 3%; padding-left:0px;"><strong class="card-title">Unpaid Fuel</strong></div>
+                        <div class="col-lg-3" id="index-company-stats-load" style="padding-top: 1.2%; padding-left:0px;">
+                            @{Html.RenderAction("GetIndexStats_Fuel");}
+                        </div>
+                        <div class="col-lg-5"></div>
+                        <div class="col-lg-2" style="padding-left: 0px;">
+                            <select class="cs-select cs-skin-border fuel-action-dd">
+                                <option value="" disabled selected>Choose Action</option>
+                                <option value="Add" class="add-load-btn">Add Fuel</option>
+                                <option value="Delete" class="edit-load-btn">Delete Fuel</option>
+                                <option value="Paid" class="update-status-btn">Mark as Paid</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="add-fuel-success" class="margin-top-md alert alert-success alert-dismissible fade show hide" role="alert">
+                            <span class="badge badge-pill badge-success">Fuel Purchase Added</span> You successfully added a new fuel purchase
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="fuel-purchase-row" class="card-body">
+                        @{Html.RenderAction("GetFuelPurchases");}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-12">
+                <div id="load-summary-card" class="card">
+                    <div class="card-header">
+                        <div class="col-lg-2" style="padding-top: 3%; padding-left:0px;"><strong class="card-title">Open Loads</strong></div>
+                        <div class="col-lg-3" id="index-company-stats-load" style="padding-top: 1.2%; padding-left:0px;">
+                            @{Html.RenderAction("GetIndexStats_Load");}
+                        </div>
+                        <div class="col-lg-5" style="padding-top: 1.2%; padding-left:0px;">
+
+                        </div>
+
+                        <div class="col-lg-2" style="padding-left: 0px;">
+                            <select class="cs-select cs-skin-border load-action-dd">
+                                <option value="" disabled selected>Choose Action</option>
+                                <option value="Add" class="add-load-btn">Add Load</option>
+                                <option value="Edit" class="edit-load-btn">Edit Load</option>
+                                <option value="Update" class="update-status-btn">Change Status</option>
+                                <option value="Delete" class="delete-load-btn">Delete Load</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div id="add-load-success" class="alert  alert-success alert-dismissible fade show hide" role="alert">
+                            <span class="badge badge-pill badge-success">Load Added</span> You successfully added a new load
+                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div id="index-open-loads" class="card-body" style="padding: 0px;">
+                        <table id="tbl-open-loads-summary" class="table table-responsive" style="overflow-x: auto;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width:5%;">Day</th>
+                                    <th style="width:3%;">#</th>
+                                    <th style="width:10%;">Load</th>
+                                    <th style="width:5%;">Miles</th>
+                                    <th style="width:5%;">Payout</th>
+                                    <th style="width:5%;">Net</th>
+                                    <th style="width:5%;">PPM</th>
+                                    <th style="width:5%;">Driver</th>
+                                    <th style="width:5%;">Truck</th>
+                                    <th style="width:7%;">Status</th>
+                                    <th style="width:14%;">Pickup</th>
+                                    <th style="width:5%;">Date</th>
+                                    <th style="width:14%;">Dropoff</th>
+                                    <th style="width:5%;">Date</th>
+                                </tr>
+                            </thead>
+                            <tbody id="open-load-row">
+                                @{Html.RenderAction("GetOpenLoadSummaryIndex");}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="closed-loads-header card-header">
+                        <div class="col-lg-10" style="padding-top: 3%;"><strong class="card-title"> Closed Loads</strong></div>
+                        <div class="col-lg-2" style="padding-left: 0px;">
+                            <select class="cs-select cs-skin-border closedloads-dateview-dd">
+                                <option value="" disabled selected>Last 30 Days</option>
+                                <option value="ALL">All</option>
+                                <option value="7Days">7 Days</option>
+                                <option value="30Days">30 Days</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="index-closed-loads" class="card-body" style="padding: 0px;">
+                        <table id="tbl-closed-loads-summary" class="table table-responsive" style="min-height: 200px; margin-bottom: 0px;">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th style="width:5%;">Day</th>
+                                    <th style="width:3%;">#</th>
+                                    <th style="width:10%;">Load</th>
+                                    <th style="width:5%;">Customer</th>
+                                    <th style="width:5%;">Miles</th>
+                                    <th style="width:5%;">Payout</th>
+                                    <th style="width:5%;">PPM</th>
+                                    <th style="width:5%;">Driver</th>
+                                    <th style="width:5%;">Truck</th>
+                                    <th style="width:7%;">Status</th>
+                                    <th style="width:14%;">Pickup</th>
+                                    <th style="width:5%;">Date</th>
+                                    <th style="width:14%;">Dropoff</th>
+                                    <th style="width:5%;">Date</th>
+                                </tr>
+                            </thead>
+
+                            <tbody id="closed-load-row">
+                                @{Html.RenderAction("GetClosedLoadSummaryIndex");}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-12">&nbsp;</div>
+            <script type="text/javascript">
+            </script>
+
+        </div>
+    </div> <!-- /#right-panel body -->
+</div><!-- /#right-panel -->

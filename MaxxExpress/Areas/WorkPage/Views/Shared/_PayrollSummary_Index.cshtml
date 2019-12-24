@@ -1,0 +1,26 @@
+﻿@foreach (var p in ViewData["PayrollSummaryData"]
+           as IEnumerable<MaxxExpress.vw_payroll_web>)
+{
+    <tr>
+        <td class="dtl_number">@p.Pay_Day.ToString("MM/dd")</td>
+        <td>@p.Employee</td>
+        <td class="dtl_number">@string.Format("{0:0}", p.Miles)</td>
+        <td>@p.PPM</td>
+        <td class="money-round dtl_number">@string.Format("{0:C}", p.BasePay)</td>
+        <td class="money-round dtl_number">@string.Format("{0:C}", p.Total_Adjustment_Amount)</td>
+        <td class="money dtl_number">@string.Format("{0:C}", p.Total_Pay)</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

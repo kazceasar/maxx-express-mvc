@@ -1,0 +1,47 @@
+﻿<table id="tbl-loads-summary" class="table table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width: 40%">Pickup</th>
+            <th scope="col" style="width: 40%">Dropoff</th>
+            <th scope="col" style="width: 20%">Load Number</th>      
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="open-loads-header hide"> 
+            <td colspan="2" style="border-left: 1px solid #dee2e6">Open Loads</td>
+            <td colspan="1" style="border-right: 1px solid #dee2e6"></td>
+        </tr>
+        @foreach (var d in ViewData["OpenLoadsSummary"]
+           as IEnumerable<MaxxExpress.vw_loads_summary_open>)
+        {
+            <tr>
+                <td>@d.Pickup</td>
+                <td>@d.DropOff</td>
+                <td class="dtl_number">@d.Load_Number</td>              
+            </tr>
+            <tr>
+                <td colspan="3" style="border-top:none;">
+               @if (d.Status == "Not Started")
+                {
+                   <button type="button" class="btn btn-outline-primary loadPickup" data-load=@d.Load_Number><i class="fa fa-truck"></i>&nbsp; Mark as Picked Up</button>
+               }
+                @if (d.Status == "In-Route")
+                {
+                   <button type="button" class="btn btn-outline-success loadDelivered" data-load=@d.Load_Number><i class="fa fa-star"></i>&nbsp; Mark as Delivered</button>
+                }
+            </tr>
+        }
+
+    </tbody>
+   
+
+</table>
+
+
+
+
+
+<script type="text/javascript">
+
+
+</script>

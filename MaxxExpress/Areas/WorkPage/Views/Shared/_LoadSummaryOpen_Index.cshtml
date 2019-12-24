@@ -1,0 +1,48 @@
+﻿
+    @foreach (var d in ViewData["OpenLoadsSummary"]
+           as IEnumerable<MaxxExpress.vw_loads_summary_open>)
+    {
+        <tr>
+            <td class="dtl_number">@d.Load_Dt_Str</td>
+            <td>@d.Load_of_Day_Total</td>
+            <td class="loadnumber_cl dtl_number" data-load-id=@d.ID>@d.Load_Number</td>
+            <td class="dtl_number">@d.Total_Miles</td>
+            <td class="money-round dtl_number payout_cl">@d.Payout</td>
+            <td class="money-round dtl_number">@d.Final_Net_Payout</td>
+            <td class="money dtl_number">@d.PPM</td>
+            <td>@d.Driver</td>
+            <td class="dtl_number">@d.Truck</td>
+            <td @(d.Status == "Not Started" ? "class=status-not-started" : d.Status == "In-Route" ? "class=status-in-route" : d.Status == "Delivered" ? "class=status-delivered" : "class=other-status")>@d.Status</td>
+
+            <td class="dtl_location">@d.Pickup</td>
+            <td>@d.Pickup_Dt_str</td>
+            <td class="dtl_location">@d.DropOff</td>
+            <td style="width:5%;">
+                @if (d.DropOff_Dt[0] == '0')
+                {
+                    @d.DropOff_Dt.Substring(0, d.DropOff_Dt.Length - 5);
+                }
+                else
+                {
+                    @d.DropOff_Dt;
+                }
+            </td>
+
+        </tr>
+    }
+
+
+
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

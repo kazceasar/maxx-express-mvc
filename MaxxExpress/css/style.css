@@ -1,0 +1,415 @@
+/*
+Template name: Mountain King
+
+
+/*------------------------------------*\
+	COMMONS CLASSES
+\*------------------------------------*/
+
+h1, h2, h3, h4, h5, h6
+{
+    font-family: 'Roboto Slab', serif;
+}
+
+h1, h2, h3, h4, h5, h6
+{
+    margin-bottom: 1.1em;
+}
+
+.features,
+.blog,
+.gallery,
+.clients,
+.prefooter .container-fluid
+{
+    padding-top: 3.3em;
+    padding-bottom: 4.2em;
+}
+
+span.typcn::before, i.typcn::before
+{
+    font-size: 2em;
+}
+
+span.x2:before, i.x2:before
+{
+    font-size: 3.4em;
+}
+
+span.x3:before, i.x3:before
+{
+    font-size: 4.4em;
+}
+
+span.x4:before, i.x4:before
+{
+    font-size: 6em;
+}
+
+
+/*------------------------------------*\
+	HEADER
+\*------------------------------------*/
+
+header .container-fluid
+{
+    background-image: url('/images/bg-hero-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 36px;
+}
+
+.logo-web {
+    display: block;
+    text-indent: -9999px;
+    width: 275px;
+    height: 95px;
+    margin-top: 5px;
+    background: url(/images/MaxExpress_Logo.svg);
+    background-size: 275px 100px;
+}
+
+.ham-mobile
+{
+    text-decoration: none;
+   
+}
+
+
+
+.hamburger
+{
+    font-size: 2.3em;
+    color: #000;
+    vertical-align: top;
+}
+
+.hamburger:hover
+{
+  color: #FFF;
+  cursor: pointer;
+  vertical-align: top;
+}
+
+
+.jumbotron
+{
+    background: none;
+    text-align: center;
+    text-shadow: 2px 1px #000;
+}
+
+.jumbotron h1,
+.jumbotron h2,
+.jumbotron h3,
+.jumbotron h4,
+.jumbotron h5,
+.jumbotron h6,
+.jumbotron small
+{
+    color: #FFFFFF;
+}
+
+.jumbotron p
+{
+    color: #FFFFFF;
+    margin-bottom: 5%;
+}
+
+.DDtext {
+    color:#999999;
+}
+
+.custom-modal-footer {
+    margin-top: 15px;
+    padding: 19px 20px 20px;
+    text-align: center;
+    border-top: 1px solid #e5e5e5;
+}
+.driverapp-submit{
+    background-color:#43c839;
+    color: #fff;
+}
+
+.driverapp-submit:hover{
+    background-color:#2a6f25;
+    color: #fff;
+}
+
+.form_error_box {
+    background-color: rgba(248, 206, 204, 0.66);
+    padding: 2%;
+    line-height: 1;
+    border-radius: 5px;
+    border: 1px solid #ba4343;
+}
+
+.form_error_box_contact {
+    background-color: rgba(255, 28, 17, 0.66);
+    padding: 2%;
+    line-height: 1;
+    border-radius: 5px;
+    color: #fff;
+    border: 1px solid #ba4343;
+}
+
+#sending-message {
+    background: url(/images/img-loader-sending.svg);
+    background-repeat: no-repeat;
+    position: relative;
+    height: 110px;
+    z-index: 9;
+    cursor: pointer;
+    opacity: 1;
+    background-position: center;
+}
+
+/*------------------------------------*\
+	SECTIONS
+\*------------------------------------*/
+
+.company-history{
+    padding-bottom: 10%;
+}
+
+.number .container-fluid
+{
+    background-image: url('/images/bg-success.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.opaline
+{
+    padding-top: 3em;
+    padding-bottom: 3em;
+    background-color: rgba(238, 42, 36, 0.660);
+}
+
+.opaline h1,
+.opaline h2,
+.opaline h3,
+.opaline h4,
+.opaline h5,
+.opaline h6,
+.opaline p
+{
+    color: #FFFFFF;
+}
+
+.opaline .boxes
+{
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    border: 1px solid #FFF;
+}
+
+.story .container-fluid
+{
+    background-image: url('/images/bg-customer-portal-mobile.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.gallery
+{
+    background-color: #dddddd;
+}
+
+.prefooter .container-fluid
+{
+    background: linear-gradient(
+      rgba(33, 37, 43, 0.6),
+      rgba(33, 37, 43, 0.6)
+    ),
+
+    url(https://unsplash.it/4000/3000?image=528);
+}
+
+.prefooter h1,
+.prefooter h2,
+.prefooter h3,
+.prefooter h4,
+.prefooter h5,
+.prefooter h6,
+.prefooter p
+{
+    color: #FFFFFF;
+}
+
+/*------------------------------------*\
+	FOOTER
+\*------------------------------------*/
+.footer-wrapper {
+    background-color:#fff;
+    overflow-x: hidden;
+
+}
+
+
+footer
+{
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 1.2em;
+}
+
+footer h1,
+footer h2,
+footer h3,
+footer h4,
+footer h5,
+footer h6,
+footer p
+{
+    color: #FFFFFF;
+}
+
+.social
+{
+    padding-top: 50px;
+}
+
+/*WIDE SCREENS*/
+@media (min-width: 1199px) {
+
+    header .container-fluid
+{
+    background-image: url('/images/bg-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 36px;
+}
+
+.logo-web {
+    display: block;
+    text-indent: -9999px;
+    width: 1000px;
+    height: 500px;
+    background: url(/images/MaxExpress_Logo.svg);
+    background-size: 1000px 500px;
+}
+
+.story .container-fluid
+{
+    background-image: url('/images/bg-customer-portal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ExperienceDD {
+    min-width:264px;
+}
+
+}
+
+/*LARGE SCREENS*/
+@media (min-width: 991px) and (max-width: 1199px) {
+    header .container-fluid
+{
+    background-image: url('/images/bg-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 36px;
+}
+
+.logo-web {
+    display: block;
+    text-indent: -9999px;
+    width: 890px;
+    height: 435px;
+    background: url(/images/MaxExpress_Logo.svg);
+    background-size: 890px 435px;
+}
+.story .container-fluid
+{
+    background-image: url('/images/bg-customer-portal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ExperienceDD {
+    min-width:264px;
+}
+}
+
+/*TABLET SCREENS*/
+ @media (max-width: 990px) and (min-width: 767px) {
+
+ header .container-fluid
+{
+    background-image: url('/images/bg-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 36px;
+}
+.logo-web {
+    display: block;
+    text-indent: -9999px;
+    width: 200px;
+    height: 100px;
+    background: url(/images/MaxExpress_Logo.svg);
+    background-size: 200px 100px;
+}
+.story .container-fluid
+{
+    background-image: url('/images/bg-customer-portal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ExperienceDD {
+    min-width:264px
+}
+
+}
+
+ /*MOBILE*/
+@media  (max-width: 766px) and (min-width: 440px) {
+    header .container-fluid
+{
+    background-image: url('/images/bg-hero.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding-top: 36px;
+}
+
+.logo-web {
+    display: block;
+    text-indent: -9999px;
+    width: 330px;
+    height: 150px;
+    background: url(/images/MaxExpress_Logo.svg);
+    background-size: 330px 150px;
+}
+.story .container-fluid
+{
+    background-image: url('/images/bg-customer-portal.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+  .ham-mobile {
+  top: 0px;
+}
+ 
+   
+}
+
+@media screen (max-width: 439px)  {
+     
+
+}
+
+   

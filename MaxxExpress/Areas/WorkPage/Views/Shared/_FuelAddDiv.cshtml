@@ -1,0 +1,138 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+<form class="fueladdform" enctype="multipart/form-data">
+    <div id="addFuel_InfoBox" class="card border FuelInfoBox">
+        <div class="card-body">
+            <div class="col-md-12">
+                <div class="col-md-3 form-group">
+                    <span class="dtl_label">Purchase Date :</span><span class="dtl_value padding-right-md">@Html.DropDownListFor(m => m.vM_AddFuelData.Fuel_Date, new SelectList(Model.AddFuel_DayofWeek_List, "Id", "Value"), new { @class = "form-control dtl_number" })</span>
+                </div>
+                <div class="col-md-5 form-group">
+                    <div class="col-md-7 form-group" style="padding-left: 0px"><span class="dtl_label">Driver : </span><span class="dtl_value money-round-dtl">@Html.DropDownListFor(m => m.vM_AddFuelData.Driver_Nbr, new SelectList(Model.AddFuel_Driver_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+                    <div class="col-md-5 form-group" style="padding-left: 0px">
+                        <span class="dtl_label">Truck : </span><span class="dtl_value money-dtl">@Html.DropDownListFor(m => m.vM_AddFuelData.Truck_Nbr, new SelectList(Model.AddFuel_Truck_List, "Id", "Value"), new { @class = "form-control" })</span></div>
+
+                    </div>
+                <div class="col-md-4 form-group hide">
+                        <span class="dtl_label">Fuel Type</span><span class="dtl_value padding-right-md">@Html.DropDownListFor(m => m.vM_AddFuelData.Fuel_Type, new SelectList(Model.AddFuel_FuelType_List, "Id", "Value"), new { @class = "form-control dtl_number" })</span>
+                    </div>
+            <div class="col-md-12">
+                <div class="col-md-4 form-group" style="padding-left: 0px"><span class="dtl_label">Fuel Location : </span><span class="dtl_value padding-right-md money-dtl">@Html.EditorFor(m => m.vM_AddFuelData.Fuel_Location, new { htmlAttributes = new { @class = "form-control" } })</span></div>
+                <div class="col-md-4 form-group" style="padding-right: 0px">
+                        <div class="col-md-6 form-group" style="padding-left: 0px"><span class="dtl_label">Gallons : </span><span class="dtl_value padding-right-md money-dtl">@Html.EditorFor(m => m.vM_AddFuelData.Fuel_Gallons, new { htmlAttributes = new { @class = "form-control dtl_number", @type = "number" } })</span></div>
+                        <div class="col-md-6 form-group" style="padding-left: 0px"><span class="dtl_label">Amount : </span><span class="dtl_value padding-right-md money-dtl">@Html.EditorFor(m => m.vM_AddFuelData.Fuel_Amount, new { htmlAttributes = new { @class = "form-control dtl_number", @type = "number" } })</span></div>                            
+                </div>
+                <div class="col-md-4 form-group"><span class="dtl_label">Odometer : </span><span class="dtl_value padding-right-md money-dtl">@Html.EditorFor(m => m.vM_AddFuelData.Odometer, new { htmlAttributes = new { @class = "form-control dtl_number", @type = "number" } })</span></div>
+                <div class="col-md-11">
+                                @Html.EditorFor(m => m.vM_AddFuelData.Fuel_Receipt_URL, new { htmlAttributes = new { @class = "form-control", @hidden = true } })
+                </div>
+             </div>
+                <div class="col-md-6 padding-bottom-xl" style="margin:auto;">
+                    <span class="dtl_label">Upload Fuel Receipt:</span>
+                    <div class="col-md-12 no-pad-horizontal">
+                        <div class="col-md-8 no-pad-horizontal">
+                            <span id="addFuel-uploadbox" class="btn btn-basic fileinput-button fileInput-maxx">
+                                <span id="AddFuel_Receipt_Filename" class="dtl_number">Select File</span>
+                                <input id="AddFuel_Receipt_Upload" name="AddFuel_Fuel_Receipt_URL" class="LoadConfirmationUpload" type="file" onchange="get_filename()">
+                            </span>
+                            <div id="addFuel_UploadProgress" class="" style="font-size: 17px; text-align: center;"></div>
+                        </div>
+                        <div class="col-md-4 no-pad-horizontal">
+                            <span class="btn btn-primary fileinput-button AddFuel_ReceiptUpload_Submit" style="width: 100%">
+                                <span>Upload</span>
+                                <input class="AddFuel_ReceiptUpload_Submit Fuel_ReceiptUpload" type="button">
+                                <input id="Receipt_Ind" name="Conf_Ind" class="form-group" type="text" value="0" hidden>
+                                <input id="AddFuel_DriverNm" name="Driver_Nm" class="form-group" type="text" hidden>
+                            </span>
+                        </div>
+                    </div>
+                </div> 
+    </div>
+   
+         
+        </div>
+        </div>
+</form>
+
+
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+@*<script src="//code.jquery.com/jquery-1.10.2.js"></script>*@
+<script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link href="../Areas/WorkPage/css/customDatePicker.css" rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+
+        //Get Route Info - for Add Sand Load
+
+            function get_filename() {
+                var uploader = document.getElementById('AddFuel_Receipt_Upload');
+                var filename = uploader.files.item(0).name;
+                document.getElementById("AddFuel_Receipt_Filename").innerHTML = filename;
+            };
+
+            $(function () {
+
+                $(".date-field").datepicker({ dateFormat: 'mm/dd/yy' });
+
+
+                // Add Fuel - Upload Receipt Confirmation 
+                $('.AddFuel_ReceiptUpload_Submit').on('click', function (event) {
+
+                    var file_data = $("#AddFuel_Receipt_Upload").prop("files")[0]; // Getting the properties of file from file field
+                    if (file_data) {
+                        var driverNBR = $('#vM_AddFuelData_Driver_Nbr').val();
+                        var date = $('#vM_AddFuelData_Fuel_Date').val();
+                        var dyear = date.substr(6, 4);
+                        var dmonth = date.substr(0, 2);
+                        var dday = date.substr(3, 2);
+                        var dateid = dyear.toString() + dmonth.toString() + dday.toString() + '-';
+
+                        $('#addFuel_UploadProgress').addClass('progress-alt');
+
+                    var file_extension_txt;
+                    var file_extension_str;
+                    var final_ext_final;
+                    var form_data = new FormData(); // Creating object of FormData class
+                    form_data.append("file", file_data) // Appending parameter named file with properties of file_field to form_data
+                    file_extension = file_data.name.split("?").pop();
+                    file_extension_str = file_extension.substring(file_extension.length - 4, file_extension.length);
+                    if (file_extension_str.charAt(0) != '.') {
+                        final_ext_final = '.' + file_extension_str;
+                    } else {
+                        final_ext_final = file_extension_str;
+                    }
+
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        processData: false, // important
+                        contentType: false, // important
+                        data: form_data,
+                        url: '../Work/uploadFuelReceipt?indentifier=' + dateid + driverNBR,
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                console.log(response.responseText);
+                                $('#addFuel_UploadProgress').removeClass('progress-alt').html('Receipt Upload Successful!');
+                                $('#addFuel-uploadbox').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete').removeClass('fileInput-maxx-validation');
+                                $('#vM_AddFuelData_Fuel_Receipt_URL').val('https://maxx-express.com/Areas/PortalPage/docs/fuelreceipts/' + dateid + driverNBR + final_ext_final);
+                                $('#Receipt_Ind').val('1');
+                                $('#addFuel-uploadbox').removeClass('fileInput-maxx-validation');
+                            } else {
+                                alert(response.responseText);
+                            }
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+
+                    });
+                 }
+                });
+
+            });
+
+
+
+    </script>

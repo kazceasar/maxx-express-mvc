@@ -1,0 +1,38 @@
+﻿        @foreach (var c in ViewData["ClosedLoadsSummary"]
+           as IEnumerable<MaxxExpress.vw_loads_summary_closed>)
+        {
+            <tr class="closed-load">
+                <td style="width:6%;" class="dtl_number">@c.Load_Dt_Str</td>
+                <td style="width:3%;">@c.Load_of_Day_Total</td>
+                <td style="width:8%;" class="closedloadnumber_cl dtl_number" data-load-id=@c.ID>@c.Load_Number</td>
+                <td style="width:8%;">@c.Customer_Nm</td>
+                <td style="width:5%;" class="dtl_number">@c.Total_Miles</td>
+                <td style="width:5%;" class="money-round dtl_number payout_cl">@c.Final_Payout</td>
+                <td style="width:5%;" class="money dtl_number">@c.PPM</td>
+                <td style="width:4%;">@c.Driver</td>
+                <td style="width:5%;" class="dtl_number">@c.Truck</td>
+                <td style="width:10%;" @(c.Status == "Not Started" ? "class=status-not-started c_valuemoney-c" : c.Status == "In-Route" ? "class=status-in-route c_valuemoney-c" : c.Status == "Delivered" ? "class=status-delivered c_valuemoney-c" : c.Status == "Paid" ? "class=status-paid c_valuemoney-c" : "class=other-status")>@c.Status</td>
+                <td style="width:9%;" class="dtl_location">@c.Pickup</td>
+                <td style="width:5%;">@c.Pickup_Dt_str</td>
+                <td style="width:9%;" class="dtl_location">@c.DropOff</td>
+                <td style="width:5%;"> 
+                   @if (c.DropOff_Dt[0] == '0')
+                   {
+                      @c.DropOff_Dt.Substring(0, c.DropOff_Dt.Length - 5);
+                   }
+                   else
+                   {
+                       @c.DropOff_Dt;
+                   }                        
+                </td>
+             </tr>
+            
+        }
+                <script type="text/javascript">
+
+                </script>
+
+
+
+
+

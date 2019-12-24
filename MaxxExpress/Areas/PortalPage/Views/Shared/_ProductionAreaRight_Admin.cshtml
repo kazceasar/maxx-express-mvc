@@ -1,0 +1,143 @@
+﻿@{
+    if (Session["LogUserExp_IND"].ToString() == "1") //production Access Only
+    {
+
+
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="main-header" class="breadcrumbs">
+                <div class="col-sm-8">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="page-header">
+                        <span id="maxx-txt-logo" class="maxxtextlogo pull-left hide" style="display:none;"></span>
+                        <div id="dashboard-title" class="page-title">
+                            @if (Session["LogUserFullName"] != null)
+                            {
+                                <span class="ReportDash-Txt">Production Dashboard  </span><span class="Hello-Txt"><span style="color:black">></span>  Hello, @Session["LogUserFullName"].ToString()</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="page-header float-right">
+                        <div class="page-title">
+                            <ol class="breadcrumb text-right">
+                                <li id="dateandtime" class="active dtl_number"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content mt-3">
+
+                <div class="row">
+
+                    <div class="col-xl-12">
+                        <div id="payroll-summary-card" class="card">
+                            <div class="card-header">
+                                <div class="col-lg-4" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> Weekly Production Report</strong></div>
+
+                                <div id="production-totals-header" class="col-lg-4" style="padding-top: 3%; padding-left:0px;">
+                                    @*@{Html.RenderAction("GetExpenseTotalHeader", null, null);}*@
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border production-dataview-dd">
+                                        <option value="" disabled selected>Weekly</option>
+                                        <option value="Weekly" class="all-payroll-btn">Weekly</option>
+                                        <option value="Driver_Truck" class="kazey-expense-btn">Driver/Truck</option>
+                                    </select>
+                                    <input id="production-view-placeholder-tb" class="hide" type="text" value="Weekly" />
+                                    <input id="production-date-placeholder-tb" class="hide" type="text" value="All" />
+                                    <input class="hide purpose-tb">
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border production-dateview-dd">
+                                        <option value="" disabled selected>All Weeks</option>
+                                        <option value="30Days" class="edit-load-btn">30 Days</option>
+                                        <option value="All" class="update-status-btn">All Weeks</option>
+                                    </select>
+                                </div>
+
+                            </div>
+                            <div id="production-summary-data" class="card-body" style="padding: 0px;">
+                                <table id="tbl-production-summary" class="table table-responsive" style="overflow-x: auto; margin-bottom: 0px">
+                                    <thead class="thead-red">
+                                        <tr>
+                                            <th class="text-center" style="width:4%;">Week</th>
+                                            <th class="text-center" style="width:5%;">Gross</th>
+                                            <th class="text-center" style="width:5%">Miles</th>
+                                            <th class="text-center" style="width:5%;">Fuel</th>
+                                            <th class="text-center" style="width:6%;">Payroll</th>
+                                            <th class="text-center" style="width:6%;">Avg PPM</th>
+                                            <th class="text-center" style="width:6%;">Net</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="production-summary-row-data">
+                                        @{Html.RenderAction("GetProductionWeekly", null, null);}
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div id="production-detail-data" class="card-body hide" style="padding: 0px;">
+                                <table id="tbl-production-detail" class="table table-responsive" style="overflow-x: auto; margin-bottom: 0px">
+                                    <thead class="thead-red">
+                                        <tr>
+                                            <th class="text-center" style="width:6%;">Week</th>
+                                            <th class="text-center" style="width:4%;">Truck</th>
+                                            <th class="text-center" style="width:10%;">Driver</th>
+                                            <th class="text-center" style="width:3%;">Gross</th>
+                                            <th class="text-center" style="width:3%">Miles</th>
+                                            <th class="text-center" style="width:3%;">Fuel</th>
+                                            <th class="text-center" style="width:3%;">Payroll</th>
+                                            <th class="text-center" style="width:3%;">Avg.PPM</th>
+                                            <th class="text-center" style="width:6%;">Net</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="production-detail-row-data">
+                                        @{Html.RenderAction("GetProductionDetailWeekly", null, null);}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div> <!-- .content -->
+        </div><!-- /#right-panel -->
+
+
+        <div id="production_Modal" class="popover" style="display:none; max-width: 50em; padding-right:0px;">
+            <div class="row">
+                <div class="col-md-12">
+                    <h4 id="production-modal-title" class="popover-title padding-left-xs"></h4>
+                </div>
+
+                <div class="col-md-12 popover-content">
+                    <table id="tbl-production-modal" class="table table-responsive">
+                        <tbody id="production-popover-row-data">
+                            @{Html.RenderAction("GetProductionModal");}
+
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-12 text-center" style="padding-bottom:1em;">
+                    <button type="button" class="btn btn-secondary production-gross-close" data-dismiss="modal">Close</button>
+                </div>
+
+
+            </div>
+        </div>
+
+        <script type="text/javascript">
+
+        </script>
+
+    }
+    else
+    {
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="alert-no-access" class="alert  alert-danger alert-dismissible fade show" style="margin: 2%;" role="alert">
+                <span class="badge badge-pill badge-danger">Unauthorized</span> You do not have access to view this page, contact web administrator to gain access.
+            </div>
+        </div>
+    }
+}

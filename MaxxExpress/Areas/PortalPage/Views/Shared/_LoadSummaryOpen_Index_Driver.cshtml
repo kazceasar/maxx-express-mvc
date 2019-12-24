@@ -1,0 +1,41 @@
+﻿<table id="tbl-loads-summary" class="table table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width: 4%">Day</th>
+            <th scope="col" style="width: 4%">#</th>
+            <th scope="col" class="hide" style="width: 4%">Driver Pay</th>
+            <th scope="col" style="width: 6%">BOL #</th>
+            <th scope="col" style="width: 6%">Pickup</th>
+            <th scope="col" style="width: 6%">Dropoff</th>
+            <th scope="col" style="width: 6%">Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr class="open-loads-header hide">
+            <td colspan="2" style="border-left: 1px solid #dee2e6">Open Loads</td>
+            <td colspan="1" style="border-right: 1px solid #dee2e6"></td>
+        </tr>
+        @foreach (var d in ViewData["OpenLoadsSummary"]
+           as IEnumerable<MaxxExpress.vw_loads_summary_open>)
+        {
+            <tr>
+                <td>@d.Load_Dt_Str</td>
+                <td>@d.Load_of_Day_Driver</td>
+                <td class="dtl_number loadnumber_cl">@d.Load_Number</td>
+                <td class="hide money-round dtl_number payout_cl">@d.Driver_Payout</td>
+                <td>@d.Pickup</td>
+                <td>@d.DropOff</td>
+                <td>@d.Status</td>
+            </tr>
+
+        }
+
+    </tbody>
+
+</table>
+
+
+<script type="text/javascript">
+
+
+</script>

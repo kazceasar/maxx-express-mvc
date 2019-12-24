@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <link rel="stylesheet" href="../Areas/WorkPage/css/style.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/custom.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/normalize.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/normalize.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/themify-icons.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/cs-skin-elastic.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/scss/style.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/fileuploadcss/jquery.fileupload.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/cs-select.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/cs-skin-border.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/js/modal-popover/prettify.css">
+
+    <link href="../Areas/WorkPage/css/lib/vector-map/jqvmap.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+
+    @RenderBody()
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.1/moment.min.js"></script>
+
+    @*Order of Scripts is Important*@
+    @System.Web.Optimization.Scripts.Render("~/bundles/jquery")
+    @System.Web.Optimization.Scripts.Render("~/bundles/customWork")
+    @System.Web.Optimization.Scripts.Render("~/bundles/customSelect")
+    @RenderSection("scripts", required: false)
+
+    <script src="../Areas/WorkPage/js/plugins.js"></script> 
+    <script src="../Areas/WorkPage/js/fileuploadjs/vendor/jquery.ui.widget.js"></script>
+    <script src="../Areas/WorkPage/js/fileuploadjs/jquery.iframe-transport.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,623 @@
+﻿
+<div class="modal fade" id="loadDetailModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Load Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="loadsdtl" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    
+                    @{
+                        Html.RenderPartial("_LoadDetailOpenDiv");
+                    }
+                    @{
+                        Html.RenderPartial("_LoadDetailClosedDiv");
+                    }
+                 
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                @*<button type="button" class="btn btn-primary hide">Confirm</button>*@
+            </div>
+
+       
+        </div>        
+    </div>
+</div>
+<div class="modal fade" id="loadEditListModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none;">
+                <h5 class="modal-title" id="largeModalLabel">Select The Load You Want To Edit</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px;">
+                <div id="edit-load-success" class="alert  alert-success alert-dismissible fade show hide" role="alert">
+                    <span class="badge badge-pill badge-success">Success</span> Your Load changes were saved...
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="openloadsEditList" class="col-md-12" style="padding-left:0%; padding-right:0px;">
+                   
+                            @{
+                                Html.RenderPartial("_LoadEditList");
+                            }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success editthisLoad_btn" disabled>Edit This</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadEditModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel" ><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Edit Load</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="openloadsEdit" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_LoadEditDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Edit-Modal-close" data-dismiss="modal">Close</button>
+                <button id="btn-Update-Load" type="button" class="btn btn-primary Update-Load-Cl">Save Changes</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadAddModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Add Load</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="openloadsAdd" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_LoadAddDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Add-Modal-close" data-dismiss="modal">Close</button>
+                <button id="btn-Add-Load" type="button" class="btn btn-primary Add-This-Load-Cl">Save/Add Load</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadDeleteListModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none;">
+                <h5 class="modal-title" id="largeModalLabel">Select The <span class="delete-type-name">Load</span> You Want To Delete</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px;">
+                <div id="edit-load-success" class="alert  alert-success alert-dismissible fade show hide" role="alert">
+                    <span class="badge badge-pill badge-success">Success</span> The <span class="delete-type-name">Load</span> was successfully deleted...
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">×</span>
+    </button>
+</div>
+                <div id="openloadsDeleteList" class="col-md-12" style="padding-left:0%; padding-right:0px;">                  
+                    @{
+                        Html.RenderPartial("_LoadEditList");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger deletethisLoad_btn" disabled>Delete This</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title" style="margin:auto;"><span class="action-Desc-Upper">Delete</span> This <span class="object-Desc-Upper">Load</span></h4>
+            </div>
+            <div class="modal-body" style="min-height:200px">
+                <div class="col-md-12">
+                    <div class="col-1"></div>
+                    <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:10%">
+                        <div id="delete-message"></div>
+                        <div id="delete-status" class="text-center">Are you sure you want to <span class="action-Desc-lower">delete</span> this <span class="object-Desc-lower">load</span>, this cannot be un-done</div>
+                        <div id="delete-load-nbr" class="text-center" style="display:none;"></div>
+                        <div id="delete-fuel-id" class="text-center" style="display:none;"></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+                
+
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-5 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal" style="width:100%">No, Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-5">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-delete-load" type="button" class="btn btn-danger">Yes, Delete This</button>
+                            <button id="btn-delete-fuel" type="button" class="btn btn-danger">Yes, Delete This</button>
+                            <button id="btn-paid-fuel" type="button" class="btn btn-success">Yes, This Is Paid</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadStatusListModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none;">
+                <h5 class="modal-title" id="largeModalLabel">Select The Load You Want To Status Update</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px;">
+                <div id="update-status-success" class="alert  alert-success alert-dismissible fade show hide" role="alert">
+                    <span class="badge badge-pill badge-success">Success</span> The Load status was successfully updated...
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="openloadsStatusList" class="col-md-12" style="padding-left:0%; padding-right:0px;">                    
+                            @{
+                                Html.RenderPartial("_LoadStatusList");
+                            }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-warning updatethisStatus_btn" disabled>Save Status</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="Loading_Modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title" style="margin:auto;"></h4>
+            </div>
+            <div class="modal-body" style="min-height:200px">
+                <div class="col-md-12">
+                    <div class="col-4"></div>
+                    <div class="col-4" style="margin-left:auto; margin-right:auto;">
+                        <div class="loading-message"></div>
+                        <div id="sending-status" class="text-center"></div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="col-md-12">
+                    <div class="col-4"></div>
+                    <div class="col-4 hide">
+                        <div id="close-sending-modal" class="text-center padding-top-md  hide">
+                            <button id="btn-close-sending-modal" type="button" class="btn btn-danger">Close This Window</button>
+                        </div>
+                    </div>
+                    <div class="col-4"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer hide">
+                &nbsp;
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadPickupModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title pickup-modal-title" style="margin:auto;">Pickup Load</h4>
+            </div>
+            <div class="modal-body" style="min-height:150px">
+                <div class="col-md-12">
+                    <div class="col-1 pickupLoadNbr dLoadNbr" style="color: #fff;"></div>
+                    <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:2%">
+                        <div id="modal-pickup-message"></div>
+                        <div id="modal-pickup-text" class="text-center">To mark this load as picked up you must be at the pickup location, click the "Pickup Load" button below to proceed.</div>
+                        <div id="modal-pickup-text-2" class="text-center form-group">
+                            <select class="form-control" id="pickupEmailBypass" hidden>
+                                <option value="yes">no, I do not want to send the email</option>
+                                <option value="no">yes, I want to send the email</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-4 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal" style="width:100%">Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-pickup-load" type="button" class="btn btn-success">Pickup Load</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadDeliveredModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <form class="loadDeliverform" enctype="multipart/form-data">
+                <div class="modal-header">
+                    <h4 id="loading-title" class="modal-title delivered-modal-title" style="margin:auto;">Deliver Load</h4>
+                </div>
+                <div class="modal-body" style="min-height:150px">
+                    <div class="col-md-12">
+                        <div class="col-1 deliverLoadNbr dLoadNbr" style="color: #fff;"></div>
+                        <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:2%">
+                            <div id="modal-delivered-message"></div>
+                            <div id="modal-delivered-status" class="text-center">To mark this load as delivered you must upload a picture of the signed Bill of Laden</div>
+                            <div id="modal-delivered-text" class="text-center">
+                                <div class="col-md-8 no-pad-horizontal">
+                                    <span id="deliverLoad-uploadbox" class="btn btn-basic fileinput-button fileInput-maxx">
+                                        <span id="DeliverLoad_BOL_Filename" class="dtl_number">Select File</span>
+                                        <input id="DeliverLoad_BOL_Upload" name="DeliverLoad_BOL_Upload" class="LoadBOLUpload" type="file" onchange="getBOLname()">
+                                    </span>
+                                    <div id="DeliverLoad_UploadProgress" class=""></div>
+                                </div>
+                                <div class="col-md-4 no-pad-horizontal">
+                                    <span class="btn btn-primary fileinput-button DeliverLoad_BOLUpload_Submit" style="width: 100%">
+                                        <span>Upload</span>
+                                        <input class="DeliverLoad_BOLUpload_Submit BOLUpload" type="button">
+                                    </span>
+                                </div>
+                                <input id="DeliverLoad_BOL_URL" name="DeliverLoad_BOL_URL" class="form-group" type="text" hidden>
+                            </div>
+                            <div id="modal-delivered-text-1" class="text-center"><br /><br /><br /></div>
+                                <div id="modal-delivered-text-2" class="text-left form-group">
+                                    <select class="form-control" id="deliverEmailBypass" hidden>
+                                        <option value="yes">no, I do not want to send the email</option>
+                                        <option value="no">yes, I want to send the email</option>
+                                    </select>
+                                </div>
+                            </div>
+                        <div class="col-1"></div>
+                    </div>
+                </div>
+                <div class="modal-footer ">
+                    <div class="col-md-12">
+                        <div class="col-2"></div>
+                        <div class="col-4 ">
+                            <div class="text-center padding-top-md ">
+                                <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal" style="width:100%">Close</button>
+
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="text-center padding-top-md ">
+
+                                <button id="btn-deliver-load" type="button" class="btn btn-success" disabled>Deliver Load</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="loadPaidModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title paid-modal-title" style="margin:auto;">Paid Load</h4>
+            </div>
+            <div class="modal-body" style="min-height:150px">
+                <div class="col-1 paidLoadNbr pLoadNbr" style="color: #fff;"></div>
+                <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:2%">
+                    <div id="modal-paid-message"></div>
+                    <div id="modal-paid-status" class="text-center">To mark this load as paid you must enter the paid amount below.</div>
+                    <div id="modal-paid-text" class="text-center">
+                        <input id="PaidLoad_Amount" name="PaidLoad_Amount" class="LoadBOLUpload form-control" type="text" style="margin-left: 25%; margin-right: 20%; width:50%; margin-bottom: 6%">
+                    </div>
+                    <div id="modal-paid-detention-text" class="text-center">If dentention was paid enter detention amount below</div>
+                    <div id="modal-paid-detention" class="text-center">
+                        <input id="Dentention_Amount" name="Dentention_Amount" class="form-control" type="text" style="margin-left: 25%; margin-right: 20%; width:50%; margin-bottom: 6%">
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-4 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisLoadClose_btn" data-dismiss="modal" style="width:100%">Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-paid-load" type="button" class="btn btn-success" disabled>Pay Load</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="noteDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title" style="margin:auto;">Delete This Note</h4>
+            </div>
+            <div class="modal-body" style="min-height:100px">
+                <div class="col-md-12">
+                    <div class="col-1"></div>
+                    <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:0%">
+                        <div id="delete-message"></div>
+                        <div id="delete-status" class="text-center">Are you sure you want to delete this note, this cannot be un-done</div>
+                        <div id="delete-note-nbr" class="text-center" style="display:none;"></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-4 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisnoteClose_btn" data-dismiss="modal" style="width:100%">No, Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-delete-note" type="button" class="btn btn-danger">Yes, Delete This</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="alertDeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title" style="margin:auto;">Disable This Alert</h4>
+            </div>
+            <div class="modal-body" style="min-height:100px">
+                <div class="col-md-12">
+                    <div class="col-1"></div>
+                    <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:0%">
+                        <div id="delete-message"></div>
+                        <div id="delete-status" class="text-center">Are you sure you want to disable this alert?</div>
+                        <div id="delete-alert-nbr" class="text-center" style="display:none;"></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-4 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisalertClose_btn" data-dismiss="modal" style="width:100%">No, Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-delete-alert" type="button" class="btn btn-warning">Yes, Disable This</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="noteArchiveModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 id="loading-title" class="modal-title" style="margin:auto;">Archive This Note</h4>
+            </div>
+            <div class="modal-body" style="min-height:100px">
+                <div class="col-md-12">
+                    <div class="col-1"></div>
+                    <div class="col-10" style="margin-left:auto; margin-right:auto; margin-top:0%">
+                        <div id="archive-message"></div>
+                        <div id="archive-status" class="text-center">Are you sure you want to archive this note, this cannot be un-done</div>
+                        <div id="archive-note-nbr" class="text-center" style="display:none;"></div>
+                    </div>
+                    <div class="col-1"></div>
+                </div>
+
+            </div>
+            <div class="modal-footer ">
+                <div class="col-md-12">
+                    <div class="col-2"></div>
+                    <div class="col-4 ">
+                        <div class="text-center padding-top-md ">
+                            <button type="button" class="btn btn-secondary editthisnoteClose_btn" data-dismiss="modal" style="width:100%">No, Close</button>
+
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-center padding-top-md ">
+
+                            <button id="btn-archive-note" type="button" class="btn btn-primary">Yes, Archive This</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="fuelAddModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Add Fuel Purchase</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="fuelPurchaseAdd" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_FuelAddDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Add-Modal-close" data-dismiss="modal">Close</button>
+                <button id="btn-Add-Fuel" type="button" class="btn btn-primary Add-This-Load-Cl">Save/Add Purchase</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="fuelDeleteListModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header" style="border-bottom:none;">
+                <h5 class="modal-title" id="largeModalLabel">Select The Fuel Purchase You Want To <span class="fuel-edit-title-text">Delete</span></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding:0px;">
+                <div id="edit-fuel-success" class="alert  alert-success alert-dismissible fade show hide" role="alert">
+                    <span class="badge badge-pill badge-success">Success</span> The Fuel Purchase was successfully deleted...
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div id="openfuelDeleteList" class="col-md-12" style="padding-left:0%; padding-right:0px;">
+                    @{
+                        Html.RenderAction("GetFuelPurchasesList");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary editthisFuelPurchaseClose_btn" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger deletethisFuelPurchase_btn" disabled>Delete This</button>
+                <button type="button" class="btn btn-success markaspaidthisFuelPurchase_btn" disabled>Mark as Paid</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    function getBOLname() {
+        var uploader = document.getElementById('DeliverLoad_BOL_Upload');
+        var filename = uploader.files.item(0).name;
+        document.getElementById("DeliverLoad_BOL_Filename").innerHTML = filename;
+    };
+
+
+    $(function () {
+
+        //Paid Load key up
+        $("#PaidLoad_Amount").bind("change keyup input", function () {
+            document.getElementById('btn-paid-load').disabled = false;
+        });
+
+        // Deliver Load - Upload Signed BOL 
+        $('.DeliverLoad_BOLUpload_Submit').on('click', function (event) {
+            var Loadnum = $('.dLoadNbr').text();
+            $('#DeliverLoad_UploadProgress').addClass('progress-bol');
+
+            var file_data = $("#DeliverLoad_BOL_Upload").prop("files")[0]; // Getting the properties of file from file field
+            var form_data = new FormData(); // Creating object of FormData class
+            form_data.append("file", file_data) // Appending parameter named file with properties of file_field to form_data
+
+            $.ajax({
+                type: 'POST',
+                cache: false,
+                processData: false, // important
+                contentType: false, // important
+                data: form_data,
+                url: '../Work/uploadBOL?LoadNbr=' + Loadnum,
+                dataType: 'json',
+                success: function (response) {
+                    if (response.success) {
+                        console.log(response.responseText);
+                        $('#DeliverLoad_UploadProgress').removeClass('progress-bol').html('File Upload Successful!');
+                        $('#deliverLoad-uploadbox').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete');
+                        $('#DeliverLoad_BOL_URL').val('https://maxx-express.com/Areas/PortalPage/docs/bol/' + Loadnum);
+                        $('#btn-deliver-load').removeAttr('disabled').attr('data-deliver', Loadnum).attr('data-bol-url', 'https://maxx-express.com/Areas/PortalPage/docs/bol/' + Loadnum);
+                    } else {
+                        alert(response.responseText);
+                    }
+                },
+                error: function (response) {
+                    alert(response.responseText);
+                }
+
+            });
+        });
+  
+    });
+
+    </script>

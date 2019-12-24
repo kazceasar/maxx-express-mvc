@@ -1,0 +1,328 @@
+﻿@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+<form class="createNoteform" enctype="multipart/form-data">
+    <div class="row create-note-box">
+        <div class="col-md-12" style="width:100%; height:0px;">
+            <div class="card card-body padding-left-lg create-note-wrapper">
+                <div class="row create-note-body-meta no-pad-left padding-bottom-sm">
+                    <div class="col-md-2 no-pad-left">&nbsp;</div>
+                    <div class="col-md-2 message-body-to">
+                        Send To
+                        @Html.DropDownListFor(m => m.vM_CreateNote.SentTo, new SelectList(Model.vM_CreateNote_SendTo_List, "Id", "Value"), new { @class = "form-control" })
+                        @Html.TextBoxFor(m => m.vM_CreateNote_SentFrom, new { @class = "form-control hide" })
+                    </div>
+                    <div class="col-md-4 message-body-subject">
+
+                        Subject <input class="form-control dtl_number text-box single-line" id="vM_CreateNote_Subject" name="vM_CreateNote.Subject" type="text" value="">
+                    </div>
+
+                    <div class="col-md-2 message-body-duedate">
+
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row create-note-body-meta ">
+                    <div class="col-md-2 no-pad-left">&nbsp;</div>
+                    <div class="col-md-2 message-body-messageType">
+                        Message Type
+                        @Html.DropDownListFor(m => m.vM_CreateNote.Message_Type, new SelectList(Model.vM_CreateNote_Message_Type_List, "Id", "Value"), new { @class = "form-control" })
+                    </div>
+                    <div class="col-md-2 message-action-date">
+                        <span id="date-label">Event Date</span> <input class="form-control date-input dtl_number" id="vvM_CreateNote_Action_Date" name="vM_CreateNote.Action_Date" type="text" value="">
+                    </div>
+
+                    <div class="col-md-2 message-body-amount hide">
+                        Due Amount <input class="form-control dtl_number text-box single-line" id="vvM_CreateNote_Due_Amount" name="vM_CreateNote.Due_Amount" type="text" value="">
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row message-body-content-textarea">
+                    <div class="col-md-2 no-pad-left">&nbsp;</div>
+                    <div class="col-md-8">
+                        <div>Message</div>
+                        <textarea id="vM_CreateNote_Message_Content" name="vM_CreateNote.Message_Content" class="create-note-message" wrap="on" cols="10" rows="5" style="width: 98%;"></textarea>
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row padding-left-md">
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-8 create-note-body-attachment-section no-pad-left no-pad-right">
+
+                        <div class="col-md-12">
+                            <div class="col-md-2 no-pad-horizontal" style="color: #86ae9b;"><i class="fa fa-paperclip" aria-hidden="true"></i> &nbsp;  Attachments</div>
+                            <div class="col-md-8">
+                                <div class="col-md-7 no-pad-right">
+                                    <span id="createNote-attachment-box-1" class="btn btn-basic fileinput-button fileInput-maxx">
+                                        <span id="createNote_Attachment_1_Filename" class="dtl_number">Select File</span>
+                                        <input id="createNote_Attachment_1_Upload" name="vM_CreateNote.Attachment_1_Upload" class="Attachment_Upload" type="file" onchange="get_filename1()">
+                                    </span>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <input class="form-control dtl_number text-box single-line hide" id="vM_CreateNote_Attachment_1_Path" name="vM_CreateNote.Attachment_1_Path" type="text" value="">
+                                    <div id="createNote_Attachment_1_UploadProgress" class="Attachment_Upload_Suceess"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">&nbsp;</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">&nbsp;</div>
+                            <div class="col-md-8">
+                                <div class="col-md-7 no-pad-right">
+                                    <span id="createNote-attachment-box-2" class="btn btn-basic fileinput-button fileInput-maxx">
+                                        <span id="createNote_Attachment_2_Filename" class="dtl_number">Select File</span>
+                                        <input id="createNote_Attachment_2_Upload" name="vM_CreateNote.Attachment_2_Upload" class="Attachment_Upload" type="file" onchange="get_filename2()">
+                                    </span>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <input class="form-control dtl_number text-box single-line hide" id="vM_CreateNote_Attachment_2_Path" name="vM_CreateNote.Attachment_2_Path" type="text" value="">
+                                    <div id="createNote_Attachment_2_UploadProgress" class="Attachment_Upload_Suceess"></div>
+                                </div>
+                            </div>
+                            <div class="col-md-2">&nbsp;</div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-2">&nbsp;</div>
+                            <div class="col-md-8">
+
+                                <div class="col-md-7 no-pad-right">
+                                    <span id="createNote-attachment-box-3" class="btn btn-basic fileinput-button fileInput-maxx">
+                                        <span id="createNote_Attachment_3_Filename" class="dtl_number">Select File</span>
+                                        <input id="createNote_Attachment_3_Upload" name="vM_CreateNote.Attachment_3_Upload" class="Attachment_Upload" type="file" onchange="get_filename3()">
+                                    </span>
+
+                                </div>
+                                <div class="col-md-5">
+                                    <input class="form-control dtl_number text-box single-line hide" id="vM_CreateNote_Attachment_3_Path" name="vM_CreateNote.Attachment_3_Path" type="text" value="">
+                                    <div id="createNote_Attachment_3_UploadProgress" class="Attachment_Upload_Suceess"></div>
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">&nbsp;</div>
+                        </div>
+                        <div class="col-md-12 padding-bottom-md">
+                            <div class="col-md-2">&nbsp;</div>
+                            <div class="col-md-8">
+
+                                <div class="col-md-7 no-pad-right">
+                                    <input class="form-control dtl_number text-box single-line hide" id="vvM_CreateNote_Attachment_IND" name="vM_CreateNote.Attachment_IND" type="text" value="0">
+                                    <span class="btn fileinput-button createNote_Attachments_Upload btn-upload" style="width: 100%">
+                                        <span>Upload</span>
+                                        <input class="createNote_Attachments_Upload LoadConfirmationUpload btn-upload" type="button">
+                                    </span>
+                                </div>
+                                <div class="col-md-5 no-pad-left">
+
+                                </div>
+
+                            </div>
+                            <div class="col-md-2">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-2">&nbsp;</div>
+                <div class="row create-note-alert-section no-pad-left">
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-8 message-body-options">
+                        <div class="col-md-3 message-body-option no-pad-left">
+                            Alert &nbsp;  <i class="fa fa-bell-o" aria-hidden="true"></i>  <span id="btn-create-alert" class="btn btn-block btn-huge btn-outline-warning">Create Alert</span>
+                            <input class="form-control dtl_number text-box single-line hide" id="vM_CreateNote_Alert_IND" name="vM_CreateNote.Alert_IND" type="text" value="0">
+                        </div>
+                        <div class="col-md-3 message-body-option">
+                            Alert Start: <input class="form-control date-input dtl_number" id="vM_CreateNote_Alert_Start_Dt" name="vM_CreateNote.Alert_Start_Dt" type="text" value="" disabled>
+
+                        </div>
+                        <div class="col-md-3 message-body-option">
+                            Alert End: <input class="form-control date-input dtl_number" id="vM_CreateNote_Alert_End_Dt" name="vM_CreateNote.Alert_End_Dt" type="text" value="" disabled>
+
+                        </div>
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                </div>
+                <div class="row create-note-send-section">
+                    <div class="col-md-2">&nbsp;</div>
+                    <div class="col-md-8  message-body-options">
+                        <span id="btn-send-note" class="btn btn-block btn-huge btn-send-note">Send Note</span>
+                    </div>
+                    <div class="col-md-2">&nbsp;</div>
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+    </form>
+
+
+
+
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.1/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link href="../Areas/WorkPage/css/customDatePicker.css" rel='stylesheet' type='text/css'>
+
+    <script type="text/javascript">
+
+        function yyyymmdd() {
+            var x = new Date();
+            var y = x.getFullYear().toString();
+            var m = (x.getMonth() + 1).toString();
+            var d = x.getDate().toString();
+            var h = x.getHours().toString();
+            var mm = x.getMinutes().toString();
+            var ss = x.getSeconds().toString();
+            (d.length == 1) && (d = '0' + d);
+            (m.length == 1) && (m = '0' + m);
+            var yyyymmdd = y + m + d + '_' + h + mm + ss;
+            return yyyymmdd;
+        }
+
+        function get_filename1() {
+            var uploader = document.getElementById('createNote_Attachment_1_Upload');
+            var filename = uploader.files.item(0).name;
+            document.getElementById("createNote_Attachment_1_Filename").innerHTML = filename;
+        };
+        function get_filename2() {
+            var uploader = document.getElementById('createNote_Attachment_2_Upload');
+            var filename = uploader.files.item(0).name;
+            document.getElementById("createNote_Attachment_2_Filename").innerHTML = filename;
+        };
+        function get_filename3() {
+            var uploader = document.getElementById('createNote_Attachment_3_Upload');
+            var filename = uploader.files.item(0).name;
+            document.getElementById("createNote_Attachment_3_Filename").innerHTML = filename;
+        };
+
+        $(function () {
+            $(".date-input").datepicker({ dateFormat: 'mm/dd/yy' });
+
+            $('#vM_CreateNote_Message_Type').on('click', function (event) {
+                var type = this.value;
+
+                if (type == 'Bill Due') {
+                    $('.message-body-amount').removeClass('hide');
+                    $('#date-label').html('Due Date');
+                } else {
+                    $('.message-body-amount').addClass('hide');
+                    $('#date-label').html('Event Date');
+                }
+           
+            });
+
+            // Upload Note Attachment
+            $('.createNote_Attachments_Upload').on('click', function (event) {
+
+                var file_1_data = $("#createNote_Attachment_1_Upload").prop("files")[0]; // Getting the properties of file from file field
+                var file_2_data = $("#createNote_Attachment_2_Upload").prop("files")[0]; // Getting the properties of file from file field
+                var file_3_data = $("#createNote_Attachment_3_Upload").prop("files")[0]; // Getting the properties of file from file field
+                var date_ID = yyyymmdd();
+
+                if (file_1_data) {
+                    $('#createNote_Attachment_1_UploadProgress').addClass('progress');
+                    var form_data_1 = new FormData(); // Creating object of FormData class
+                    form_data_1.append("file", file_1_data) // Appending parameter named file with properties of file_1_field to form_data
+                    var attachNO = "1";
+
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        processData: false, // important
+                        contentType: false, // important
+                        data: form_data_1,
+                        url: '../Work/uploadNoteAttachment?dateID=' + date_ID + '&attachmentNBR=' + attachNO,
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                             //   console.log(response.responseText);
+                                $('#vM_CreateNote_Attachment_1_Path').val(response.responseText);
+                                $('#createNote_Attachment_1_UploadProgress').removeClass('progress').html('File Upload Successful');
+                                $('#createNote-attachment-box-1').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete');
+                                $('#vvM_CreateNote_Attachment_IND').val('1');
+
+                            } else {
+                                alert(response.responseText);
+                            }
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+
+                    });
+                }
+                if (file_2_data) {
+                    $('#createNote_Attachment_2_UploadProgress').addClass('progress');
+                    var form_data_2 = new FormData(); // Creating object of FormData class
+                    form_data_2.append("file", file_2_data) // Appending parameter named file with properties of file_1_field to form_data
+                    var attachNO = "2";
+
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        processData: false, // important
+                        contentType: false, // important
+                        data: form_data_2,
+                        url: '../Work/uploadNoteAttachment?dateID=' + date_ID + '&attachmentNBR=' + attachNO,
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                $('#vM_CreateNote_Attachment_2_Path').val(response.responseText);
+                                $('#createNote_Attachment_2_UploadProgress').removeClass('progress').html('File Upload Successful');
+                                $('#createNote-attachment-box-2').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete');
+                                $('#vvM_CreateNote_Attachment_IND').val('1');
+                                
+                            } else {
+                                alert(response.responseText);
+                            }
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+
+                    });
+                }
+                if (file_3_data) {
+                    $('#createNote_Attachment_3_UploadProgress').addClass('progress');
+                    var form_data_3 = new FormData(); // Creating object of FormData class
+                    form_data_3.append("file", file_3_data) // Appending parameter named file with properties of file_1_field to form_data
+                    var attachNO = "3";
+
+                    $.ajax({
+                        type: 'POST',
+                        cache: false,
+                        processData: false, // important
+                        contentType: false, // important
+                        data: form_data_3,
+                        url: '../Work/uploadNoteAttachment?dateID=' + date_ID + '&attachmentNBR=' + attachNO,
+                        dataType: 'json',
+                        success: function (response) {
+                            if (response.success) {
+                                $('#vM_CreateNote_Attachment_3_Path').val(response.responseText);
+                                $('#createNote_Attachment_3_UploadProgress').removeClass('progress').html('File Upload Successful');
+                                $('#createNote-attachment-box-3').removeClass('fileInput-maxx').addClass('fileInput-maxx-complete');
+                                $('#vvM_CreateNote_Attachment_IND').val('1');
+
+                            } else {
+                                alert(response.responseText);
+                            }
+                        },
+                        error: function (response) {
+                            alert(response.responseText);
+                        }
+
+                    });
+                }
+
+
+
+
+
+
+            });
+
+        });
+
+
+    </script>
+
+

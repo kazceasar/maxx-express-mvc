@@ -1,0 +1,30 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+
+@foreach (var p in Model.vM_financial_PayrollData
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_payroll>)
+{
+    <tr> 
+        <td class="dtl_number">@p.Pay_Day.ToString("MM/dd")</td>
+        <td class="dtl_number">@p.Pay_Type</td>
+        <td class="dtl_number">@string.Format("{0}", p.Miles)</td>
+        <td class="dtl_number">@p.PPM</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Base)</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Adjustments)</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Pay)</td>
+        <td class="dtl_number">@p.Employee</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,2251 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2018 7:54:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KIRA10"
+  DTS:CreatorName="KIRA10\user"
+  DTS:DTSID="{9DC8D217-7642-497C-98CA-CC283C5AFC3B}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Fuel_Import_Loves"
+  DTS:PackageType="5"
+  DTS:VersionBuild="98"
+  DTS:VersionGUID="{8F1B29BE-9446-4361-A742-C75411A8BA78}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FA4CF953-7215-4C57-A467-5198BF1B00A3}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\Majestic\drogo\OneDrive\Documents Pictures and Media\MaxxExpress\Data Imports\Loves\VGENCSV2019-04-29_07.48.30_951987_Maxx_Express_LLC.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Truck Stop"
+              DTS:DTSID="{0ED97198-3E33-42ED-8733-D0405803247B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{5255554A-2C24-48A0-A12C-2D8645B2E597}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{38647FDF-ECD7-4325-8A29-3B4D586C43C0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Store"
+              DTS:DTSID="{CAB5F61C-0158-472E-BFEE-4A9480DA4CC2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Truck Stop Code"
+              DTS:DTSID="{5BDFF4F7-B696-46CF-8BC3-E4D75EB43806}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="POS Ticket#"
+              DTS:DTSID="{B832E152-C505-4F3E-B44B-E6AC96EDAE2B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Time"
+              DTS:DTSID="{0732CCE3-8117-4480-9850-4CABC554A9D6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver"
+              DTS:DTSID="{FD9B94EE-E4F1-4509-8F7F-EBC7F0DF2EFE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Unit"
+              DTS:DTSID="{DA4C85A2-215C-443D-B8A1-0E69D8A1971D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trailer"
+              DTS:DTSID="{D3EF1E1E-4D8E-4577-8569-C927DC3863AC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction"
+              DTS:DTSID="{1B7C6B86-1E7A-4C2A-BB52-48B0147D0754}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sequence"
+              DTS:DTSID="{4AAA21AC-7934-46A5-82F2-D72E9E3A3FBB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Code"
+              DTS:DTSID="{84DC12AB-2D11-4E86-B6F4-81F0588BEB28}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product Name"
+              DTS:DTSID="{D1EE5E62-1F0E-446F-96C2-324444B51D5D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Qty"
+              DTS:DTSID="{B012C61C-1C9B-4524-B73A-2599F6069966}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Price"
+              DTS:DTSID="{34FC9BA1-C227-4386-8E6A-2BCE06DF07AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Total"
+              DTS:DTSID="{E75E6F87-FFD6-4CA8-BA22-42C75C53EF69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Odometer"
+              DTS:DTSID="{B913820D-D3F0-4CCF-8201-964FE594CFAC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Order No"
+              DTS:DTSID="{DD1D65AE-E937-4D89-AE3E-2A6FE5FC5D69}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Credit"
+              DTS:DTSID="{07809533-6240-442C-BBA6-CBF427D036D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Column 20"
+              DTS:DTSID="{EF40E322-59A4-48F7-A227-D416BF1C44F1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{93B23386-0DCF-4CCB-8B56-78503FACD441}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">O:\OneDrive\Documents Pictures and Media\MaxxExpress\Documents\Fuel\Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{06293E70-0E01-4C29-880D-BE20AA6130D4}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8">varFileName</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete From STG_FUEL_LOVES"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{5A5D077C-DCDE-457D-8689-ACCBDB9A2824}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete From STG_FUEL_LOVES"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="Delete From [dbo].[tbl_stg_fuel_loves]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert to Loves Fuel STG"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Insert to Loves Fuel Table"
+      DTS:DTSID="{8777cfac-115c-45a8-bf64-6a31910c97ea}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert to Loves Fuel STG"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert to Loves Fuel STG\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Truck Stop]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Truck Stop"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Store]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Store"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Store]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Truck Stop Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Truck Stop Code"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop Code]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[POS Ticket#]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="POS Ticket#"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[POS Ticket#]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Date Time]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date Time"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Driver]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Driver]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Unit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Unit"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Unit]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Trailer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Trailer"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Transaction]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Transaction"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Sequence]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Sequence"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Sequence]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Product Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Code"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Code]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Product Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product Name"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Qty]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Qty"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Qty]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Price]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Price"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Price]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Total]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Total"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Total]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Odometer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Odometer"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Order No]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Order No"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Order No]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input].Columns[Credit]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Credit"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop]"
+                      name="Copy of Truck Stop"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]"
+                      name="Copy of City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[City]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]"
+                      name="Copy of State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[State]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Store]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Store]"
+                      name="Copy of Store"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Store]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop Code]"
+                      name="Copy of Truck Stop Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of POS Ticket#]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of POS Ticket#]"
+                      name="Copy of POS Ticket#"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[POS Ticket#]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]"
+                      name="Copy of Date Time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver]"
+                      name="Copy of Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Driver]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Unit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Unit]"
+                      name="Copy of Unit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Unit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]"
+                      name="Copy of Trailer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction]"
+                      name="Copy of Transaction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sequence]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sequence]"
+                      name="Copy of Sequence"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Sequence]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Code]"
+                      name="Copy of Product Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]"
+                      name="Copy of Product Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Qty]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Qty]"
+                      name="Copy of Qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Qty]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]"
+                      name="Copy of Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Price]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total]"
+                      name="Copy of Total"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Total]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      name="Copy of Odometer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Order No]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Order No]"
+                      name="Copy of Order No"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Order No]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Credit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Credit]"
+                      name="Copy of Credit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Loves Fuel STG\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert to Loves Fuel STG\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert to Loves Fuel STG\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      name="createdate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert to Loves Fuel STG\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Loves Fuel STG\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert to Loves Fuel STG\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Truck Stop]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop]"
+                      name="Truck Stop"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Store]"
+                      name="Store"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Truck Stop Code]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Truck Stop Code]"
+                      name="Truck Stop Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[POS Ticket#]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POS Ticket#]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[POS Ticket#]"
+                      name="POS Ticket#"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]"
+                      name="Date Time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Driver]"
+                      name="Driver"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Unit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unit]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Unit]"
+                      name="Unit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trailer]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]"
+                      name="Trailer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Transaction]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction]"
+                      name="Transaction"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Sequence]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sequence]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Sequence]"
+                      name="Sequence"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Code]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Code]"
+                      name="Product Code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Product Name]"
+                      name="Product Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Qty]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Qty]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Qty]"
+                      name="Qty"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Price]"
+                      name="Price"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Total]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Total]"
+                      name="Total"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      name="Odometer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Order No]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Order No]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Order No]"
+                      name="Order No"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Credit]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Credit]"
+                      name="Credit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Column 20]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 20]"
+                      length="50"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].Columns[Column 20]"
+                      name="Column 20"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Truck Stop]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Truck Stop" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Store" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Truck Stop Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Truck Stop Code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[POS Ticket#]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="POS Ticket#" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Date Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Unit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trailer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Trailer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Transaction]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Transaction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Sequence]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Sequence" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Product Code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Product Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Qty]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Qty" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Price]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Total]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Total" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Order No]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Order No" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Credit]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Credit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Column 20]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Column 20" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Loves Fuel STG\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_stg_fuel_loves]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CascadiaSQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of City"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of State"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[createdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdate"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      lineageId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Output].Columns[createdate]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Credit]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Copy of Credit"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Credit]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Credit]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Order No]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Order No"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_No]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Order No]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Odometer]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Odometer"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Price]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Price"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Price]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Qty]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Qty"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gallons]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Qty]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Product Name"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Name]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Product Code"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_Code]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product Code]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Sequence]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Sequence"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sequence]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Sequence]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Transaction]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Transaction"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Trailer]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Trailer"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Unit]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Unit"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Unit]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of POS Ticket#]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of POS Ticket#"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POS_Ticket]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of POS Ticket#]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Truck Stop Code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Truck Stop Code"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TruckStopCode]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop Code]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Truck Stop]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Truck Stop"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Truck_Stop]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Truck Stop]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Date Time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Date Time"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Date]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Driver"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver]" />
+                    <inputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Total]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Total"
+                      externalMetadataColumnId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Amt]"
+                      lineageId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Total]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_Amt]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction_Amt" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Truck_Stop]"
+                      dataType="wstr"
+                      length="255"
+                      name="Truck_Stop" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TruckStopCode]"
+                      dataType="wstr"
+                      length="255"
+                      name="TruckStopCode" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[POS_Ticket]"
+                      dataType="wstr"
+                      length="255"
+                      name="POS_Ticket" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Unit]"
+                      dataType="wstr"
+                      length="255"
+                      name="Unit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trailer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Sequence]"
+                      dataType="wstr"
+                      length="255"
+                      name="Sequence" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_Code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product_Code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Gallons]"
+                      dataType="wstr"
+                      length="255"
+                      name="Gallons" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Price]"
+                      dataType="wstr"
+                      length="255"
+                      name="Price" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      dataType="wstr"
+                      length="255"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Order_No]"
+                      dataType="wstr"
+                      length="255"
+                      name="Order_No" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Credit]"
+                      dataType="wstr"
+                      length="255"
+                      name="Credit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Loves Fuel STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Loves Fuel STG\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert to Loves Fuel STG.Paths[Data Conversion Output]"
+              endId="Package\Insert to Loves Fuel STG\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Insert to Loves Fuel STG\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Insert to Loves Fuel STG.Paths[Derived Column Output]"
+              endId="Package\Insert to Loves Fuel STG\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert to Loves Fuel STG\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert to Loves Fuel STG.Paths[Flat File Source Output]"
+              endId="Package\Insert to Loves Fuel STG\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert to Loves Fuel STG\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STG to FCT Merge"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{E8813EE6-954A-4AEB-9F4A-E44A6C6D37F2}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STG to FCT Merge"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="MERGE INTO dbo.tbl_fct_fuel_loves fct &#xA;&#xA;USING (&#xA;&#xA;SELECT &#xA;       [Truck_Stop]&#xA;      ,[City]&#xA;      ,[State]&#xA;      ,[TruckStopCode]&#xA;      ,[POS_Ticket]&#xA;      ,[Transaction_Date]&#xA;      ,[Driver]&#xA;      ,[Unit]&#xA;      ,[Trailer]&#xA;      ,[Transaction]&#xA;      ,[Sequence]&#xA;      ,[Product_Code]&#xA;      ,[Product_Name]&#xA;      ,[Gallons]&#xA;      ,[Price]&#xA;      ,[Transaction_Amt]&#xA;      ,[Odometer]&#xA;      ,[Order_No]&#xA;      ,[Credit]&#xA;  FROM [cascadia].[dbo].[tbl_stg_fuel_loves]&#xA;&#xA;&#xA;  ) as stg &#xA;  ON (  &#xA;  fct.TruckStopCode = stg.TruckStopCode AND&#xA;  fct.POS_Ticket = stg.POS_Ticket AND&#xA;  fct.Transaction_Date = stg.Transaction_Date AND&#xA;  fct.Transaction_Amt = stg.Transaction_Amt &#xA;  )&#xA;&#xA;  WHEN NOT MATCHED THEN &#xA;  INSERT (&#xA;       [Truck_Stop]&#xA;      ,[City]&#xA;      ,[State]&#xA;      ,[TruckStopCode]&#xA;      ,[POS_Ticket]&#xA;      ,[Transaction_Date]&#xA;      ,[Driver]&#xA;      ,[Unit]&#xA;      ,[Trailer]&#xA;      ,[Transaction]&#xA;      ,[Sequence]&#xA;      ,[Product_Code]&#xA;      ,[Product_Name]&#xA;      ,[Gallons]&#xA;      ,[Price]&#xA;      ,[Transaction_Amt]&#xA;      ,[Odometer]&#xA;      ,[Order_No]&#xA;      ,[Credit]&#xA;&#x9;  )&#xA;&#xA;&#x9;  Values (&#xA;&#x9;   stg.[Truck_Stop]&#xA;      ,stg.[City]&#xA;      ,stg.[State]&#xA;      ,stg.[TruckStopCode]&#xA;      ,stg.[POS_Ticket]&#xA;      ,stg.[Transaction_Date]&#xA;      ,stg.[Driver]&#xA;      ,stg.[Unit]&#xA;      ,stg.[Trailer]&#xA;      ,stg.[Transaction]&#xA;      ,stg.[Sequence]&#xA;      ,stg.[Product_Code]&#xA;      ,stg.[Product_Name]&#xA;      ,stg.[Gallons]&#xA;      ,stg.[Price]&#xA;      ,stg.[Transaction_Amt]&#xA;      ,stg.[Odometer]&#xA;      ,stg.[Order_No]&#xA;      ,stg.[Credit]&#xA;&#x9;  &#xA;);&#xA;&#x9;  &#xA;&#x9;  " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Update TBL Jermaine Unit Number Fix"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{343DFA6D-E137-4EF9-B45D-8400F6845BEF}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Update TBL Jermaine Unit Number Fix"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="UPDATE [cascadia].[dbo].[tbl_fct_fuel_loves] SET UNIT = 2008 WHERE Driver = 1002 and Transaction_Date &gt;= '2018-10-01 00:00:00';" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{BA159A96-119A-4E99-A44E-941BA5F127E4}"
+      DTS:From="Package\Delete From STG_FUEL_LOVES"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert to Loves Fuel STG" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{D1CBB671-7D3F-4B98-A4DB-3624A54F4E63}"
+      DTS:From="Package\Insert to Loves Fuel STG"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\STG to FCT Merge" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
+      DTS:CreationName=""
+      DTS:DTSID="{BC3760AD-442F-4358-8331-8D67970115D8}"
+      DTS:From="Package\STG to FCT Merge"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 2"
+      DTS:To="Package\Update TBL Jermaine Unit Number Fix" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="225.6,41.6"
+          Id="Package\Delete From STG_FUEL_LOVES"
+          TopLeft="85.4857154145532,41.5999999999999" />
+        <NodeLayout
+          Size="195.2,41.6"
+          Id="Package\Insert to Loves Fuel STG"
+          TopLeft="94.057142973919,112.800000291713" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\STG to FCT Merge"
+          TopLeft="109.142859001549,195.011764568606" />
+        <NodeLayout
+          Size="259.2,41.6"
+          Id="Package\Update TBL Jermaine Unit Number Fix"
+          TopLeft="62.8571439275937,260.894119028401" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="194.971429194236,83.1999999999999">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,29.6000002917127"
+              Start="0,0"
+              End="0,22.1000002917127">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,22.1000002917127" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="191.600000987734,154.400000291713">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,40.6117642768933"
+              Start="0,0"
+              End="0,33.1117642768933">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,33.1117642768933" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 2]"
+          TopLeft="192.000001464571,236.611764568606">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,24.2823544597955"
+              Start="0,0"
+              End="0,16.7823544597955">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.7823544597955" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert to Loves Fuel STG">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert to Loves Fuel STG\Flat File Source"
+          TopLeft="195.4285747567,18.9647061483258" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Insert to Loves Fuel STG\Derived Column"
+          TopLeft="195.42857141884,190.894116986417" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Insert to Loves Fuel STG\Data Conversion"
+          TopLeft="193.14286043206,106.070589016053" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Insert to Loves Fuel STG\OLE DB Destination"
+          TopLeft="183.8571429058,275.047057982712" />
+        <EdgeLayout
+          Id="Package\Insert to Loves Fuel STG.Paths[Flat File Source Output]"
+          TopLeft="270.68571759438,60.5647061483258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.5058828677272"
+              Start="0,0"
+              End="0,38.0058828677272">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.0058828677272" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to Loves Fuel STG.Paths[Derived Column Output]"
+          TopLeft="270.84285716232,232.494116986417">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.5529409962954"
+              Start="0,0"
+              End="0,35.0529409962954">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.0529409962954" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to Loves Fuel STG.Paths[Data Conversion Output]"
+          TopLeft="271.48571592545,147.670589016053">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,43.2235279703637"
+              Start="0,0"
+              End="0,35.7235279703637">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,35.7235279703637" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to Loves Fuel STG\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

@@ -1,0 +1,81 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{
+    var source = Model.productionViewBy; 
+    var gross = ViewData["ProductionModalData_Gross"];
+    var miles = ViewData["ProductionModalData_Miles"];
+    var fuel = ViewData["ProductionModalData_Fuel"];
+    var payroll = ViewData["ProductionModalData_Payroll"];
+
+
+}
+
+@if (source == "gross") 
+{ 
+ foreach (var g in gross
+                   as IEnumerable<MaxxExpress.vw_weekly_production_gross>)
+        {
+            <tr>
+                <td class="dtl_number gross-value" style="width: 15%;" >@g.Customer_nm</td>
+                <td class="dtl_number gross-value" style="width: 8%;" >@string.Format("{0:C}", g.Payout)</td>
+                <td class="dtl_number gross-value" style="width: 15%;" >@g.Pickup</td>
+                <td class="dtl_number gross-value" style="width: 15%;" >@g.Dropoff</td>
+                <td class="dtl_number gross-value" style="width: 8%;" >@g.Name</td>
+                <td class="dtl_number gross-value" style="width: 6%;" >#@g.Truck</td>
+            </tr>
+        }
+ }
+ 
+@if (source == "miles")
+{
+    foreach (var m in miles
+                       as IEnumerable<MaxxExpress.vw_weekly_production_miles>)
+    {
+    <tr>
+        <td class="dtl_number mile-value" style="width: 10%;" >@m.Date_DT</td>
+        <td class="dtl_number mile-value" style="width: 10%;" >#@m.Vehicle_Number</td>
+        <td class="dtl_number mile-value" style="width: 10%;" >@m.Driver_Name</td>
+        <td class="dtl_number mile-value" style="width: 10%;" >@string.Format("{0:N}", m.Daily_Mileage)</td>
+
+    </tr>
+    }
+}
+
+@if (source == "fuel")
+{
+foreach (var f in fuel
+                   as IEnumerable<MaxxExpress.vw_weekly_production_fuel>)
+{
+    <tr>
+        <td class="dtl_number fuel-value" style="width: 20%;" >@f.Date_DT</td>
+        <td class="dtl_number fuel-value" style="width: 5%;" >@f.Fuel_Type</td>
+        <td class="dtl_number fuel-value" style="width: 3%;" >@string.Format("{0:C}", f.Amount)</td>
+        <td class="dtl_number fuel-value" style="width: 25%;" >@f.FuelSource</td>
+        <td class="dtl_number fuel-value" style="width: 20%;" >#@f.Unit - @f.Name</td>
+    </tr>
+}
+}
+
+@if (source == "payroll")
+{
+
+    foreach (var p in payroll
+                       as IEnumerable<MaxxExpress.vw_weekly_production_payroll>)
+    {
+    <tr>
+        <td class="dtl_number payroll-value text-right" style="width: 10%;" >@string.Format("{0:C}", p.Total_Pay)</td>
+        <td class="dtl_number payroll-value" style="width: 10%;" >@p.Employee</td>
+    </tr>
+    }
+}
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+

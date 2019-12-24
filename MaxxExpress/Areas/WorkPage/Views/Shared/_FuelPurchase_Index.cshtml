@@ -1,0 +1,45 @@
+﻿<table id="tbl-fuel-purchases" class="table table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width: 2%">Date</th>
+            <th scope="col" style="width: 8%">Location</th>
+            <th scope="col" style="width: 6%">Gallons</th>
+            <th scope="col" style="width: 6%">Amount</th>
+            <th scope="col" style="width: 6%">Driver</th>
+            <th scope="col" style="width: 6%">Truck</th>
+            <th scope="col" style="width: 6%">Odometer</th>
+        </tr>
+    </thead>
+    <tbody>
+
+
+        @foreach (var d in ViewData["FuelPurchases"]
+           as IEnumerable<MaxxExpress.tbl_fct_fuel_entry>)
+        {
+            <tr>
+                <td class="dtl_number"><a class="dtl_number fuel-link" href=@d.Fuel_Receipt_URL target="_blank">@d.Fuel_Date</a></td>
+                <td>@d.Fuel_Location</td>
+                <td class="dtl_number">@d.Fuel_Gallons</td>
+                <td class="money-round dtl_number payout_cl">@d.Fuel_Amount</td>
+                <td>@d.Driver_Nm</td>
+                <td class="dtl_number">@d.Truck_Nbr</td>
+                <td class="dtl_number">@d.Odometer</td>
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+
+
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

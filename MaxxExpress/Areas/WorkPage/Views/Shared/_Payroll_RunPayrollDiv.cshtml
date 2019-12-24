@@ -1,0 +1,52 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+<form class="payrollAdjustmentForm" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <div class="col-md-12 padding-top-lg padding-bottom-lg">
+            @if (Model.payroll_RunIND == "1")
+            {
+
+                <div class="alert alert-danger text-center"> Payroll has already been run for this period would you like to re-run pay now? </div>
+
+                <div class="padding-top-lg padding-bottom-lg">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block btn-huge btn-run-payroll" data-dismiss="modal">Yes</button>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <button type="button" class="btn btn-secondary btn-lg btn-block btn-huge btn-Edit-Modal-close" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-primary text-center"> Run Payroll Now? </div>
+
+                <div class="padding-top-lg padding-bottom-lg">
+                    <div class="col-md-6">
+                        <button type="button" class="btn btn-primary btn-lg btn-block btn-huge btn-run-payroll" data-dismiss="modal">Yes</button>
+
+                    </div>
+                    <div class="col-md-6">
+
+                        <button type="button" class="btn btn-secondary btn-lg btn-block btn-huge btn-Edit-Modal-close" data-dismiss="modal">No</button>
+                    </div>
+                </div>
+
+            }
+
+        </div>
+
+    </div>
+
+</form>
+
+
+<script type="text/javascript">
+   
+
+</script>
+

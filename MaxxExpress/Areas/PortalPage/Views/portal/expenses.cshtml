@@ -1,0 +1,44 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+@using MaxxExpress.Areas.PortalPage.Models.Tools;
+
+@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+@{
+
+    ViewBag.Title = "Maxx Express - Expense Dashboard";
+}
+<!-- Begin Left Panel -->
+@{
+    Html.RenderPartial("_ExpensesAreaLeft_Admin");
+}
+<!-- End Left Panel -->
+<!-- Begin Right Panel -->
+@{
+    Html.RenderPartial("_ExpensesAreaRight_Admin");
+}
+<!-- EndRight Panel -->
+
+
+<!--Start Show Session Expire Warning Popup here -->
+
+<div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Session Expired Message</h4>
+            </div>
+            <div class="modal-body">
+                Your session has expired please log back in.
+            </div>
+            <div class="modal-footer">
+                @*<button id="btn-LogoutNow" type="button" class="btn btn-outline-danger" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; ">Logout now</button>*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End Show Session Expire Warning Popup here -->

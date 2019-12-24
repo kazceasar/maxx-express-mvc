@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+
+
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../Areas/WorkPage/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/css/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/animate/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/css-hamburgers/hamburgers.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/animsition/css/animsition.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/select2/select2.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/js/login_scripts/daterangepicker/daterangepicker.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/css/login_css/util.css">
+    <link rel="stylesheet" type="text/css" href="~/Areas/WorkPage/css/login_css/main.css">
+</head>
+<body>
+
+    @model MaxxExpress.tbl_web_users
+
+    @{
+        ViewBag.Title = "Maxx Express Staging Logout";
+
+    // Group APIs by controller
+    // ILookup<HttpControllerDescriptor, ApiDescription> apiGroups = Model.ToLookup(api => api.ActionDescriptor.ControllerDescriptor);
+    }
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100 p-l-77 p-r-77 p-t-55 p-b-55">
+
+                    <span class="login100-form-title">
+                       <span class="tinymaxxlogo pull-left"></span> 
+                        <span class="staff-login-txt">Dev Logout</span>
+                    </span>
+
+
+                    <span class="txt1 p-b-11">
+                        Your Session has expired and you have been logged out.
+                    </span>    
+
+                    <div class="flex-sb-m w-full p-b-48">
+                       
+                    </div>
+
+                    <div class="container-login100-form-btn">
+                        <button id="btn-login-return" type="submit" class="login100-form-btn" value="Login" style="margin-left:auto; margin-right:auto;">
+                            Login
+                        </button>
+                    </div>                             
+            </div>
+        </div>
+    </div>
+
+
+    
+
+
+    <script src="~/Areas/WorkPage/js/login_scripts/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/bootstrap/js/popper.js"></script>
+    <script src="~/Areas/WorkPage/js/login_scripts/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/daterangepicker/moment.min.js"></script>
+    <script src="~/Areas/WorkPage/js/login_scripts/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/Areas/WorkPage/js/login_scripts/main.js"></script>
+
+    <script>
+
+        $('#btn-login-return').on('click', function () {
+            window.location.href = "../Work/Login";
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,654 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{588F89FF-5DC9-41DA-8E54-62A7E66FC601}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MaxxExpress</RootNamespace>
+    <AssemblyName>MaxxExpress</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <Use64BitIISExpress />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime, Version=3.4.1.9004, Culture=neutral, PublicKeyToken=eb42632606e9261f, processorArchitecture=MSIL">
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Data.Edm, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.Edm.5.8.3\lib\net40\Microsoft.Data.Edm.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Data.OData, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Data.OData.5.8.3\lib\net40\Microsoft.Data.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebHelpers.3.2.4\lib\net45\Microsoft.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.7\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Spatial, Version=5.8.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Spatial.5.8.3\lib\net40\System.Spatial.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Cors.5.2.7\lib\net45\System.Web.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.7\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.Cors, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Cors.5.2.7\lib\net45\System.Web.Http.Cors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.OData, Version=5.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.OData.5.7.0\lib\net45\System.Web.Http.OData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.Tracing, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Tracing.5.2.4\lib\net45\System.Web.Http.Tracing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.4\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Providers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Providers.Core.2.0.0\lib\net40\System.Web.Providers.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="WebGrease, Version=1.6.5135.21930, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.Data, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.Data.3.2.4\lib\net45\WebMatrix.Data.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebMatrix.WebData, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.WebData.3.2.4\lib\net45\WebMatrix.WebData.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Areas\PortalPage\App_Start\PortalPageConfig.cs" />
+    <Compile Include="Areas\PortalPage\Controllers\portalController.cs" />
+    <Compile Include="Areas\PortalPage\Models\Rules\NoCache.cs" />
+    <Compile Include="Areas\PortalPage\Models\Tools\CustomTools.cs" />
+    <Compile Include="Areas\PortalPage\Models\PortalViewModel.cs" />
+    <Compile Include="Areas\PortalPage\PortalPageAreaRegistration.cs" />
+    <Compile Include="Areas\WorkPage\App_Start\WorkPageConfig.cs" />
+    <Compile Include="Areas\WorkPage\Controllers\WorkController.cs" />
+    <Compile Include="Areas\WorkPage\Models\Tools\CustomTools.cs" />
+    <Compile Include="Areas\WorkPage\Models\WorkViewModel.cs" />
+    <Compile Include="Areas\WorkPage\Models\Rules\NoCache.cs" />
+    <Compile Include="Areas\WorkPage\WorkPageAreaRegistration.cs" />
+    <Compile Include="Cascadia_DataModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cascadia_DataModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cascadia_DataModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Cascadia_DataModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Cascadia_DataModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\DriverAppController.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ValuesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="sp_Web_monthly_financial_expenses_reoccurring_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_expenses_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_fuel_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_load_revenue_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_payroll_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_revenue_deposit_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_Web_monthly_financial_revenue_load_Result.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_customer.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_driver.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_location.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_monthly_expense.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_payroll_schedule.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_trailer.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_dim_truck.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_deposit.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_expense.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_fuel_entry.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_loads.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_load_status.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_payroll.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_payroll_adjustments.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_fct_payroll_hourly.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_rpt_weekly_production.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_contact_form.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_driver_application.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_homepage_stats_week.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_expenses.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_expenses_reoccurring.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_fuel.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_payroll.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_revenue_deposit.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_monthly_financial_revenue_load.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_notes.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="tbl_web_users.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_date_last_month.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_date_last_week.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_date_pnl_month.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_date_week.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_date_week_of.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_expenses.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_fuel.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_loads_detail_closed.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_loads_detail_open.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_loads_summary_closed.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_loads_summary_open.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_load_status.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_payroll_period_summary.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_payroll_web.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_sand_payout.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_web_homepage_stats_week.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_weekly_production.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_weekly_production_fuel.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_weekly_production_gross.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_weekly_production_miles.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="vw_weekly_production_payroll.cs">
+      <DependentUpon>Cascadia_DataModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Areas\PortalPage\css\cs-select.css" />
+    <Content Include="Areas\PortalPage\css\cs-skin-border.css" />
+    <Content Include="Areas\PortalPage\css\scss\style.css" />
+    <Content Include="Areas\PortalPage\images\icons\favicon.ico" />
+    <Content Include="Areas\PortalPage\images\icons\icon-google.png" />
+    <Content Include="Areas\PortalPage\images\icons\map-marker.png" />
+    <Content Include="Areas\PortalPage\images\icons\symbol-01.png" />
+    <Content Include="Areas\PortalPage\images\img-right-arrow.svg" />
+    <Content Include="Areas\PortalPage\images\logo.png" />
+    <Content Include="Areas\PortalPage\images\logo2.png" />
+    <Content Include="Areas\PortalPage\images\placeholder.png" />
+    <Content Include="Areas\PortalPage\images\twitter_corner_black.png" />
+    <Content Include="Areas\PortalPage\images\twitter_corner_blue.png" />
+    <Content Include="Areas\PortalPage\js\modal-popover\bootstrap-modal-popover.js" />
+    <Content Include="Areas\PortalPage\js\modal-popover\bootstrap.js" />
+    <Content Include="Areas\PortalPage\js\modal-popover\jquery-1.11.3.min.js" />
+    <Content Include="Areas\PortalPage\js\modal-popover\prettify.css" />
+    <Content Include="Areas\PortalPage\js\modal-popover\prettify.js" />
+    <Content Include="Areas\PortalPage\js\portalMain.js" />
+    <Content Include="Areas\WorkPage\css\cs-select.css" />
+    <Content Include="Areas\WorkPage\css\cs-skin-border.css" />
+    <Content Include="Areas\WorkPage\css\customDatePicker.css" />
+    <Content Include="Areas\WorkPage\css\scss\style.css" />
+    <Content Include="Areas\WorkPage\images\icons\favicon.ico" />
+    <Content Include="Areas\WorkPage\images\icons\icon-google.png" />
+    <Content Include="Areas\WorkPage\images\icons\map-marker.png" />
+    <Content Include="Areas\WorkPage\images\icons\symbol-01.png" />
+    <Content Include="Areas\WorkPage\js\modal-popover\bootstrap-modal-popover.js" />
+    <Content Include="Areas\WorkPage\js\modal-popover\bootstrap.js" />
+    <Content Include="Areas\WorkPage\js\modal-popover\jquery-1.11.3.min.js" />
+    <Content Include="Areas\WorkPage\js\modal-popover\prettify.css" />
+    <Content Include="Areas\WorkPage\js\modal-popover\prettify.js" />
+    <Content Include="Areas\WorkPage\js\workMain.js" />
+    <Content Include="Cascadia_DataModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cascadia_DataModel.edmx</DependentUpon>
+      <LastGenOutput>Cascadia_DataModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Cascadia_DataModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Cascadia_DataModel.edmx</DependentUpon>
+      <LastGenOutput>Cascadia_DataModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="favicon-16x16.png" />
+    <Content Include="favicon-32x32.png" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Images\logo\MaxExpress_Logo.svg" />
+    <Content Include="Images\logo\MaxExpress_Logo_Alt.svg" />
+    <Content Include="Images\logo\MaxExpress_Logo_M.svg" />
+    <Content Include="Images\logo\MaxExpress_Logo_Text_Red_Black.svg" />
+    <Content Include="Images\logo\MaxExpress_Logo_Text_Red_White.svg" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadSummaryClosed_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadAddDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\expenses.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesAreaRight_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ProductionAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadEditList.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadAddDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadDetailOpenDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadEditDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadEditList.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadModals.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadStatusList.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PortalAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PortalAreaRight_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Web.config" />
+    <Content Include="Areas\PortalPage\Views\portal\Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\login.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\expenses.cshtml" />
+    <Content Include="Areas\PortalPage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\WorkPage\docs\loads\3480345.pdf" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadDetailClosedDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadDetailClosedDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WorkAreaRight_Driver.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WorkAreaLeft_Driver.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PortalAreaRight_Driver.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PortalAreaLeft_Driver.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadSummaryOpen_Index_Driver.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\payroll.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\payroll.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_PayrollAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_PayrollAreaRight_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\_Layout.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\_Layout.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_PayrollSummary_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadSummaryClosed_Index_Driver.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadSummaryClosed_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadSummaryOpen_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\logout.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\logout.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadSummaryOpen_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Payroll_LoadModals.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Payroll_AdjustmentDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Payroll_RunPayrollDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Payroll_AdjustmentDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Payroll_LoadModals.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Payroll_RunPayrollDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PayrollAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PayrollAreaRight_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_PayrollSummary_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesFuel_Summary.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesExpense_Summary.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesExpensesTotal_Header.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesFuelTotal_Header.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesAreaRight_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesExpense_Summary.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesExpensesTotal_Header.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesFuel_Summary.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ExpensesFuelTotal_Header.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadStats_Load.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\financials.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsAreaRight_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsFuelDetail.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsLoadDetail.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsPayrollDetail.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsExpenses_RO_Detail.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsExpensesDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsAreaRight_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsExpenses_RO_Detail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsExpensesDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsFuelDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsLoadDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsPayrollDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\financials.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Expenses_PurposeDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Expenses_PurposeDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FinancialsDepositDetail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FinancialsDepositDetail.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_AdminAreaLeft.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_AdminAreaRight.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_AdminAreaRight.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_AdminAreaLeft.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WebNotes_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WebAlerts_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_WebAlerts_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_WebCreateNote_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_WebNotes_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_WebNotesCount_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ExpensesAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_ProductionAreaRight_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Production_Summary.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Production_Detail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ProductionAreaRight_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Production_Detail.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Production_Summary.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_ProductionAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\PortalPage\Views\portal\production.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Production_Modal.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_Production_Modal.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadAddDiv_Sand.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadDetailOpenDiv_Sand.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadDetailOpenDiv_Sand.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadAddDiv_Sand.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadEditDiv_Sand.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadSummaryOpen_Index_Driver.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FuelAddDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FuelAddDiv.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FuelEditList.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_FuelPurchase_Index.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadStats_Load.cshtml" />
+    <Content Include="Areas\PortalPage\Views\Shared\_LoadStats_Fuel.cshtml" />
+    <None Include="Areas\WorkPage\Views\Shared\_LoadEditDiv_Sand.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadDeleteList.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FuelPurchase_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_FuelEditList.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadStats_Fuel.cshtml" />
+    <None Include="Areas\WorkPage\Views\Shared\_WebCreateNote_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WebNotesCount_Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\production.cshtml" />
+    <None Include="Areas\WorkPage\Views\Work\_error.cshtml">
+      <SubType>Code</SubType>
+    </None>
+    <None Include="Properties\PublishProfiles\MaxxPublish.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <EntityDeploy Include="Cascadia_DataModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Cascadia_DataModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Cascadia_DataModel.edmx.diagram">
+      <DependentUpon>Cascadia_DataModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Areas\WorkPage\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Work\Index.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Areas\WorkPage\Views\Work\Login.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadModals.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WorkAreaLeft_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_WorkAreaRight_Admin.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadDetailOpenDiv.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadStatusList.cshtml" />
+    <Content Include="Areas\WorkPage\Views\Shared\_LoadEditDiv.cshtml" />
+    <None Include="Properties\PublishProfiles\maxxexpress-godaddy.pubxml" />
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\PortalPage\Content\Loads\" />
+    <Folder Include="Areas\PortalPage\docs\fuelreceipts\" />
+    <Folder Include="Areas\PortalPage\docs\notes\" />
+    <Folder Include="Areas\WorkPage\css\fonts\icomoon\" />
+    <Folder Include="Areas\WorkPage\docs\bol\" />
+    <Folder Include="css\" />
+    <Folder Include="Scripts\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>65509</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:65509/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

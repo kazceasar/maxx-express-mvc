@@ -1,0 +1,1867 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="5/28/2018 7:54:47 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KIRA10"
+  DTS:CreatorName="KIRA10\user"
+  DTS:DTSID="{7057780A-4910-4A0B-83E5-5A7636735AC3}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Fuel_Import_Pilot"
+  DTS:PackageType="5"
+  DTS:VersionBuild="74"
+  DTS:VersionGUID="{A2381576-6855-4C10-8239-2605DBB56168}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{FAF5975F-0BA8-4DE7-9C29-58BDCD9FFD91}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="\\Majestic\drogo\OneDrive\Documents Pictures and Media\MaxxExpress\Data Imports\Pilot\transactions_708974_29042019.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Card #"
+              DTS:DTSID="{B9FBF7DD-687C-4B58-A58D-C1B633C7DCF4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Card Description"
+              DTS:DTSID="{9B7B2D7C-1975-4EAD-9D84-DFEA5C17DFDB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trx Date"
+              DTS:DTSID="{D1383B1C-3054-4C5B-A52E-F33DB4726B52}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Transaction #"
+              DTS:DTSID="{C61BBBEC-473F-4A53-84F2-A565A30B66CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Store Location"
+              DTS:DTSID="{BD1BD0F2-B90C-40E9-8EE8-6D5209444C23}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Product"
+              DTS:DTSID="{E815BB52-7733-4C20-A78D-FAED85DB4616}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver ID"
+              DTS:DTSID="{0CF3DE62-536B-4115-A95E-FF93751A9F4F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Odometer"
+              DTS:DTSID="{38766CB0-DB1F-402E-999C-FCCD796CCFAF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trailer"
+              DTS:DTSID="{318B822C-AB09-46DA-878C-D59358DD5D1F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Trip"
+              DTS:DTSID="{9E26AFEB-A430-4E4B-A526-A49BE7D79C51}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle ID"
+              DTS:DTSID="{222A8D0E-AC39-49B7-A73B-0288F129B53A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Quantity"
+              DTS:DTSID="{6D927E61-6B19-4E8E-9071-84B19760CD56}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fuel"
+              DTS:DTSID="{07FCE651-EA96-46B3-A803-436969956B10}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Merchandise"
+              DTS:DTSID="{67EE05A4-7F94-4652-94BA-2A1F4612FCEA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Detail Total"
+              DTS:DTSID="{244358D3-81EB-4F32-A20C-5D0B346A8965}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Invoice Amt"
+              DTS:DTSID="{C8DC64A5-FFA9-4355-847A-EE57E8E78337}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F21D9AB0-2925-4AF7-8410-8B66CA8AD2BA}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestinationFolder">
+      <DTS:VariableValue
+        DTS:DataType="8">O:\OneDrive\Documents Pictures and Media\MaxxExpress\Documents\Fuel\Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8A70C875-47A1-4DEA-9706-BCC004799251}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Variable">
+      <DTS:VariableValue
+        DTS:DataType="8">varFileName</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete From STG_FUEL_PILOT"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{8A9408CB-9668-44FC-BF56-57EE1250DD68}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete From STG_FUEL_PILOT"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="Delete From [dbo].[tbl_stg_fuel_pilot]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert to Pilot Fuel STG Table"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Insert to Loves Fuel Table"
+      DTS:DTSID="{9E43C1AB-87B0-42A6-96A6-0CE44407CD62}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert to Pilot Fuel STG Table"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert to Pilot Fuel STG Table\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Trailer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Trailer"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Odometer]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Odometer"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Card #]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Card #"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card #]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Card Description]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Card Description"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card Description]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Trx Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Trx Date"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trx Date]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Transaction #]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Transaction #"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction #]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Store Location]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Store Location"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Store Location]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Product]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Product"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Product]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Driver ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver ID"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Driver ID]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Trip]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Trip"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trip]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Vehicle ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle ID"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle ID]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Quantity]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Quantity"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Fuel]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fuel"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Fuel]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Merchandise]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Merchandise"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Merchandise]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Detail Total]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Detail Total"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Detail Total]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input].Columns[Invoice Amt]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Invoice Amt"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Invoice Amt]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]"
+                      name="Copy of Trailer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      name="Copy of Odometer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card #]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card #]"
+                      name="Copy of Card #"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card #]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Description]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Description]"
+                      name="Copy of Card Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card Description]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trx Date]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trx Date]"
+                      name="Copy of Trx Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trx Date]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction #]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction #]"
+                      name="Copy of Transaction #"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction #]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Store Location]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Store Location]"
+                      name="Copy of Store Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Store Location]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product]"
+                      name="Copy of Product"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Product]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver ID]"
+                      name="Copy of Driver ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Driver ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trip]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trip]"
+                      name="Copy of Trip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trip]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle ID]"
+                      name="Copy of Vehicle ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]"
+                      name="Copy of Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fuel]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fuel]"
+                      name="Copy of Fuel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Fuel]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Merchandise]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Merchandise]"
+                      name="Copy of Merchandise"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Merchandise]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detail Total]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detail Total]"
+                      name="Copy of Detail Total"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Detail Total]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Invoice Amt]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Invoice Amt]"
+                      name="Copy of Invoice Amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Invoice Amt]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Pilot Fuel STG Table\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert to Pilot Fuel STG Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      name="createdate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert to Pilot Fuel STG Table\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Pilot Fuel STG Table\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trailer]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trailer]"
+                      name="Trailer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      name="Odometer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card #]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Card #]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card #]"
+                      name="Card #"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card Description]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Card Description]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Card Description]"
+                      name="Card Description"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trx Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trx Date]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trx Date]"
+                      name="Trx Date"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction #]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Transaction #]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Transaction #]"
+                      name="Transaction #"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Store Location]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store Location]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Store Location]"
+                      name="Store Location"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Product]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Product]"
+                      name="Product"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Driver ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver ID]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Driver ID]"
+                      name="Driver ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trip]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trip]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Trip]"
+                      name="Trip"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle ID]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle ID]"
+                      name="Vehicle ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Quantity]"
+                      name="Quantity"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Fuel]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fuel]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Fuel]"
+                      name="Fuel"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Merchandise]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Merchandise]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Merchandise]"
+                      name="Merchandise"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Detail Total]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Detail Total]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Detail Total]"
+                      name="Detail Total"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Invoice Amt]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Invoice Amt]"
+                      length="50"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].Columns[Invoice Amt]"
+                      name="Invoice Amt"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trailer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Trailer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Card #]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Card #" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Card Description]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Card Description" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trx Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Trx Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Transaction #]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Transaction #" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Store Location]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Store Location" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Product]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Product" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Driver ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Trip]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Trip" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Quantity]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Fuel]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fuel" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Merchandise]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Merchandise" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Detail Total]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Detail Total" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Invoice Amt]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Invoice Amt" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="1252"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_stg_fuel_pilot]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">true</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CascadiaSQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[createdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdate"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Output].Columns[createdate]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Odometer]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Odometer"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Trailer]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Trailer"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trailer]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Invoice Amt]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Invoice Amt"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Invoice Amt]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Invoice Amt]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Detail Total]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Detail Total"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Detail Total]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Detail Total]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Merchandise]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Merchandise"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Merchandise]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Merchandise]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Fuel]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Fuel"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fuel]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Fuel]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Quantity]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Quantity"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Quantity]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Vehicle ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Vehicle ID"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_ID]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle ID]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Trip]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Trip"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trip]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trip]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Driver ID"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_ID]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver ID]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Product]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Product"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Product]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Store Location]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Store Location"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store_Location]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Store Location]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Transaction #]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Transaction #"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_No]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Transaction #]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Trx Date]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Trx Date"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trx_Date]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Trx Date]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card Description]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Card Description"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Description]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card Description]" />
+                    <inputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Card #]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Card #"
+                      externalMetadataColumnId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No]"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Card #]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trailer]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trailer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      dataType="wstr"
+                      length="255"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_No]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card_No" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Card_Description]"
+                      dataType="wstr"
+                      length="255"
+                      name="Card_Description" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trx_Date]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trx_Date" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Transaction_No]"
+                      dataType="wstr"
+                      length="255"
+                      name="Transaction_No" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Store_Location]"
+                      dataType="wstr"
+                      length="255"
+                      name="Store_Location" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Product]"
+                      dataType="wstr"
+                      length="255"
+                      name="Product" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Trip]"
+                      dataType="wstr"
+                      length="255"
+                      name="Trip" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Quantity]"
+                      dataType="wstr"
+                      length="255"
+                      name="Quantity" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fuel]"
+                      dataType="wstr"
+                      length="255"
+                      name="Fuel" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Merchandise]"
+                      dataType="wstr"
+                      length="255"
+                      name="Merchandise" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Detail Total]"
+                      dataType="wstr"
+                      length="255"
+                      name="Detail Total" />
+                    <externalMetadataColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Invoice Amt]"
+                      dataType="wstr"
+                      length="255"
+                      name="Invoice Amt" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert to Pilot Fuel STG Table.Paths[Data Conversion Output]"
+              endId="Package\Insert to Pilot Fuel STG Table\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Insert to Pilot Fuel STG Table.Paths[Derived Column Output]"
+              endId="Package\Insert to Pilot Fuel STG Table\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert to Pilot Fuel STG Table\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert to Pilot Fuel STG Table.Paths[Flat File Source Output]"
+              endId="Package\Insert to Pilot Fuel STG Table\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert to Pilot Fuel STG Table\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\STG to FCT Merge"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{865ec48e-7e23-4a43-9516-327e79ac713c}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="STG to FCT Merge"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="MERGE INTO dbo.tbl_fct_fuel_pilot fct &#xA;&#xA;USING (&#xA;&#xA;SELECT &#xA;       [Card_No]&#xA;      ,[Card_Description]&#xA;      ,[Trx_Date]&#xA;      ,[Transaction_No]&#xA;      ,[Store_Location]&#xA;      ,[Product]&#xA;      ,[Driver_ID]&#xA;      ,[Odometer]&#xA;      ,[Trailer]&#xA;      ,[Trip]&#xA;      ,[Vehicle_ID]&#xA;      ,[Quantity]&#xA;      ,[Fuel]&#xA;      ,[Merchandise]&#xA;      ,[Detail Total]&#xA;      ,[Invoice Amt]&#xA;&#xA;  FROM [cascadia].[dbo].[tbl_stg_fuel_pilot]&#xA;&#xA;&#xA;  ) as stg &#xA;  ON (  &#xA;  fct.[Store_Location] = stg.[Store_Location] AND&#xA;  fct.[Transaction_No] = stg.[Transaction_No] AND&#xA;  fct.[Trx_Date] = stg.[Trx_Date] AND&#xA;  fct.[Invoice Amt] = stg.[Invoice Amt] &#xA;  )&#xA;&#xA;  WHEN NOT MATCHED THEN &#xA;  INSERT (&#xA;        [Card_No]&#xA;      ,[Card_Description]&#xA;      ,[Trx_Date]&#xA;      ,[Transaction_No]&#xA;      ,[Store_Location]&#xA;      ,[Product]&#xA;      ,[Driver_ID]&#xA;      ,[Odometer]&#xA;      ,[Trailer]&#xA;      ,[Trip]&#xA;      ,[Vehicle_ID]&#xA;      ,[Quantity]&#xA;      ,[Fuel]&#xA;      ,[Merchandise]&#xA;      ,[Detail Total]&#xA;      ,[Invoice Amt]&#xA;&#xA;   )&#xA;&#xA;   Values (&#xA;       stg.[Card_No]&#xA;      ,stg.[Card_Description]&#xA;      ,stg.[Trx_Date]&#xA;      ,stg.[Transaction_No]&#xA;      ,stg.[Store_Location]&#xA;      ,stg.[Product]&#xA;      ,stg.[Driver_ID]&#xA;      ,stg.[Odometer]&#xA;      ,stg.[Trailer]&#xA;      ,stg.[Trip]&#xA;      ,stg.[Vehicle_ID]&#xA;      ,stg.[Quantity]&#xA;      ,stg.[Fuel]&#xA;      ,stg.[Merchandise]&#xA;      ,stg.[Detail Total]&#xA;      ,stg.[Invoice Amt]&#xA;   &#xA;);" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A8E29605-D518-4483-9B50-5AD34C172D69}"
+      DTS:From="Package\Delete From STG_FUEL_PILOT"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert to Pilot Fuel STG Table" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{3163FA33-94BA-43DD-AF57-33149EA760E1}"
+      DTS:From="Package\Insert to Pilot Fuel STG Table"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\STG to FCT Merge" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="163.2,41.6"
+          Id="Package\Delete From STG_FUEL_PILOT"
+          TopLeft="116.48571595951,63.0117650061742" />
+        <NodeLayout
+          Size="216.8,41.6"
+          Id="Package\Insert to Pilot Fuel STG Table"
+          TopLeft="94.628571555079,140.329412442508" />
+        <NodeLayout
+          Size="164.8,41.6"
+          Id="Package\STG to FCT Merge"
+          TopLeft="115.42857135072,218.094115236144" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="200.557143757295,104.611765006174">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.7176474363334"
+              Start="0,0"
+              End="0,28.2176474363334">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.2176474363334" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="200.4285714529,181.929412442508">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.1647027936361"
+              Start="0,0"
+              End="0,28.6647027936361">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.6647027936361" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert to Pilot Fuel STG Table">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Insert to Pilot Fuel STG Table\Flat File Source"
+          TopLeft="195.4285747567,18.9647061483258" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Insert to Pilot Fuel STG Table\OLE DB Destination"
+          TopLeft="186.14285723044,267.094116694704" />
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Insert to Pilot Fuel STG Table\Derived Column"
+          TopLeft="190.857142769561,189.57647042522" />
+        <NodeLayout
+          Size="155.2,41.6"
+          Id="Package\Insert to Pilot Fuel STG Table\Data Conversion"
+          TopLeft="192.000003269741,102.776472029636" />
+        <EdgeLayout
+          Id="Package\Insert to Pilot Fuel STG Table.Paths[Flat File Source Output]"
+          TopLeft="270.11428901322,60.5647061483258">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,42.2117658813107"
+              Start="0,0"
+              End="0,34.7117658813107">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,34.7117658813107" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to Pilot Fuel STG Table.Paths[Derived Column Output]"
+          TopLeft="269.7,231.17647042522">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,35.9176462694849"
+              Start="0,0"
+              End="0,28.4176462694849">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.4176462694849" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert to Pilot Fuel STG Table.Paths[Data Conversion Output]"
+          TopLeft="268.628573019651,144.376472029636">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,45.1999983955831"
+              Start="0,0"
+              End="0,37.6999983955831">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,37.6999983955831" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert to Pilot Fuel STG Table\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

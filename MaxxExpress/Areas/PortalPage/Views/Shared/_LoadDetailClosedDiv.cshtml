@@ -1,0 +1,428 @@
+﻿@foreach (var dtl in ViewData["ClosedLoadsDetail"]
+                                                     as IEnumerable<MaxxExpress.vw_loads_detail_closed>)
+{
+    <div class="card border border-secondary">
+        <div class="card-header card-header-customer">
+            <span class="dtl_label-main padding-right-md">Load Number :</span><span class="dtl_value dtl_number padding-right-md">@dtl.Load_Number</span>
+            <span class="dtl_label-main padding-right-md">Customer :</span><span class="dtl_value padding-right-md">@dtl.Customer_Nm</span>
+            <span class="dtl_label-main ">Load Con. :</span><span class="dtl_value padding-right-md">
+                @if (dtl.Load_Confirmation_URL == null)
+                {<span class="red small">No Documents</span> }
+                else
+                {<a class="dtl_number custom-link" href=@dtl.Load_Confirmation_URL target="_blank">@dtl.Load_Number@dtl.Load_Confirmation_File_Type</a>}
+            </span>
+        </div>
+        <div class="card-body">
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Week of : </span><span class="dtl_value dtl_number">@dtl.Week_of</span></div>
+                <div class="col-md-4"><span class="dtl_label">Load # of Week : </span><span class="dtl_value dtl_number padding-right-md">@dtl.Load_of_Week_Total</span></div>
+                <div class="col-md-4"><span class="dtl_label padding-right-md">Status : </span><span class="status-paid dtl_valuemoney-dtl">@dtl.Status</span></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Payout : </span><span id="payout-dtl" class="dtl_number dtl_number padding-right-md money-round-dtl">@string.Format("{0:C}", dtl.Final_Payout)</span></div>
+                <div class="col-md-4 no-pad-right"><span class="dtl_label">LPPM/TPPM : </span><span class=" dtl_number money-dtl small">@dtl.PPM</span>/<span class=" dtl_number money-dtl small">@dtl.T_PPM</span></div>
+                <div class="col-md-4 no-pad-right"><span class="dtl_label">Total/Load : </span><span class=" dtl_number money-dtl small">@dtl.Total_Miles mi</span>/<span class=" dtl_number money-dtl small">@dtl.Total_Load_Miles mi</span></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Driver : </span><span class="dtl_number money-round-dtl">@dtl.Driver_Short_NM</span></div>
+                <div class="col-md-4"><span class="dtl_label">Truck : </span><span class="dtl_number money-dtl">@dtl.Truck</span></div>
+                <div class="col-md-4"><span class="dtl_label">Weight : </span><span class="dtl_number padding-right-md">@dtl.Weight</span></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Contents : </span><span class="dtl_number padding-right-md small">@dtl.Contents</span></div>
+                <div class="col-md-4"><span class="dtl_label">LTL? : </span><span class="dtl_number money-round-dtl padding-right-md">@dtl.LTL</span></div>
+                @if (@dtl.BOL_URL != null)
+                {
+                    <div class="col-md-4"><span class="dtl_label">BOL : </span><span class="dtl_value money-round-dtl"><a class="dtl_number custom-link" href=@dtl.BOL_URL@dtl.BOL_FILE_TYPE target="_blank">BOL_@dtl.Load_Number@dtl.BOL_FILE_TYPE</a></span></div>
+                }
+                @if (@dtl.Detention_Payout != "0")
+                {
+                    <div class="col-md-4"><span class="dtl_label padding-right-md">Dentention :</span><span class="dtl_value dtl_number padding-right-md">@dtl.Detention_Payout</span></div>
+                }
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Docs : </span><a id="load-doc-download" href="#" onclick="docDownload(this);" data-loadnum=@dtl.Load_Number data-loadcon=@dtl.Load_Confirmation_URL data-bol=@dtl.BOL_URL@dtl.BOL_FILE_TYPE class="dtl_value money-round-dtl"> Download <i class="menu-icon fa fa-file-text-o"></i><small></small></a></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <span class="dtl_label padding-right-md">&nbsp;</span>
+    </div>
+
+    <div class="col-md-6">
+        <div class="card border border-secondary">
+            <div class="card-header card-header-pickup">
+                <strong class="card-title">Pickup Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 mobile-bold form-group">Pickup City :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Location</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Name :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Name &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Address :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_Address &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Zip :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_Zip &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Contact :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_Contact &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Date :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_Date</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Time :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Time &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup DH :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Deadhead_Miles miles</div>
+
+                @if (dtl.Pickup_Notes != null)
+                {
+                    <div class="col-md-6 mobile-bold form-group">Pickup Notes :</div>
+                    <div class="col-md-12 form-group loadnotes">@dtl.Pickup_Notes</div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dtl-dropoff-1" class="col-md-6">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 1 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Location</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Name &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_1_Address &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_1_Zip &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_1_Contact &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_1_Date</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Time &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">PU To D1 :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_DO1_Miles miles</div>
+
+                @if (dtl.Dropoff_1_Notes != null)
+                {
+                    <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                    <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_1_Notes &nbsp;</div>
+                }
+            </div>
+        </div>
+    </div>
+
+    if (dtl.Dropoff_2_Location != null)
+    {
+        <div id="dtl-dropoff-2" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 2 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D1 To D2 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO1_DO2_Miles miles</div>
+
+                    @if (dtl.Dropoff_2_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_2_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+    if (dtl.Dropoff_3_Location != null)
+    {
+        <div id="dtl-dropoff-3" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 3 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_3_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_3_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_3_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_3_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_3_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_3_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_3_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D2 To D3 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO2_DO3_Miles miles</div>
+
+                    @if (dtl.Dropoff_3_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_3_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+
+    if (dtl.Dropoff_4_Location != null)
+    {
+        <div id="dtl-dropoff-4" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 4 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_4_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_4_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_4_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_4_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_4_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_4_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_4_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D3 To D4 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO3_DO4_Miles miles</div>
+
+                    @if (dtl.Dropoff_4_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_4_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+    if (dtl.Dropoff_5_Location != null)
+    {
+        <div id="dtl-dropoff-5" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 5 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_5_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_5_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_5_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_5_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_5_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_5_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_5_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D4 To D5 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO4_DO5_Miles miles</div>
+
+                    @if (dtl.Dropoff_5_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_5_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+    if (dtl.Dropoff_6_Location != null)
+    {
+        <div id="dtl-dropoff-6" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 6 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_6_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_6_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_6_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_6_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_6_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_6_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_6_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D5 To D6 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO5_DO6_Miles miles</div>
+
+                    @if (dtl.Dropoff_6_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_6_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+
+    if (dtl.Dropoff_7_Location != null)
+    {
+        <div id="dtl-dropoff-7" class="col-md-6">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 7 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_7_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_7_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_7_Address &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_7_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_7_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_7_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_7_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D6 To D7 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO6_DO7_Miles miles</div>
+
+                    @if (dtl.Dropoff_7_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_7_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+
+
+
+
+}
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+    // Download Docs Button Click
+    function docDownload(element) {
+        var loadCon_URL = $(element).attr("data-loadcon");
+        var bol_URL = $(element).attr("data-bol");
+        var load_number = $(element).attr("data-loadnum");
+
+        downloadFile('Load_' + load_number + '_Load_Confirmation_MAXX_EXPRESS_LLC', loadCon_URL);
+        downloadFile('Load_' + load_number + '_Signed_BOL_MAXX_EXPRESS_LLC', bol_URL);
+
+    };
+
+    function downloadFile(fileName_Desc, url) {
+        var a = document.createElement("a");
+        a.href = url;
+        //  fileName = fileName_Desc + url.split(".").pop();
+        fileName = fileName_Desc;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
+    }
+
+</script>
+
+
+

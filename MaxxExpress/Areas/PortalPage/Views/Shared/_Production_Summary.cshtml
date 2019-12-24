@@ -1,0 +1,48 @@
+﻿@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+@{
+    var list = ViewData["ProductionWeeklyData"];
+
+}
+
+
+@foreach (var p in list
+           as IEnumerable<MaxxExpress.vw_weekly_production>)
+{
+    <tr>
+        <td class="dtl_number no-pad-all table-cell-middle-align prod-week-cell">@Convert.ToDateTime(p.Start_Date).ToString("MM/dd") - @Convert.ToDateTime(p.End_Date).ToString("MM/dd")</td>
+        <td class="dtl_number no-pad-all prod-dtl-data" data-source="gross" data-period=@String.Concat(p.Start_Date,'-',p.End_Date)><button class="production-value" data-toggle="modal-popover" data-target="#production_Modal" data-placement="right" data-pos="@p.ID">@string.Format("{0:C}", p.Gross)</button></td>
+        <td class="dtl_number no-pad-all prod-dtl-data" data-source="miles" data-period=@String.Concat(p.Start_Date,'-',p.End_Date)><button class="production-value" data-toggle="modal-popover" data-target="#production_Modal" data-placement="bottom" data-pos="@p.ID">@string.Format("{0:N}", p.Miles)</button></td>
+        <td class="dtl_number no-pad-all prod-dtl-data" data-source="fuel" data-period=@String.Concat(p.Start_Date,'-',p.End_Date)><button class="production-value" data-toggle="modal-popover" data-target="#production_Modal" data-placement="bottom" data-pos="@p.ID">@string.Format("{0:C}", p.Fuel)</button></td>
+        <td class="dtl_number no-pad-all prod-dtl-data" data-source="payroll" data-period=@String.Concat(p.Start_Date,'-',p.End_Date)><button class="production-value" data-toggle="modal-popover" data-target="#production_Modal" data-placement="left" data-pos="@p.ID">@string.Format("{0:C}", p.Payroll)</button></td>
+        <td class="dtl_number no-pad-all table-cell-middle-align text-center">@string.Format("{0:C}", p.Weekly_PPM)</td>
+        <td class="dtl_number no-pad-all table-cell-middle-align text-center">
+            @if (Convert.ToDouble(p.Net) <= 2000)
+            {
+                <span style="color: #ff0000">@string.Format("{0:C}", p.Net)</span>
+            }
+            else if (Convert.ToDouble(p.Net) >= 2001 && Convert.ToDouble(p.Net) <= 2999)
+            {
+                <span style="color: #ff6a00">@string.Format("{0:C}", p.Net)</span>
+            }
+            else
+            {
+                <span style="color: #12863b">@string.Format("{0:C}", p.Net)</span>
+            }
+
+        </td>
+
+    </tr>
+}
+
+
+
+
+<script type="text/javascript">
+
+
+</script>
+
+
+
+

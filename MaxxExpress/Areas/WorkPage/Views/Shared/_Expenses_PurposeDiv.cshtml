@@ -1,0 +1,96 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+<form class="expensePurposeForm" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <div class="col-md-12 no-pad-bottom no-pad-horizontal">
+
+            <table id="tbl-open-loads-summary" class="table table-responsive" style="overflow-x: auto;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="width:3%;">Date</th>
+                        <th style="width:4%;">By</th>
+                        <th style="width:9%;">Expense</th>
+                        <th style="width:10%;">Amount</th>
+                        <th style="width:9%;">Method</th>
+                       
+                    </tr>
+                </thead>
+                <tbody id="purpose-row-data">
+                    @for (int i = 0; i < Model.vM_ExpensePurposeData.Count(); i++)
+                    {
+                        <tr>
+                            <td class="dtl_number">@Model.vM_ExpensePurposeData[i].DateValue_str</td>
+                            <td class="dtl_number">@Model.vM_ExpensePurposeData[i].Authorized_By.ToString()</td>
+                            <td class="dtl_number">@Model.vM_ExpensePurposeData[i].Trans_Item.ToString()</td>
+                            <td class="dtl_number">@string.Format("{0:C}", Model.vM_ExpensePurposeData[i].Amount.ToString())</td>
+                            <td class="dtl_number">@Model.vM_ExpensePurposeData[i].Method.ToString()</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="dtl_number hide">ExpenseID: @Html.TextBox("ID", Model.vM_ExpensePurposeData[i].ID, new { @class = "form-control  dtl_number text-box single-line" })</td>
+                            <td colspan="5" class="dtl_number">Purpose: @Html.TextBox("Purpose", Model.vM_ExpensePurposeData[i].Purpose, new { @class = "form-control  dtl_number text-box single-line purpose-tb" })</td>
+                        </tr>
+                        <tr>
+                            <td colspan="5" class="dtl_number hide"></td>
+                            <td colspan="5" class="dtl_number">Exclude: 
+                                <select class="form-control" id="Expense-Exclude" style="width:50%" onchange="exclusion_visible()">
+                                    <option value="no">No, Do Not Exclude This Expense</option>
+                                    <option value="yes">Yes, Exclude This Expense</option>
+                            </select>
+                                <span id="exclusion-wrapper" class="hide">
+                                    <br />
+                                    <span style="color:#ae1d1d;">Exclusion Reason:</span>
+                                    @Html.TextBox("Exclusion_Reason", Model.vM_ExpensePurposeData[i].Exclusion_Reason, new { @class = "form-control  dtl_number text-box single-line exclusion-tb" })
+                                    @Html.TextBox("Expense_IND", Model.vM_ExpensePurposeData[i].Expense_IND, new { @class = "form-control  dtl_number text-box single-line hide" })
+                                </span>
+                            </td>
+                            
+                        </tr>
+                    }
+
+
+                    
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</form>
+
+
+<script type="text/javascript">
+ 
+                var elements = document.getElementsByClassName("purpose-tb");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].setAttribute("placeholder", "Enter Expense purpose here...");
+                }
+
+                var elements = document.getElementsByClassName("exclusion-tb");
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].setAttribute("placeholder", "Enter Exclusion reason here...");
+                }
+
+                function exclusion_visible() {
+                    var exclude_ind = document.getElementById("Expense-Exclude").value;
+
+                    var exclude_div = document.getElementById("exclusion-wrapper");
+
+                    if (exclude_ind == 'yes') {
+                        if (exclude_div.classList)
+                            exclude_div.classList.remove('hide');
+                            document.getElementById("Expense_IND").value = "0";
+                    }
+
+                    if (exclude_ind == 'no') {
+                        if (exclude_div.classList)
+                           exclude_div.classList.add('hide');
+                           document.getElementById("Expense_IND").value = "1";
+                    }
+                }
+
+               
+</script>
+

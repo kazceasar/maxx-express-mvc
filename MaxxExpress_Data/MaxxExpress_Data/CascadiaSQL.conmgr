@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="CascadiaSQL"
+  DTS:DTSID="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=184.168.194.62;User ID=ops;Initial Catalog=cascadia;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAgx9Jq1d+LUKolZAnW6DrTwAAAAACAAAAAAAQZgAAAAEAACAAAAAdcjeDasu2G9DOf1EptOB5CGpsKDrXCXEBPgMrGz4DlgAAAAAOgAAAAAIAACAAAAAH5qrD6nRdCEv8Z3V2Sw5KpfXEisc+h7hH3zu5ifZteYAAAADAwP32tvMKRv6lN3NgV4AfNsPi/9QUsiSi7VKluGN/0iALizh6cDV4SZIG2LZbl66J4iuciuQs8GiWLfEvuHIdKnO3mIHm5bllxqXTVWAFuXGDwY7Uk93jeZbWCCYX99gsXIgRXQDdzgnwntuIGdQGX1SYGTEubHDKHvOGIIqAkEAAAABw16S7XcJ9fyBy3BChjMMB+I4Ey42HId8YDzklSdLFsHs6IPOS5QIwn/q7TsafH3gxkEUyrdvReINIHhVtlPPg</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>

@@ -1,0 +1,57 @@
+﻿
+<div class="modal fade" id="payroll_runPayrollModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Run Payroll</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 0px;">
+                <div class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_Payroll_RunPayrollDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Edit-Modal-close" data-dismiss="modal">Close</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="payroll_loadAdjModal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span> Payroll Adjustments</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 0px;">
+                <div id="openpayrollAdjustment" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_Payroll_AdjustmentDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Edit-Modal-close" data-dismiss="modal">Close</button>
+                <button id="btn-Update-Adj" type="button" class="btn btn-primary Update-Load-Cl">Save Changes</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+
+</script>

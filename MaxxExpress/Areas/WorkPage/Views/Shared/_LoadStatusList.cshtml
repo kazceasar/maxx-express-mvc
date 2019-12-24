@@ -1,0 +1,59 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+  <table class="table table-responsive">
+        <thead class="thead-dark">
+            <tr>
+                <th scope="col" width="1%"></th>
+                <th scope="col" width="7%">Load #</th>
+                <th scope="col" width="20%">Load Status</th>
+                <th scope="col" width="12%">Pickup</th>
+                <th scope="col" width="12%">Dropoff</th>
+                <th scope="col" width="10%">Customer</th>
+            </tr>
+        </thead>
+        <tbody>
+@foreach (var d in ViewData["OpenLoadsStatusList"] as IEnumerable<MaxxExpress.vw_loads_summary_open>)
+{
+            <tr>
+                <td><div class="checkbox checkbox-success"><input type="checkbox" name="updateThisStatus_chk" class="updateThisStatus_CL" data-payout="@d.Payout" value="@d.Load_Number" onclick="updateLoadStatusOnlyThis(this)"><label></label></div></td>
+                <td class="loadnumberEdit_cl dtl_number">@d.Load_Number</td>
+                <td>@Html.DropDownList("LoadStatus_" + @d.Load_Number + "", Model.vM_UpdateStatus_StatusList, d.Status, new { @class = "form-control StatusDD", @disabled = true })  </td>
+                <td>@d.Pickup</td>
+                <td>@d.DropOff</td>
+                <td>@d.Customer_Nm</td>
+            </tr>
+
+
+            }
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        //Edit only one Load
+        function updateLoadStatusOnlyThis(id) {
+            var thisload_chkBox = document.getElementsByClassName("updateThisStatus_CL");
+            var currVal = 'LoadStatus_' + id.value;
+            Array.prototype.forEach.call(thisload_chkBox, function (el) {
+                el.checked = false;
+            });
+            id.checked = true;
+
+            var thisload_statusDD = document.getElementsByClassName('StatusDD');
+            Array.prototype.forEach.call(thisload_statusDD, function (el2) {
+                if (currVal == el2.id) {
+                    el2.disabled = false;
+                } else 
+                {
+                    el2.disabled = true;
+                }
+            });
+
+            var editButton = document.getElementsByClassName("updatethisStatus_btn");
+            Array.prototype.forEach.call(editButton, function (el3) {
+                el3.disabled = false;
+            });
+
+        }
+
+
+    </script>

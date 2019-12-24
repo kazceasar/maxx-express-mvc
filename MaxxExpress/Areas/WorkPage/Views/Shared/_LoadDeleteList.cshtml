@@ -1,0 +1,68 @@
+﻿<table class="table table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width:1%;"></th>
+            <th scope="col" style="width:10%;">Load #</th>
+            <th scope="col" style="width:15%;">Customer</th>
+            <th scope="col" class="driver-restricted hide" style="width:5%;">Payout</th>
+            <th scope="col" style="width:10%;">Load Status</th>
+            <th scope="col" style="width:10%;">Pickup</th>
+            <th scope="col" width="17%">Dropoff</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var d in ViewData["OpenLoadsEditList"] as IEnumerable<MaxxExpress.vw_loads_summary_open>)
+        {
+            <tr>
+                <td><div class="checkbox checkbox-success"><input type="checkbox" name="editThisLoad_chk" class="editThisLoad_CL" value="@d.Load_Number" onclick="editOnlyThis(this)"><label></label></div></td>
+                <td class="loadnumberEdit_cl dtl_number driver-restricted">@d.Load_Number</td>
+                <td>@d.Customer_Nm</td>
+                <td class="money-round dtl_number hide driver-restricted">@d.Payout</td>
+                <td @(d.Status == "Not Started" ? "class=status-not-started" : d.Status == "In-Route" ? "class=status-in-route" : d.Status == "Delivered" ? "class=status-delivered" : "class=other-status")>@d.Status</td>
+                <td>@d.Pickup</td>
+                <td>@d.DropOff</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+@{
+        if (Session["LogUserAccess"].ToString() == "Driver")
+        {
+            <script>
+               
+            </script>
+
+        }
+        else
+        {
+
+        }
+}
+
+<script type="text/javascript">
+    //Edit only one Load
+    function editOnlyThis(id) {
+        var myCheckbox = document.getElementsByClassName("editThisLoad_CL");
+        Array.prototype.forEach.call(myCheckbox, function (el) {
+            el.checked = false;
+        });
+        id.checked = true;
+
+        var editButton = document.getElementsByClassName("editthisLoad_btn");
+        Array.prototype.forEach.call(editButton, function (el2) {
+            el2.disabled = false;
+        });
+
+        var editButton = document.getElementsByClassName("deletethisLoad_btn");
+        Array.prototype.forEach.call(editButton, function (el3) {
+            el3.disabled = false;
+        });
+    }
+
+
+
+</script>

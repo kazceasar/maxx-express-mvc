@@ -1,0 +1,60 @@
+@using System.Web.Http
+@using System.Web.Http.Controllers
+@using System.Web.Http.Description
+@using System.Collections.ObjectModel
+
+@{
+    ViewBag.Title = "Maxx Express Portal";
+}
+<!-- Begin Left Panel -->
+@{
+    if (Session["LogUserAccess"].ToString() == "Manager")
+    {
+        Html.RenderPartial("_PortalAreaLeft_Admin");
+    }
+    if (Session["LogUserAccess"].ToString() == "Driver")
+    {
+        Html.RenderPartial("_PortalAreaLeft_Driver");
+    }
+}
+<!-- End Left Panel -->
+<!-- Begin Right Panel -->
+@{
+    if (Session["LogUserAccess"].ToString() == "Manager")
+    {
+        Html.RenderPartial("_PortalAreaRight_Admin");
+    }
+    if (Session["LogUserAccess"].ToString() == "Driver")
+    {
+        Html.RenderPartial("_PortalAreaRight_Driver");
+    }
+}
+<!-- EndRight Panel -->
+<!-- Begin Load Modals -->
+@{
+    Html.RenderPartial("_LoadModals");
+}
+<!-- End Load Modals -->
+
+<!--Start Show Session Expire Warning Popup here -->
+
+<div class="modal fade" id="session-expire-warning-modal" aria-hidden="true" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Session Expired Message</h4>
+            </div>
+            <div class="modal-body">
+                Your session has expired please log back in.
+            </div>
+            <div class="modal-footer">
+                @*<button id="btn-LogoutNow" type="button" class="btn btn-outline-danger" style="padding: 6px 12px; margin-bottom: 0; font-size: 14px; font-weight: normal; ">Logout now</button>*@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--End Show Session Expire Warning Popup here -->
+
+<script src="../Areas/PortalPage/js/fileuploadjs/jquery.fileupload.js"></script>

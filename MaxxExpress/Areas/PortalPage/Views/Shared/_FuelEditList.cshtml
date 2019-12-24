@@ -1,0 +1,66 @@
+﻿<table class="table table-responsive">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col" style="width:1%;"></th>
+            <th scope="col" style="width:10%;">Date</th>
+            <th scope="col" style="width:15%;">Location</th>
+            <th scope="col" style=" width:10%">Gallons</th>
+            <th scope="col" style="width:10%;">Amount</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var d in ViewData["FuelPurchasesList"] as IEnumerable<MaxxExpress.tbl_fct_fuel_entry>)
+        {
+            <tr>
+                <td><div class="checkbox checkbox-success"><input type="checkbox" name="ThisFuelPurchase_chk" class="ThisFuelPurchase_CL" value="@d.ID" onclick="editOnlyThisFuelPurchase(this)"><label></label></div></td>
+                <td class="loadnumberEdit_cl dtl_number">@d.Fuel_Date</td>
+                <td>@d.Fuel_Location</td>
+                <td>@d.Fuel_Gallons</td>
+                <td class="money-round dtl_number">@d.Fuel_Amount</td>
+            </tr>
+        }
+
+
+    </tbody>
+</table>
+
+@{
+    if (Session["LogUserAccess"].ToString() == "Driver")
+    {
+        <script>
+
+        </script>
+
+    }
+    else
+    {
+
+    }
+}
+
+<script type="text/javascript">
+    //Edit only one purchase at a time
+    function editOnlyThisFuelPurchase(id) {
+        var myCheckbox = document.getElementsByClassName("ThisFuelPurchase_CL");
+        Array.prototype.forEach.call(myCheckbox, function (el) {
+            el.checked = false;
+        });
+        id.checked = true;
+
+        var deleteButton = document.getElementsByClassName("deletethisFuelPurchase_btn");
+        Array.prototype.forEach.call(deleteButton, function (el2) {
+            el2.disabled = false;
+        });
+
+        var paidButton = document.getElementsByClassName("markaspaidthisFuelPurchase_btn");
+        Array.prototype.forEach.call(paidButton, function (el3) {
+            el3.disabled = false;
+        });
+
+
+    }
+
+
+
+</script>

@@ -1,0 +1,25 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+
+@foreach (var p in Model.vM_financial_expenses_RO_Data
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_expenses_reoccurring>)
+{
+    <tr> 
+        <td class="dtl_number">@p.Expense_Name</td>
+        <td class="dtl_number">@string.Format("{0}", p.Amount)</td>
+        <td class="dtl_number">@p.Method</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

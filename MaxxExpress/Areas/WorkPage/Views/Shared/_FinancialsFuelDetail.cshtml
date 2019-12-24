@@ -1,0 +1,30 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+
+@foreach (var p in Model.vM_financial_FuelData
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_fuel>)
+{
+    <tr> 
+        <td class="dtl_number">@p.Trans_Date.ToString("MM/dd")</td>
+        <td class="dtl_number">@p.Location</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Amount)</td>
+        <td class="dtl_number">@p.Gallons</td>
+        <td class="dtl_number">@p.Price</td>
+        <td class="dtl_number">@p.Fuel_Type</td>
+        <td class="dtl_number">@p.Driver</td>
+        <td class="dtl_number">@p.FuelSource</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

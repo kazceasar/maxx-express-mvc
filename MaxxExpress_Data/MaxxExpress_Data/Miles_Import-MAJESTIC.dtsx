@@ -1,0 +1,3003 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="6/2/2018 1:08:35 PM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="KIRA10"
+  DTS:CreatorName="KIRA10\user"
+  DTS:DTSID="{84310F99-3B58-40AC-A4D7-01F98746A79C}"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="12.0.2430.0"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Miles_Import"
+  DTS:PackageType="5"
+  DTS:VersionBuild="50"
+  DTS:VersionGUID="{BFFC0FC2-E04F-4B4C-8EC1-4C4BABCA6696}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{1908DA63-073D-4DCF-966C-6F32D832E091}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x0022_"
+          DTS:CodePage="65001"
+          DTS:ConnectionString="\\Majestic\drogo\OneDrive\Documents Pictures and Media\MaxxExpress\Data Imports\Miles\DetailedReport[KazeyEllis](11062018-11262018).csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Number"
+              DTS:DTSID="{E059CB53-33A8-4C28-A0E2-F68431A34F20}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Vehicle Name"
+              DTS:DTSID="{45351EAE-6B32-4A60-9C83-EAC190BD4BE6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Registration Number"
+              DTS:DTSID="{ACBC4303-0254-42CD-8F00-BADC3EED0CBD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver Number"
+              DTS:DTSID="{DBB386D7-5D44-427B-B53D-EEDEB0055727}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Driver Name"
+              DTS:DTSID="{31B47530-E8FB-43B0-BEFB-9B51CE0CCFF6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Employee ID"
+              DTS:DTSID="{DFAD6D0D-FB97-4F3F-A1D1-F0ACF244D564}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Time"
+              DTS:DTSID="{1EB9D7CC-3813-4CE4-9E4E-67589C319034}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time Zone Offset"
+              DTS:DTSID="{B29FC823-19FD-4561-80FE-A2AB7E7D837A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Time Zone"
+              DTS:DTSID="{BD1803E5-6E48-4DD2-BA8E-20196523A88E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Status"
+              DTS:DTSID="{519D5DF7-AE26-4F1A-8AC3-A4333A497D7D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Latitude"
+              DTS:DTSID="{E5F1817F-289E-4A8B-9BC0-FF4D554D78A0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Longitude"
+              DTS:DTSID="{729F1875-C0DB-459F-8AF3-24700674D9D1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Street Address"
+              DTS:DTSID="{F0C46317-CCA0-419D-9A42-1144990F5891}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{5C323529-DDBA-46A7-8A8E-F351E5F95463}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{C9677A4B-DB30-4CE8-8DDB-78141C1B4A9B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Postal code"
+              DTS:DTSID="{D4658B6A-4619-4EE9-BF5F-B8D6D0BABB9C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Speed"
+              DTS:DTSID="{CCE5F39C-568B-4033-8F24-83F1F219804F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Speed Limit"
+              DTS:DTSID="{8ECF5E89-20D8-4E94-BEE3-02B4FB7E74D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Heading"
+              DTS:DTSID="{0AA50BEF-E4FE-4E28-8D16-D33F0B9482ED}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Odometer"
+              DTS:DTSID="{EA0C9EED-3367-48C3-9C3D-24D9A10B927F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delta time"
+              DTS:DTSID="{8DF3234A-8BC0-42BF-9D85-EB0F92C36F47}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delta time (seconds)"
+              DTS:DTSID="{76465FAC-637B-44AE-A778-22F5B39FE79F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Delta distance"
+              DTS:DTSID="{A3FBC5B8-1AA5-4C7F-B9ED-6E9E2655930E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accumulated Time"
+              DTS:DTSID="{43B981C5-27FB-4A05-A932-1D13692328DD}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accumulated Time (Seconds)"
+              DTS:DTSID="{DAC1F422-3352-4F45-B155-CB6D868C1B16}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Accumulated Distance"
+              DTS:DTSID="{EDBB583C-45A7-4C21-A038-864F352E71AF}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Place IDs"
+              DTS:DTSID="{A579289D-A18B-4D24-8DB0-3130E2393357}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Place Names"
+              DTS:DTSID="{896D45F5-F77F-4507-B960-0C19857E54A4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Ignition"
+              DTS:DTSID="{DAEB5B8D-1FF2-436F-895C-62529A130024}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Daily accumulated distance"
+              DTS:DTSID="{D64A8F1F-24CC-4514-8945-F823BEE2C7B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ESN"
+              DTS:DTSID="{33203706-A39E-4156-9F2B-E52A23421F76}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables />
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Delete stg_fleetmatics_detail"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{D76A81D3-8050-4CF0-995E-C54B04BF754B}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Delete stg_fleetmatics_detail"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="DELETE FROM [tbl_stg_fleetmatics_detail];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Insert Stage"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{E8B7EFF2-B8EA-49B2-8ECE-C63F8BDA2CDE}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Insert Stage"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Insert Stage\Data Conversion"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Data Conversion;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Data Conversion"
+              name="Data Conversion"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input]"
+                  name="Data Conversion Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Vehicle Number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle Number"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Vehicle Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Vehicle Name"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Name]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Registration Number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Registration Number"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Registration Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Driver Number]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver Number"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Driver Name]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Driver Name"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Name]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Employee ID]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Employee ID"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Employee ID]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Date Time]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Date Time"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Time Zone Offset]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Time Zone Offset"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone Offset]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Time Zone]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Time Zone"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Status]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Status"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Status]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Latitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Latitude"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Latitude]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Longitude]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Longitude"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Longitude]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Street Address]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Street Address"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Street Address]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[City]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[State]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="State"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Postal code]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Postal code"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Postal code]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Speed]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Speed"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Speed Limit]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Speed Limit"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed Limit]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Heading]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Heading"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Heading]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Odometer]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Odometer"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Delta time]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Delta time"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Delta time (seconds)]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Delta time (seconds)"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time (seconds)]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Delta distance]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Delta distance"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Accumulated Time]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accumulated Time"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Accumulated Time (Seconds)]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accumulated Time (Seconds)"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time (Seconds)]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Accumulated Distance]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Accumulated Distance"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Ignition]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Ignition"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Ignition]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Daily accumulated distance]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Daily accumulated distance"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Daily accumulated distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[ESN]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="ESN"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[ESN]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Place IDs]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Place IDs"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place IDs]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input].Columns[Place Names]"
+                      cachedCodepage="65001"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Place Names"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place Names]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output]"
+                  exclusionGroup="1"
+                  name="Data Conversion Output"
+                  synchronousInputId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Number]"
+                      name="Copy of Vehicle Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Name]"
+                      name="Copy of Vehicle Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Registration Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Registration Number]"
+                      name="Copy of Registration Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Registration Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Number]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Number]"
+                      name="Copy of Driver Number"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Number]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Name]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Name]"
+                      name="Copy of Driver Name"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Name]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Employee ID]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Employee ID]"
+                      name="Copy of Employee ID"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Employee ID]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]"
+                      name="Copy of Date Time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone Offset]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone Offset]"
+                      name="Copy of Time Zone Offset"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone Offset]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone]"
+                      name="Copy of Time Zone"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Status]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Status]"
+                      name="Copy of Status"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Status]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Latitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Latitude]"
+                      name="Copy of Latitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Latitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Longitude]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Longitude]"
+                      name="Copy of Longitude"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Longitude]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Street Address]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Street Address]"
+                      name="Copy of Street Address"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Street Address]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]"
+                      name="Copy of City"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[City]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]"
+                      name="Copy of State"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[State]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Postal code]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Postal code]"
+                      name="Copy of Postal code"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Postal code]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed]"
+                      name="Copy of Speed"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed Limit]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed Limit]"
+                      name="Copy of Speed Limit"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed Limit]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Heading]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Heading]"
+                      name="Copy of Heading"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Heading]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]"
+                      name="Copy of Odometer"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time]"
+                      name="Copy of Delta time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time (seconds)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time (seconds)]"
+                      name="Copy of Delta time (seconds)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time (seconds)]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta distance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta distance]"
+                      name="Copy of Delta distance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta distance]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time]"
+                      name="Copy of Accumulated Time"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time (Seconds)]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time (Seconds)]"
+                      name="Copy of Accumulated Time (Seconds)"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time (Seconds)]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Distance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Distance]"
+                      name="Copy of Accumulated Distance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Distance]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ignition]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ignition]"
+                      name="Copy of Ignition"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Ignition]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily accumulated distance]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily accumulated distance]"
+                      name="Copy of Daily accumulated distance"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Daily accumulated distance]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ESN]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ESN]"
+                      name="Copy of ESN"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[ESN]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place IDs]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place IDs]"
+                      name="Copy of Place IDs"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place IDs]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place Names]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      length="255"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place Names]"
+                      name="Copy of Place Names"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Specifies the input column used as the source of data for the conversion."
+                          name="SourceInputColumnLineageID">#{Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place Names]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Data Conversion Error Output"
+                  synchronousInputId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Stage\Derived Column"
+              componentClassID="Microsoft.DerivedColumn"
+              contactInfo="Derived Column;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Creates new column values by applying expressions to transformation input columns. Create new columns or overwrite existing ones. For example, concatenate the values from the 'first name' and 'last name' column to make a 'full name' column."
+              name="Derived Column"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Insert Stage\Derived Column.Inputs[Derived Column Input]"
+                  description="Input to the Derived Column Transformation"
+                  name="Derived Column Input">
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Stage\Derived Column.Outputs[Derived Column Output]"
+                  description="Default Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  name="Derived Column Output"
+                  synchronousInputId="Package\Insert Stage\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      dataType="dbTimeStamp"
+                      errorOrTruncationOperation="Computation"
+                      errorRowDisposition="FailComponent"
+                      lineageId="Package\Insert Stage\Derived Column.Outputs[Derived Column Output].Columns[createdate]"
+                      name="createdate"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Expression"
+                          name="Expression">[GETDATE]()</property>
+                        <property
+                          containsID="true"
+                          dataType="System.String"
+                          description="Derived Column Friendly Expression"
+                          expressionType="Notify"
+                          name="FriendlyExpression">GETDATE()</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Insert Stage\Derived Column.Outputs[Derived Column Error Output]"
+                  description="Error Output of the Derived Column Transformation"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Derived Column Error Output"
+                  synchronousInputId="Package\Insert Stage\Derived Column.Inputs[Derived Column Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Derived Column.Outputs[Derived Column Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Stage\Flat File Source"
+              componentClassID="Microsoft.FlatFileSource"
+              contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+              description="Flat File Source"
+              localeId="1033"
+              name="Flat File Source"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether zero-length columns are treated as null."
+                  name="RetainNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                  name="FileNameColumnName"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Stage\Flat File Source.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output]"
+                  name="Flat File Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Number]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Number]"
+                      name="Vehicle Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Name]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Vehicle Name]"
+                      name="Vehicle Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Registration Number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Registration Number]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Registration Number]"
+                      name="Registration Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Number]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver Number]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Number]"
+                      name="Driver Number"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Name]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver Name]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Driver Name]"
+                      name="Driver Name"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Employee ID]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Employee ID]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Employee ID]"
+                      name="Employee ID"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Date Time]"
+                      name="Date Time"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone Offset]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time Zone Offset]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone Offset]"
+                      name="Time Zone Offset"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time Zone]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Time Zone]"
+                      name="Time Zone"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Status]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Status]"
+                      name="Status"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Latitude]"
+                      name="Latitude"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Longitude]"
+                      name="Longitude"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Street Address]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Address]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Street Address]"
+                      name="Street Address"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Postal code]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Postal code]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Postal code]"
+                      name="Postal code"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Speed]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed]"
+                      name="Speed"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed Limit]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Speed Limit]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Speed Limit]"
+                      name="Speed Limit"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Heading]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Heading]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Heading]"
+                      name="Heading"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Odometer]"
+                      name="Odometer"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta time]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time]"
+                      name="Delta time"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time (seconds)]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta time (seconds)]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta time (seconds)]"
+                      name="Delta time (seconds)"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta distance]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta distance]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Delta distance]"
+                      name="Delta distance"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Time]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time]"
+                      name="Accumulated Time"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time (Seconds)]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Time (Seconds)]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Time (Seconds)]"
+                      name="Accumulated Time (Seconds)"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Distance]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Distance]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Accumulated Distance]"
+                      name="Accumulated Distance"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Ignition]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ignition]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Ignition]"
+                      name="Ignition"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Daily accumulated distance]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Daily accumulated distance]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Daily accumulated distance]"
+                      name="Daily accumulated distance"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[ESN]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ESN]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[ESN]"
+                      name="ESN"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place IDs]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Place IDs]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place IDs]"
+                      name="Place IDs"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place Names]"
+                      codePage="65001"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="IgnoreFailure"
+                      externalMetadataColumnId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Place Names]"
+                      length="50"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].Columns[Place Names]"
+                      name="Place Names"
+                      truncationRowDisposition="IgnoreFailure">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                          name="FastParse">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the data is in binary format."
+                          name="UseBinaryFormat">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Vehicle Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Vehicle Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Registration Number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Registration Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver Number]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Driver Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Driver Name]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Driver Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Employee ID]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Employee ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Date Time]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Date Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time Zone Offset]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Time Zone Offset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Time Zone]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Time Zone" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Status]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Latitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Longitude]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Street Address]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Street Address" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[City]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[State]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Postal code]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Postal code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Speed]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Speed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Speed Limit]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Speed Limit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Heading]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Heading" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Odometer]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta time]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Delta time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta time (seconds)]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Delta time (seconds)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Delta distance]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Delta distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Time]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Accumulated Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Time (Seconds)]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Accumulated Time (Seconds)" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Accumulated Distance]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Accumulated Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Place IDs]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Place IDs" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Place Names]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Place Names" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Ignition]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Ignition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[Daily accumulated distance]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="Daily accumulated distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ESN]"
+                      codePage="65001"
+                      dataType="str"
+                      length="50"
+                      name="ESN" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output]"
+                  isErrorOut="true"
+                  name="Flat File Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      codePage="65001"
+                      dataType="text"
+                      description="Flat File Source Error Output Column"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                      name="Flat File Source Error Output Column" />
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Insert Stage\OLE DB Destination"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="OLE DB Destination"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[tbl_stg_fleetmatics_detail]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Insert Stage\OLE DB Destination.Connections[OleDbConnection]"
+                  connectionManagerID="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[CascadiaSQL]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[createdate]"
+                      cachedDataType="dbTimeStamp"
+                      cachedName="createdate"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      lineageId="Package\Insert Stage\Derived Column.Outputs[Derived Column Output].Columns[createdate]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of ESN]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of ESN"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ESN]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of ESN]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Daily accumulated distance]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Daily accumulated distance"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Daily_Accumulated_Distance]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Daily accumulated distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Ignition]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Ignition"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ignition]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Ignition]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Accumulated Distance]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Accumulated Distance"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Distance]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Accumulated Time (Seconds)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Accumulated Time (Seconds)"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Time_Seconds]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time (Seconds)]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Accumulated Time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Accumulated Time"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Time]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Accumulated Time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Delta distance]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Delta distance"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Distance]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta distance]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Delta time (seconds)]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Delta time (seconds)"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Time_Seconds]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time (seconds)]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Delta time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Delta time"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Time]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Delta time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Odometer]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Odometer"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Odometer]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Heading]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Heading"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Heading]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Heading]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Speed Limit]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Speed Limit"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed_Limit]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed Limit]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Speed]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Speed"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Speed]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of State]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of State"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of State]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Postal code]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Postal code"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postal_code]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Postal code]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of City]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of City"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of City]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Street Address]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Street Address"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Address]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Street Address]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Longitude]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Longitude"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Longitude]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Latitude]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Latitude"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Latitude]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Status]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Status"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Status]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Time Zone]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Time Zone"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_Zone]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Time Zone Offset]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Time Zone Offset"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_Zone_Offset]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Time Zone Offset]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Date Time]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Date Time"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Time]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Date Time]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Employee ID]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Employee ID"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Employee_ID]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Employee ID]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Driver Name"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Name]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Name]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Driver Number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Driver Number"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Number]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Driver Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Registration Number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Registration Number"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Registration_Number]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Registration Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Vehicle Name]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Vehicle Name"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Name]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Name]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Vehicle Number]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Vehicle Number"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Number]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Vehicle Number]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Place Names]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Place Names"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Place_Names]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place Names]" />
+                    <inputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Copy of Place IDs]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Copy of Place IDs"
+                      externalMetadataColumnId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Place_IDs]"
+                      lineageId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output].Columns[Copy of Place IDs]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Vehicle_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Vehicle_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Registration_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Registration_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Number]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver_Number" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Driver_Name]"
+                      dataType="wstr"
+                      length="255"
+                      name="Driver_Name" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Employee_ID]"
+                      dataType="wstr"
+                      length="255"
+                      name="Employee_ID" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Date_Time]"
+                      dataType="wstr"
+                      length="255"
+                      name="Date_Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_Zone_Offset]"
+                      dataType="wstr"
+                      length="255"
+                      name="Time_Zone_Offset" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Time_Zone]"
+                      dataType="wstr"
+                      length="255"
+                      name="Time_Zone" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Status]"
+                      dataType="wstr"
+                      length="255"
+                      name="Status" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Latitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Latitude" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Longitude]"
+                      dataType="wstr"
+                      length="255"
+                      name="Longitude" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Street_Address]"
+                      dataType="wstr"
+                      length="255"
+                      name="Street_Address" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[City]"
+                      dataType="wstr"
+                      length="255"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[State]"
+                      dataType="wstr"
+                      length="255"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Postal_code]"
+                      dataType="wstr"
+                      length="255"
+                      name="Postal_code" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed]"
+                      dataType="wstr"
+                      length="255"
+                      name="Speed" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Speed_Limit]"
+                      dataType="wstr"
+                      length="255"
+                      name="Speed_Limit" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Heading]"
+                      dataType="wstr"
+                      length="255"
+                      name="Heading" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Odometer]"
+                      dataType="wstr"
+                      length="255"
+                      name="Odometer" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Time]"
+                      dataType="wstr"
+                      length="255"
+                      name="Delta_Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Time_Seconds]"
+                      dataType="wstr"
+                      length="255"
+                      name="Delta_Time_Seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Delta_Distance]"
+                      dataType="wstr"
+                      length="255"
+                      name="Delta_Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Time]"
+                      dataType="wstr"
+                      length="255"
+                      name="Accumulated_Time" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Time_Seconds]"
+                      dataType="wstr"
+                      length="255"
+                      name="Accumulated_Time_Seconds" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Accumulated_Distance]"
+                      dataType="wstr"
+                      length="255"
+                      name="Accumulated_Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Place_IDs]"
+                      dataType="wstr"
+                      length="255"
+                      name="Place_IDs" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Place_Names]"
+                      dataType="wstr"
+                      length="255"
+                      name="Place_Names" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Ignition]"
+                      dataType="wstr"
+                      length="255"
+                      name="Ignition" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Daily_Accumulated_Distance]"
+                      dataType="wstr"
+                      length="255"
+                      name="Daily_Accumulated_Distance" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ESN]"
+                      dataType="wstr"
+                      length="255"
+                      name="ESN" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CreateDate]"
+                      dataType="dbTimeStamp"
+                      name="CreateDate" />
+                    <externalMetadataColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ID]"
+                      dataType="i4"
+                      name="ID" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Insert Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Insert Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Insert Stage\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Insert Stage.Paths[Data Conversion Output]"
+              endId="Package\Insert Stage\Derived Column.Inputs[Derived Column Input]"
+              name="Data Conversion Output"
+              startId="Package\Insert Stage\Data Conversion.Outputs[Data Conversion Output]" />
+            <path
+              refId="Package\Insert Stage.Paths[Derived Column Output]"
+              endId="Package\Insert Stage\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              name="Derived Column Output"
+              startId="Package\Insert Stage\Derived Column.Outputs[Derived Column Output]" />
+            <path
+              refId="Package\Insert Stage.Paths[Flat File Source Output]"
+              endId="Package\Insert Stage\Data Conversion.Inputs[Data Conversion Input]"
+              name="Flat File Source Output"
+              startId="Package\Insert Stage\Flat File Source.Outputs[Flat File Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Merge fct_fleetmatics_detail"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{75B01C3F-A32D-4DC4-BD84-147848818C70}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Merge fct_fleetmatics_detail"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2014; © 2014 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{C9997460-BBA6-48C3-A8EA-8BA9D828618B}"
+          SQLTask:SqlStatementSource="MERGE  tbl_fct_fleetmatics_detail fct&#xA;USING (&#xA;&#xA;SELECT &#xA;      [Vehicle_Number]&#xA;      ,[Vehicle_Name]&#xA;      ,[Registration_Number]&#xA;      ,[Driver_Number]&#xA;      ,[Driver_Name]&#xA;      ,[Employee_ID]&#xA;      ,[Date_Time]&#xA;      ,[Time_Zone_Offset]&#xA;      ,[Time_Zone]&#xA;      ,[Status]&#xA;      ,[Latitude]&#xA;      ,[Longitude]&#xA;      ,[Street_Address]&#xA;      ,[City]&#xA;      ,[State]&#xA;      ,[Postal_code]&#xA;      ,[Speed]&#xA;      ,[Speed_Limit]&#xA;      ,[Heading]&#xA;      ,[Odometer]&#xA;      ,[Delta_Time]&#xA;      ,[Delta_Time_Seconds]&#xA;      ,[Delta_Distance]&#xA;      ,[Accumulated_Time]&#xA;      ,[Accumulated_Time_Seconds]&#xA;      ,[Accumulated_Distance]&#xA;      ,[Place_IDs]&#xA;      ,[Place_Names]&#xA;      ,[Ignition]&#xA;      ,[Daily_Accumulated_Distance]&#xA;      ,[ESN]&#xA;      ,[CreateDate]&#xA;  FROM [cascadia].[dbo].[tbl_stg_fleetmatics_detail]&#xA;&#xA;&#xA;  ) STG on (&#xA;  fct.[Vehicle_Number] = stg.[Vehicle_Number] and&#xA;  fct.[Driver_Number] = stg.[Driver_Number] and&#xA;  fct.[Date_Time] = stg.[Date_Time] and&#xA;  fct.[Latitude] = stg.[Latitude] and&#xA;  fct.[Longitude] = stg.[Longitude]&#xA;  ) &#xA;  WHEN NOT MATCHED THEN INSERT&#xA;  (&#xA;       [Vehicle_Number]&#xA;      ,[Vehicle_Name]&#xA;      ,[Registration_Number]&#xA;      ,[Driver_Number]&#xA;      ,[Driver_Name]&#xA;      ,[Employee_ID]&#xA;      ,[Date_Time]&#xA;      ,[Time_Zone_Offset]&#xA;      ,[Time_Zone]&#xA;      ,[Status]&#xA;      ,[Latitude]&#xA;      ,[Longitude]&#xA;      ,[Street_Address]&#xA;      ,[City]&#xA;      ,[State]&#xA;      ,[Postal_code]&#xA;      ,[Speed]&#xA;      ,[Speed_Limit]&#xA;      ,[Heading]&#xA;      ,[Odometer]&#xA;      ,[Delta_Time]&#xA;      ,[Delta_Time_Seconds]&#xA;      ,[Delta_Distance]&#xA;      ,[Accumulated_Time]&#xA;      ,[Accumulated_Time_Seconds]&#xA;      ,[Accumulated_Distance]&#xA;      ,[Place_IDs]&#xA;      ,[Place_Names]&#xA;      ,[Ignition]&#xA;      ,[Daily_Accumulated_Distance]&#xA;      ,[ESN]&#xA;  )&#xA;  VALUES (&#xA;       stg.[Vehicle_Number]&#xA;      ,stg.[Vehicle_Name]&#xA;      ,stg.[Registration_Number]&#xA;      ,stg.[Driver_Number]&#xA;      ,stg.[Driver_Name]&#xA;      ,stg.[Employee_ID]&#xA;      ,stg.[Date_Time]&#xA;      ,stg.[Time_Zone_Offset]&#xA;      ,stg.[Time_Zone]&#xA;      ,stg.[Status]&#xA;      ,stg.[Latitude]&#xA;      ,stg.[Longitude]&#xA;      ,stg.[Street_Address]&#xA;      ,stg.[City]&#xA;      ,stg.[State]&#xA;      ,stg.[Postal_code]&#xA;      ,stg.[Speed]&#xA;      ,stg.[Speed_Limit]&#xA;      ,stg.[Heading]&#xA;      ,stg.[Odometer]&#xA;      ,stg.[Delta_Time]&#xA;      ,stg.[Delta_Time_Seconds]&#xA;      ,stg.[Delta_Distance]&#xA;      ,stg.[Accumulated_Time]&#xA;      ,stg.[Accumulated_Time_Seconds]&#xA;      ,stg.[Accumulated_Distance]&#xA;      ,stg.[Place_IDs]&#xA;      ,stg.[Place_Names]&#xA;      ,stg.[Ignition]&#xA;      ,stg.[Daily_Accumulated_Distance]&#xA;      ,stg.[ESN]&#xA;  );" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C7B372E6-2648-4CFB-842B-443E0DD1EF3F}"
+      DTS:From="Package\Delete stg_fleetmatics_detail"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Insert Stage" />
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
+      DTS:CreationName=""
+      DTS:DTSID="{95CBFEA9-F9F7-4D0C-97B8-A3D45C4BC895}"
+      DTS:From="Package\Insert Stage"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint 1"
+      DTS:To="Package\Merge fct_fleetmatics_detail" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql12">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="214.4,41.6"
+          Id="Package\Delete stg_fleetmatics_detail"
+          TopLeft="69.142858320353,25.082353292947" />
+        <NodeLayout
+          Size="136,41.6"
+          Id="Package\Insert Stage"
+          TopLeft="106.00000006812,119.988236598243" />
+        <NodeLayout
+          Size="211.2,41.6"
+          Id="Package\Merge fct_fleetmatics_detail"
+          TopLeft="65.1428582522334,208.000002917121" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="175.171429194237,66.682353292947">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,53.305883305296"
+              Start="0,0"
+              End="0,45.805883305296">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.805883305296" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint 1]"
+          TopLeft="172.371429160177,161.588236598243">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,46.4117663188788"
+              Start="0,0"
+              End="0,38.9117663188788">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,38.9117663188788" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Insert Stage">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="153.6,41.6"
+          Id="Package\Insert Stage\Derived Column"
+          TopLeft="243.8571429058,212.117646415341" />
+        <NodeLayout
+          Size="171.2,41.6"
+          Id="Package\Insert Stage\OLE DB Destination"
+          TopLeft="236.57142858116,306.305881263311" />
+        <NodeLayout
+          Size="156,41.6"
+          Id="Package\Insert Stage\Data Conversion"
+          TopLeft="241.85714283768,134.094117423985" />
+        <NodeLayout
+          Size="151.2,41.6"
+          Id="Package\Insert Stage\Flat File Source"
+          TopLeft="246,37" />
+        <EdgeLayout
+          Id="Package\Insert Stage.Paths[Data Conversion Output]"
+          TopLeft="320.25714287174,175.694117423985">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,36.423528991356"
+              Start="0,0"
+              End="0,28.923528991356">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,28.923528991356" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Stage.Paths[Flat File Source Output]"
+          TopLeft="320.72857141884,78.6">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,55.4941174239848"
+              Start="0,0"
+              End="0,47.9941174239848">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,47.9941174239848" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Insert Stage.Paths[Derived Column Output]"
+          TopLeft="321.41428574348,253.717646415341">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,52.5882348479697"
+              Start="0,0"
+              End="0,45.0882348479697">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,45.0882348479697" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Insert Stage\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

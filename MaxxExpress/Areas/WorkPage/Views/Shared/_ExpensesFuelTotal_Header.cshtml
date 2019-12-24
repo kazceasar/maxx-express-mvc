@@ -1,0 +1,22 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{
+
+    string totalFuelDateText = Model.fuel_ViewByDate.ToString();
+    string totalFuel = string.Format("{0:C}", Model.fuel_Total);
+}
+<strong class="card-title">
+    <span id="expenseDateText" class="dtl_number">@Html.DisplayFor(modelItem => totalFuelDateText)</span>
+    - <span id="expenseTotal" class="dtl_number">@Html.DisplayFor(modelItem => totalFuel)</span>
+    </strong>
+
+    <script type="text/javascript">
+
+
+
+    </script>
+
+
+
+
+

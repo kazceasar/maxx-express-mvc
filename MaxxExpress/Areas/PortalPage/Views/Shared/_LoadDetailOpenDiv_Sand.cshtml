@@ -1,0 +1,232 @@
+﻿@foreach (var dtl in ViewData["OpenLoadsDetail"]
+                             as IEnumerable<MaxxExpress.vw_loads_detail_open>)
+{
+    <div class="card border border-secondary">
+        <div class="card-header card-header-customer">
+            <span class="dtl_label-main padding-right-md">BOL Number :</span><span class="dtl_value dtl_number padding-right-md">@dtl.Load_Number</span>
+            <span class="dtl_label-main">Sand Ticket :</span><span class="dtl_value padding-right-md">
+                @if (dtl.Load_Confirmation_URL == null)
+                {<span class="red small">No Documents</span> }
+                else
+                {<a class="dtl_number custom-link" href=@dtl.Load_Confirmation_URL target="_blank">Click to View Ticket</a>}
+            </span>
+            @if (@dtl.BOL_URL != null)
+            {
+                <span class="dtl_label-main">BOL : </span><span class="dtl_value dtl_number padding-right-md"><a class="dtl_number custom-link" href=@dtl.BOL_URL@dtl.BOL_FILE_TYPE target="_blank">Click to View BOL</a></span>
+            }
+        </div>
+        <div class="card-body">
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Week of : </span><span class="dtl_value dtl_number">@dtl.Week_of</span></div>
+                <div class="col-md-4"><span class="dtl_label">Load # of Week : </span><span class="dtl_value dtl_number padding-right-md">@dtl.Load_of_Week_Total</span></div>
+                <div class="col-md-4"></div>
+
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Delivery Date : </span><span id="date-dtl" class="dtl_number  padding-right-md ">@dtl.Load_Date</span></div>
+                <div class="col-md-4 no-pad-right"><span class="dtl_label">Load # of Day : </span><span class=" dtl_number money-dtl">@dtl.Load_of_Day_Total</span></div>
+                <div class="col-md-4 no-pad-right"><span class="dtl_label padding-right-md">Status : </span><span @(dtl.Status == "Not Started" ? "class=status-not-started dtl_valuemoney-dtl" : dtl.Status == "In-Route" ? "class=status-in-route dtl_valuemoney-dtl" : dtl.Status == "Delivered" ? "class=status-delivered dtl_valuemoney-dtl" : dtl.Status == "Paid" ? "class=status-paid dtl_valuemoney-dtl" : "class=other-status")>@dtl.Status</span></div>
+            </div>
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Contents : </span><span class="dtl_number padding-right-md">@dtl.Contents</span></div>
+                <div class="col-md-4"><span class="dtl_label">Weight : </span><span class="dtl_number padding-right-md">@dtl.Weight</span></div>
+                <div class="col-md-4"><span class="dtl_label">Customer : </span><span class="dtl_number money-round-dtl padding-right-md">@dtl.Customer_Nm</span></div>
+            </div>
+
+            @{
+    if (Session["LogUserAccess"].ToString() == "Driver")
+    {
+
+    }
+    else
+    {
+        <div class="col-md-12">
+            <div class="col-md-4"><span class="dtl_label">Payout : </span><span id="payout-dtl" class="dtl_number dtl_number padding-right-md money-round-dtl">@string.Format("{0:C}", dtl.Payout)</span></div>
+            <div class="col-md-4 no-pad-right"><span class="dtl_label">LPPM/TPPM : </span><span class=" dtl_number money-dtl small">@dtl.PPM</span>/<span class=" dtl_number money-dtl small">@dtl.T_PPM</span></div>
+            <div class="col-md-4 no-pad-right"><span class="dtl_label">Load/Total : </span><span class=" dtl_number money-dtl small">@dtl.Total_Load_Miles mi</span>/<span class=" dtl_number money-dtl small">@dtl.Total_Miles mi</span></div>
+        </div>
+    }
+            }
+
+
+            <div class="col-md-12">
+                <div class="col-md-4"><span class="dtl_label">Driver : </span><span class="dtl_number money-round-dtl">@dtl.Driver_Short_NM</span></div>
+                <div class="col-md-4"><span class="dtl_label">Truck : </span><span class="dtl_number money-dtl">@dtl.Truck</span></div>
+
+                @if (@dtl.Detention_Payout != "0")
+                {
+                    <div class="col-md-4"><span class="dtl_label padding-right-md">Dentention :</span><span class="dtl_value dtl_number padding-right-md">@dtl.Detention_Payout</span></div>
+                }
+            </div>
+            <div class="col-md-12">
+                @if (@dtl.BOL_URL != null)
+                {
+                    <div class="col-md-4"><span class="dtl_label">Docs : </span><a id="load-doc-download" href="#" onclick="docDownload(this);" data-loadnum=@dtl.Load_Number data-loadcon=@dtl.Load_Confirmation_URL data-bol=@dtl.BOL_URL@dtl.BOL_FILE_TYPE class="dtl_value money-round-dtl"> Download <i class="menu-icon fa fa-file-text-o"></i><small></small></a></div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <span class="dtl_label padding-right-md">&nbsp;</span>
+    </div>
+
+    <div id="dtl-pickup" class="col-md-6 dtl-pickup">
+        <div class="card border border-secondary">
+            <div class="card-header card-header-pickup">
+                <strong class="card-title">Pickup Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 mobile-bold form-group">Pickup City :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Location</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Name :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Name &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Address :</div>
+                <div class="col-md-6 form-group dtl_number">
+                    @if (dtl.Pickup_Address != null)
+                    {@dtl.Pickup_Address}
+                    else
+                    { <span>&nbsp;</span>}
+                </div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Date :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_Date</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup Time :</div>
+                <div class="col-md-6 form-group">@dtl.Pickup_Time &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Pickup DH :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Deadhead_Miles miles</div>
+
+                @if (dtl.Pickup_Notes != null)
+                {
+                    <div class="col-md-6 mobile-bold form-group">Pickup Notes :</div>
+                    <div class="col-md-12 form-group loadnotes">@dtl.Pickup_Notes</div>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div id="dtl-dropoff-1" class="col-md-6 dtl-dropoff">
+        <div class="card border border-secondary">
+            <div class="card-header">
+                <strong class="card-title">Dropoff 1 Info</strong>
+            </div>
+            <div class="card-body">
+                <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Location</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Name &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                <div class="col-md-6 form-group dtl_number">
+                    @if (dtl.Dropoff_1_Address != null)
+                    {@dtl.Dropoff_1_Address}
+                    else
+                    { <span>&nbsp;</span>}
+                </div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_1_Date</div>
+
+                <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                <div class="col-md-6 form-group">@dtl.Dropoff_1_Time &nbsp;</div>
+
+                <div class="col-md-6 mobile-bold form-group">PU To D1 :</div>
+                <div class="col-md-6 form-group dtl_number">@dtl.Pickup_DO1_Miles miles</div>
+
+                @if (dtl.Dropoff_1_Notes != null)
+                {
+                    <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                    <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_1_Notes &nbsp;</div>
+                }
+            </div>
+        </div>
+    </div>
+
+    if (dtl.Dropoff_2_Location != null)
+    {
+        <div id="dtl-dropoff-2" class="col-md-6 dtl-dropoff">
+            <div class="card border border-secondary">
+                <div class="card-header">
+                    <strong class="card-title">Dropoff 2 Info</strong>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6 mobile-bold form-group">Dropoff City:</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Location</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Name :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Name &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Address :</div>
+                    <div class="col-md-6 form-group dtl_number">
+                        @if (dtl.Dropoff_2_Address != null)
+                        {@dtl.Dropoff_2_Address}
+                        else
+                        { <span>&nbsp;</span>}
+                    </div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Zip :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Zip &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Contact :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Contact &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Date :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.Dropoff_2_Date</div>
+
+                    <div class="col-md-6 mobile-bold form-group">Dropoff Time :</div>
+                    <div class="col-md-6 form-group">@dtl.Dropoff_2_Time &nbsp;</div>
+
+                    <div class="col-md-6 mobile-bold form-group">D1 To D2 :</div>
+                    <div class="col-md-6 form-group dtl_number">@dtl.DO1_DO2_Miles miles</div>
+
+                    @if (dtl.Dropoff_2_Notes != null)
+                    {
+                        <div class="col-md-6 mobile-bold form-group">Special Notes :</div>
+                        <div class="col-md-12 form-group dtl_number loadnotes">@dtl.Dropoff_2_Notes &nbsp;</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+
+    }
+
+
+
+
+
+
+}
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script type="text/javascript">
+
+    // Download Docs Button Click
+    function docDownload(element) {
+        var loadCon_URL = $(element).attr("data-loadcon");
+        var bol_URL = $(element).attr("data-bol");
+        var load_number = $(element).attr("data-loadnum");
+
+        downloadFile('Load_' + load_number + '_Load_Confirmation_MAXX_EXPRESS_LLC', loadCon_URL);
+        downloadFile('Load_' + load_number + '_Signed_BOL_MAXX_EXPRESS_LLC', bol_URL);
+
+    };
+
+    function downloadFile(fileName_Desc, url) {
+        var a = document.createElement("a");
+        a.href = url;
+        //  fileName = fileName_Desc + url.split(".").pop();
+        fileName = fileName_Desc;
+        a.download = fileName;
+        document.body.appendChild(a);
+        a.click();
+        window.URL.revokeObjectURL(url);
+        a.remove();
+    }
+
+</script>

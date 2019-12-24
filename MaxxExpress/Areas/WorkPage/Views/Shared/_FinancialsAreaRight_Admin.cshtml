@@ -1,0 +1,285 @@
+﻿@model MaxxExpress.Areas.WorkPage.Models.WorkViewModel
+
+@{
+    if (Session["LogUserPNL_IND"].ToString() == "1") //Financial PNL Access Only
+    {
+
+
+<div id="right-panel" class="right-panel" style="overflow-x:hidden">
+    <div id="main-header" class="breadcrumbs">
+        <div class="col-sm-8">
+            <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+            <div class="page-header">
+                <span id="maxx-txt-logo" class="maxxtextlogo pull-left hide" style="display:none;"></span>
+                <div id="dashboard-title" class="page-title">
+                    @if (Session["LogUserFullName"] != null)
+                    {
+                        <span class="ReportDash-Txt">P & L Dashboard  </span><span class="Hello-Txt"><span style="color:black">></span>  Hello, @Session["LogUserFullName"].ToString()</span>
+                    }
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="page-header float-right">
+                <div class="page-title">
+                    <ol class="breadcrumb text-right">
+                        <li id="dateandtime" class="active dtl_number"></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content mt-3">
+
+        <div class="row">
+
+            <div class="col-xl-12">
+                <div id="financial-summary-card" class="card">
+                    <div class="card-header">
+                        <div class="col-lg-6 text-center pnl-label" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> NET</strong></div>
+
+                        <div id="NET-PNL-header" class="col-lg-3" style="padding-top: 3%; padding-left:0px;">
+                            <div id="NET-PNL-Value" class="col-md-12 dtl_number pnl-value text-center">
+                                NET $
+                                @foreach (var p in Model.vM_financial_pnl
+                                                       as IEnumerable<MaxxExpress.tbl_web_monthly_financial>)
+                                {
+                                    string.Format("{0:C}", p.Net_PNL);
+
+                                }
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <select class="cs-select cs-skin-border financials-dateview-dd">
+                                <option value="" disabled selected>@Model.vM_financial_CurrMonth</option>
+                                @foreach (var t in Model.vM_financial_pnl_months
+                                                       as IEnumerable<MaxxExpress.vw_date_pnl_month>)
+                                {
+                                    <option value=@t.YearMonth>@t.Month_Nm</option>
+
+                                }
+                                @*<option value="All" class="update-status-btn">All</option>*@
+                            </select>                          
+                        </div>
+
+                    </div>
+                    <div id="financial-summary-data" class="card-body" style="padding: 0px;">
+                        <div class="hide" id="methodload"></div>
+                        <div id="tbl-financial-summary" class="table-responsive" style="overflow-x: auto;">
+                            <div class="row">
+                                <div class="col-md-12 pnl-line-item" data-toggle="collapse" data-target="#financial-gross-detail">
+                                    <div class="col-md-6 text-center pnl-label">Gross Revenue</div>
+                                    <div id="Load-Revenue-Value" class="col-md-3 dtl_number pnl-value text-center">$
+                                        @foreach (var p in Model.vM_financial_pnl
+                                                       as IEnumerable<MaxxExpress.tbl_web_monthly_financial>)
+                                            {
+                                                string.Format("{0:C}", p.Revenue);
+
+                                            }
+                                    </div>
+                                </div>
+                                <div class="collapse" id="financial-gross-detail" style="width:100%">
+                                    <div class="card card-body padding-left-lg" style="margin-bottom: 0px;">
+                               
+                                        <table id="tbl-deposit-revenue" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:30%;">Manual Deposit Item</th>
+                                                    <th style="width:5%;">Deposit Date</th>
+                                                    <th style="width:5%;">Amount</th>
+                                                    <th style="width:5%">Source</th>                                      
+                                                </tr>
+                                            </thead>
+                                            <tbody id="deposit-revenue-row-data">
+                                                @{Html.RenderAction("GetFinancialDeposits");}
+                                            </tbody>
+                                        </table>
+                                       
+                                        <table id="tbl-load-revenue" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:5%;">Date</th>
+                                                    <th style="width:5%;">Load</th>
+                                                    <th style="width:8%">Customer</th>
+                                                    <th style="width:8%;">Miles</th>
+                                                    <th style="width:8%;">Total PPM</th>
+                                                    <th style="width:8%;">Payout</th>
+                                                    <th style="width:8%;">Driver</th>
+                                                    <th style="width:8%;">Pickup</th>
+                                                    <th style="width:8%;">Dropoff</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="load-revenue-row-data">
+                                                @{Html.RenderAction("GetFinancialLoadGross");}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pnl-line-item" data-toggle="collapse" data-target="#financial-fuel-detail">
+                                    <div class="col-md-6 text-center pnl-label">Fuel</div>
+                                    <div id="Fuel-Total-Value" class="col-md-3 dtl_number pnl-value text-center">
+                                        $
+                                        @foreach (var p in Model.vM_financial_pnl
+                                                       as IEnumerable<MaxxExpress.tbl_web_monthly_financial>)
+                                        {
+                                            string.Format("{0:C}", p.Fuel);
+
+                                        }
+                                    </div>
+                                </div>
+                                <div class="collapse" id="financial-fuel-detail" style="width:100%">
+                                    <div class="card card-body padding-left-lg" style="margin-bottom: 0px;">
+                                        <table id="tbl-fuel-revenue" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:5%;">Date</th>
+                                                    <th style="width:5%;">Location</th>
+                                                    <th style="width:8%">Amount</th>
+                                                    <th style="width:8%;">Gallons</th>
+                                                    <th style="width:8%;">Price</th>
+                                                    <th style="width:8%;">Type</th>
+                                                    <th style="width:8%;">Driver</th>
+                                                    <th style="width:8%;">Source</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="fuel-revenue-row-data">
+                                               @{Html.RenderAction("GetFinancialFuel");}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pnl-line-item" data-toggle="collapse" data-target="#financial-payroll-detail">
+                                    <div class="col-md-6 text-center pnl-label">Payroll</div>
+                                    <div id="Payroll-Total-Value" class="col-md-3 dtl_number pnl-value text-center">
+                                        $
+                                        @foreach (var p in Model.vM_financial_pnl
+                                                       as IEnumerable<MaxxExpress.tbl_web_monthly_financial>)
+                                        {
+                                            string.Format("{0:C}", p.Payroll);
+
+                                        }
+                                    </div>
+                                </div>
+                                <div class="collapse" id="financial-payroll-detail" style="width:100%">
+                                    <div class="card card-body padding-left-lg" style="margin-bottom: 0px;">
+                                        <table id="tbl-payroll-revenue" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:5%;">Pay Date</th>
+                                                    <th style="width:8%;">Pay Type</th>
+                                                    <th style="width:8%">Miles</th>
+                                                    <th style="width:8%;">Pay PM</th>
+                                                    <th style="width:8%;">Base</th>
+                                                    <th style="width:8%;">Adjustments</th>
+                                                    <th style="width:8%;">Pay</th>
+                                                    <th style="width:8%;">Employee</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="payroll-revenue-row-data">
+                                               @{Html.RenderAction("GetFinancialPayroll");}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 pnl-line-item" data-toggle="collapse" data-target="#financial-expenses-detail">
+                                    <div class="col-md-6 text-center pnl-label">Expenses</div>
+                                    <div id="Expenses-Total-Value" class="col-md-3 dtl_number pnl-value text-center">
+                                        $
+                                        @foreach (var p in Model.vM_financial_pnl
+                                                       as IEnumerable<MaxxExpress.tbl_web_monthly_financial>)
+                                        {
+                                            string.Format("{0:C}", p.Expenses);
+                                        }
+                                    </div>
+                                </div>
+                                <div class="collapse" id="financial-expenses-detail" style="width:100%">
+                                    <div class="card card-body padding-left-lg" style="margin-bottom: 0px;">
+                                        <table id="tbl-expenses-reoccurring" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:5%;">Reoccurring Monthly Expense</th>
+                                                    <th style="width:5%;">Amount</th>
+                                                    <th style="width:8%">Source</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="expenses-reoccurring-row-data">
+                                                @{Html.RenderAction("GetFinancialExpensesRO");}
+                                            </tbody>
+                                        </table>
+
+                                        <table id="tbl-expenses-revenue" class="table table-responsive" style="overflow-x: auto;">
+                                            <thead class="thead-red">
+                                                <tr>
+                                                    <th style="width:5%;">Date</th>
+                                                    <th style="width:15%;">Item</th>
+                                                    <th style="width:5%">Amount</th>
+                                                    <th style="width:5%">Method</th>
+                                                    <th style="width:12%">Purpose</th>
+                                                    <th style="width:8%">Authorized by</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody id="expenses-revenue-row-data">
+                                               @{Html.RenderAction("GetFinancialExpenses");}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>                 
+                </div>
+            </div>  
+        </div>
+      </div><!-- .content -->
+    </div><!-- /#right-panel -->
+
+
+<!--Expense Purpose Modal-->
+
+<div class="modal fade" id="expense_purpose_Modal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span>Expense Tracking</h5>
+                <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body" style="padding: 0px;">
+                <div id="expense-purpose-row" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                    @{
+                        Html.RenderPartial("_Expenses_PurposeDiv");
+                    }
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary btn-Edit-Modal-close" data-dismiss="modal">Close</button>
+                <button id="btn-Update-expense" type="button" class="btn btn-primary update-expense-purpose">Save Changes</button>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+
+
+<!--End Expense Purpose Modal-->
+
+<script type="text/javascript">
+ 
+
+</script>
+
+    }
+    else
+    {
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="alert-no-access" class="alert  alert-danger alert-dismissible fade show" style="margin: 2%;" role="alert">
+                <span class="badge badge-pill badge-danger">Unauthorized</span> You do not have access to view this page, contact web administrator to gain access.
+            </div>
+        </div>
+    }
+}

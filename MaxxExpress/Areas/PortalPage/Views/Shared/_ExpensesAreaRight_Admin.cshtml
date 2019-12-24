@@ -1,0 +1,198 @@
+﻿@{
+    if (Session["LogUserExp_IND"].ToString() == "1") //Expenses Access Only
+    {
+
+
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="main-header" class="breadcrumbs">
+                <div class="col-sm-8">
+                    <a id="menuToggle" class="menutoggle pull-left"><i class="fa fa fa-tasks"></i></a>
+                    <div class="page-header">
+                        <span id="maxx-txt-logo" class="maxxtextlogo pull-left hide" style="display:none;"></span>
+                        <div id="dashboard-title" class="page-title">
+                            @if (Session["LogUserFullName"] != null)
+                            {
+                                <span class="ReportDash-Txt">Expenses Dashboard  </span><span class="Hello-Txt"><span style="color:black">></span>  Hello, @Session["LogUserFullName"].ToString()</span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="page-header float-right">
+                        <div class="page-title">
+                            <ol class="breadcrumb text-right">
+                                <li id="dateandtime" class="active dtl_number"></li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content mt-3">
+
+                <div class="row">
+
+                    <div class="col-xl-12">
+                        <div id="payroll-summary-card" class="card">
+                            <div class="card-header">
+                                <div class="col-lg-4" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> Expenses</strong></div>
+
+                                <div id="expenses-totals-header" class="col-lg-4" style="padding-top: 3%; padding-left:0px;">
+                                    @{Html.RenderAction("GetExpenseTotalHeader", null, null);}
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border expenses-dateview-dd">
+                                        <option value="" disabled selected>30 Days</option>
+                                        <option value="30Days" class="edit-load-btn">30 Days</option>
+                                        <option value="Month" class="edit-load-btn">This Month</option>
+                                        <option value="LastMonth" class="add-load-btn">Last Month</option>
+                                        <option value="All" class="update-status-btn">All</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border expenses-typeview-dd">
+                                        <option value="" disabled selected>All</option>
+                                        <option value="All" class="all-payroll-btn">All</option>
+                                        <option value="1" class="kazey-expense-btn">Reoccuring</option>
+                                        <option value="0" class="gary-expense-btn">Miscellaneous</option>
+                                    </select>
+                                    <input id="type-placeholder-tb" class="hide" type="text" value="All" />
+                                    <input id="date-placeholder-tb" class="hide" type="text" value="30Days" />
+                                    <input class="hide purpose-tb">
+                                </div>
+                            </div>
+                            <div id="expense-summary-data" class="card-body" style="padding: 0px;">
+
+                                <div class="expense-update-success alert alert-success alert-dismissible fade show hide" role="alert">
+                                    <span class="badge badge-pill badge-success">Success</span> Expense changes were saved
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                </div>
+
+                                <table id="tbl-expenses-summary" class="table table-responsive" style="overflow-x: auto;">
+                                    <thead class="thead-red">
+                                        <tr>
+                                            <th style="width:5%;">Date</th>
+                                            <th style="width:5%;">By</th>
+                                            <th style="width:30%">Expense</th>
+                                            <th style="width:5%;">Amount</th>
+                                            <th style="width:6%;">Method</th>
+                                            <th style="width:6%;">Reoccuring</th>
+                                            <th style="width:30%;">Purpose</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="expenses-row-data">
+                                        @{Html.RenderAction("GetExpenseSummary", null, null);}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-xl-12">
+                        <div id="fuel-summary-card" class="card">
+                            <div class="card-header">
+                                <div class="col-lg-4" style="padding-top: 3%; padding-left:0px;"><strong class="card-title"> Fuel</strong></div>
+                                <div id="fuel-totals-header" class="col-lg-4" style="padding-top: 3%; padding-left:0px;">
+                                    @{Html.RenderAction("GetFuelTotalHeader", null, null);}
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border fuel-dateview-dd">
+                                        <option value="" disabled selected>30 Days</option>
+                                        <option value="Month" class="edit-load-btn">This Month</option>
+                                        <option value="LastMonth" class="add-load-btn">Last Month</option>
+                                        <option value="30Days" class="edit-load-btn">30 Days</option>
+                                        <option value="All" class="update-status-btn">All</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-2">
+                                    <select class="cs-select cs-skin-border fuel-personview-dd">
+                                        <option value="" disabled selected>All</option>
+                                        <option value="All" class="all-payroll-btn">All</option>
+                                        <option value="Jermaine_Covington" class="Jermaine-fuel-btn">Jermaine Covington</option>
+                                        <option value="Wayne_Baldwin" class="James-fuel-btn">Wayne Baldwin</option>
+                                        <option value="Floyd_Stocton">Floyd Stocton</option>
+                                    </select>
+                                    <input id="fuel-employee-placeholder-tb" class="hide" type="text" value="All" />
+                                    <input id="fuel-date-placeholder-tb" class="hide" type="text" value="30Days" />
+                                </div>
+
+                            </div>
+                            <div id="fuel-summary-data" class="card-body" style="padding: 0px;">
+
+
+                                <table id="fuel-summary" class="table table-responsive" style="overflow-x: auto;">
+                                    <thead class="thead-blue">
+                                        <tr>
+                                            <th style="width:5%;">Date</th>
+                                            <th style="width:8%;">Location</th>
+                                            <th style="width:8%">Gallons</th>
+                                            <th style="width:8%;">Amount</th>
+                                            <th style="width:8%;">Price</th>
+                                            <th style="width:8%;">Type</th>
+                                            <th style="width:8%;">Source</th>
+                                            <th style="width:8%;">Driver</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="fuel-row-data">
+                                        @{Html.RenderAction("GetFuelSummary", null, null);}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- .content -->
+        </div><!-- /#right-panel -->
+
+
+        <!--Expense Purpose Modal-->
+
+        <div class="modal fade" id="expense_purpose_Modal" tabindex="-1" role="dialog" aria-labelledby="largeModalLabel" aria-hidden="true" style="display: none;">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="largeModalLabel"><span class="maxxtextlogo_ModalTitle pull-left" style="display:inline;"></span>Expense Tracking</h5>
+                        <button type="button" class="close btn-Edit-Modal-close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body" style="padding: 0px;">
+                        <div id="expense-purpose-row" class="col-md-12" style="padding-left:0px; padding-right:0px;">
+                            @{
+        Html.RenderPartial("_Expenses_PurposeDiv");
+                            }
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary btn-Edit-Modal-close" data-dismiss="modal">Close</button>
+                        <button id="btn-Update-expense" type="button" class="btn btn-primary update-expense-purpose">Save Changes</button>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+
+        <!--End Expense Purpose Modal-->
+
+
+
+        <script type="text/javascript">
+
+
+        </script>
+
+    }
+    else
+    {
+        <div id="right-panel" class="right-panel" style="overflow-x:hidden">
+            <div id="alert-no-access" class="alert  alert-danger alert-dismissible fade show" style="margin: 2%;" role="alert">
+                <span class="badge badge-pill badge-danger">Unauthorized</span> You do not have access to view this page, contact web administrator to gain access.
+            </div>
+        </div>
+    }
+}

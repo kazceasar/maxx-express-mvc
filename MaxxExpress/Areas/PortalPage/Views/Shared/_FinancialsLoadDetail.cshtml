@@ -1,0 +1,31 @@
+﻿@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+
+@foreach (var p in Model.vM_financial_LoadData
+           as IEnumerable<MaxxExpress.tbl_web_monthly_financial_revenue_load>)
+{
+    <tr> 
+        <td class="dtl_number">@p.Deliverd_Dt.ToString("MM/dd")</td>
+        <td class="dtl_number">@p.Load_Number</td>
+        <td class="dtl_number">@p.Customer_Nm</td>
+        <td class="dtl_number">@p.Total_Miles</td>
+        <td class="dtl_number">@p.Total_PPM</td>
+        <td class="dtl_number">@string.Format("{0:C}", p.Payout)</td>
+        <td class="dtl_number">@p.Driver</td>
+        <td class="dtl_number">@p.Pickup</td>
+        <td class="dtl_number">@p.Dropoff</td>
+    </tr>
+}
+
+   
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+

@@ -1,0 +1,53 @@
+﻿@model MaxxExpress.Areas.PortalPage.Models.PortalViewModel
+
+<form class="payrollAdjustmentForm" enctype="multipart/form-data">
+
+    <div class="card-body">
+
+        <div class="col-md-12 no-pad-bottom no-pad-horizontal">
+
+            <table id="tbl-open-loads-summary" class="table table-responsive" style="overflow-x: auto;">
+                <thead class="thead-dark">
+                    <tr>
+                        <th style="width:3%;">Date</th>
+                        <th style="width:4%;">Employee</th>
+                        <th style="width:9%;">Det Time</th>
+                        <th style="width:10%;">Det Pay</th>
+                        <th style="width:9%;">Stop Count</th>
+                        <th style="width:10%;">Stop Pay</th>
+                        <th style="width:15%;">Misc Adj</th>
+                        <th style="width:20%;">Misc Adj Notes</th>
+                    </tr>
+                </thead>
+                <tbody id="payroll-row-data">
+                    @for (int i = 0; i < Model.vM_PayrollAdjustmentData.Count(); i++)
+                    {
+                        <tr>
+                            <td class="dtl_number"> @Model.vM_PayrollAdjustmentData[i].Pay_Day.ToString("MM/dd")</td>
+                            <td class="driver-adj">@Model.vM_PayrollAdjustmentData[i].Employee_Name @Html.TextBox("Employee_Number", Model.vM_PayrollAdjustmentData[i].Employee_Number, new { @class = "hide" }) @Html.TextBox("Pay_Day", Model.vM_PayrollAdjustmentData[i].Pay_Day, new { @class = "hide" })</td>
+                            <td class="loadnumber_cl dtl_number">
+                                @Html.TextBox("Dentention_Time", Model.vM_PayrollAdjustmentData[i].Detention_Time, new { @class = "form-control  dtl_number text-box single-line", @type = "number" })
+                            </td>
+                            <td>@Html.TextBox("Dentention_Pay", Model.vM_PayrollAdjustmentData[i].Detention_Pay, new { @class = "form-control  dtl_number text-box single-line", @type = "number" })</td>
+                            <td class="dtl_number">@Html.TextBox("Stop_Count", Model.vM_PayrollAdjustmentData[i].Stop_Count, new { @class = "form-control  dtl_number text-box single-line", @type = "number" })</td>
+                            <td class="money-round dtl_number payout_cl">@Html.TextBox("Stop_Pay", Model.vM_PayrollAdjustmentData[i].Stop_Pay, new { @class = "form-control  dtl_number text-box single-line", @type = "number" })</td>
+                            <td class="money dtl_number">@Html.TextBox("Misc_Adjustment_Amount", Model.vM_PayrollAdjustmentData[i].Misc_Adjustment_Amount, new { @class = "form-control  dtl_number text-box single-line", @type = "number" })</td>
+                            <td> @Html.TextBox("Misc_Adjustment_Notes", Model.vM_PayrollAdjustmentData[i].Misc_Adjustment_Notes, new {   @class = "form-control  dtl_number text-box single-line" })</td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+        </div>
+
+    </div>
+
+</form>
+
+
+<script type="text/javascript">
+   
+
+</script>
+

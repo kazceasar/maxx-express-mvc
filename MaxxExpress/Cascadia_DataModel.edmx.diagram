@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="359c3313a16645f48fe976409a583852" Name="Diagram1" ZoomLevel="61">
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_contact_form" Width="1.5" PointX="8" PointY="4.375" IsExpanded="true" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_driver_application" Width="1.5" PointX="2.375" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_location" Width="1.5" PointX="6.125" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_date_week_of" Width="1.5" PointX="0.5" PointY="2.25" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_customer" Width="1.5" PointX="11.75" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_load_status" Width="1.5" PointX="2.375" PointY="5.125" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_load_status" Width="1.5" PointX="6.125" PointY="3.625" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_driver" Width="1.5" PointX="4.25" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_payroll" Width="1.5" PointX="13.625" PointY="3.125" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_payroll_hourly" Width="1.5" PointX="15.5" PointY="6.125" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_date_last_month" Width="1.5" PointX="0.5" PointY="4.25" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_web_homepage_stats_week" Width="1.5" PointX="11.75" PointY="3.25" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_truck" Width="1.5" PointX="8" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_payroll_web" Width="1.5" PointX="15.5" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_date_last_week" Width="1.5" PointX="0.5" PointY="0.5" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_fuel" Width="1.5" PointX="4.25" PointY="16.25" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_fuel" Width="1.5" PointX="17.375" PointY="12.875" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_payroll" Width="1.5" PointX="17.375" PointY="6.875" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_homepage_stats_week" Width="1.5" PointX="11.75" PointY="5.25" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_expenses" Width="1.5" PointX="17.375" PointY="17.875" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_date_pnl_month" Width="1.5" PointX="4.25" PointY="7.5" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_revenue_deposit" Width="1.5" PointX="17.375" PointY="15.75" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_revenue_load" Width="1.5" PointX="17.375" PointY="3.75" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial" Width="1.5" PointX="17.375" PointY="9.75" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_deposit" Width="1.5" PointX="9.875" PointY="4.375" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_expense" Width="1.5" PointX="11.75" PointY="10.75" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_users" Width="1.5" PointX="13.625" PointY="7.125" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_payroll_adjustments" Width="1.5" PointX="15.5" PointY="9" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_rpt_weekly_production" Width="1.5" PointX="15.5" PointY="12.875" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_weekly_production" Width="1.5" PointX="13.625" PointY="16.625" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_weekly_production_fuel" Width="1.5" PointX="15.5" PointY="19.125" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_weekly_production_miles" Width="1.5" PointX="15.5" PointY="16.75" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_weekly_production_payroll" Width="1.5" PointX="15.5" PointY="21.875" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_expenses" Width="1.5" PointX="2.375" PointY="16.375" FillColor="ForestGreen" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_monthly_expense" Width="1.5" PointX="11.75" PointY="7.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_monthly_financial_expenses_reoccurring" Width="1.5" PointX="17.375" PointY="20.625" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_web_notes" Width="1.5" PointX="13.625" PointY="11.75" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_weekly_production_gross" Width="1.5" PointX="13.625" PointY="19.75" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_trailer" Width="1.5" PointX="9.875" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_date_week" Width="1.5" PointX="19.25" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_loads" Width="1.5" PointX="6.125" PointY="7.375" FillColor="Red" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_fct_fuel_entry" Width="1.5" PointX="11.75" PointY="14.875" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.tbl_dim_payroll_schedule" Width="1.5" PointX="13.5" PointY="0.5" FillColor="192, 255, 255" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_payroll_period_summary" Width="1.5" PointX="17.375" PointY="0.5" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_sand_payout" Width="1.5" PointX="4.25" PointY="20.625" FillColor="Green" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_loads_summary_closed" Width="1.5" PointX="2.25" PointY="9.5" FillColor="LightCyan" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_loads_summary_open" Width="1.5" PointX="4.25" PointY="9.5" FillColor="LightCyan" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_loads_detail_closed" Width="1.5" PointX="8" PointY="7.375" FillColor="Red" />
+        <EntityTypeShape EntityType="cascadiaModel.vw_loads_detail_open" Width="1.5" PointX="9.875" PointY="7.375" FillColor="Red" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

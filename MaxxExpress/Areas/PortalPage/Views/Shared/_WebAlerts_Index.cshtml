@@ -1,0 +1,23 @@
+﻿
+    @foreach (var d in ViewData["WebAlerts"]
+           as IEnumerable<MaxxExpress.tbl_web_notes>)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <span class="badge badge-pill badge-warning">@d.Message_Type</span><span class="dtl_number"> @Convert.ToDateTime(d.Action_Date).ToString("MM/dd/yy") - @d.Subject </span>
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">×</span>
+            </button>
+        </div>
+   
+    }
+
+<script type="text/javascript">
+
+
+
+</script>
+
+
+
+
+
